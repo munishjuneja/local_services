@@ -26,6 +26,17 @@
     <script type="text/javascript" src="js/jquery.min.js">
     </script>
     <script type="text/javascript">
+    	$(function(){
+    		$("#hamburgermenu ul li a").hover(function(){
+    			$("#overlay").css("background","white");
+    			$("#overlay").css("opacity","0.8");
+    			var x = $(this).html();
+    			$("#overlay").html("<h1>"+x+"</h1>");
+
+    		});
+    	});
+    </script>
+    <script type="text/javascript">
             function sticky_relocate() {
             var window_top = $(window).scrollTop();
             var div_top = $('#sticky-anchor').offset().top;
@@ -82,8 +93,9 @@
     }
   });
  
-  $('.overlay').on('click', function(e){
+  $('#overlay').on('click', function(e){
     if($bdy.hasClass('openmenu')) {
+      $("#overlay").html("");
       jsAnimateMenu('close');
     }
   });
@@ -98,7 +110,7 @@
  
       $container.animate({marginRight: negwidth, marginLeft: poswidth}, menuspeed);
       $burger.animate({width: poswidth}, menuspeed);
-      $('.overlay').animate({left: poswidth}, menuspeed);
+      $('#overlay').animate({left: poswidth}, menuspeed);
     }
  
     if(tog == 'close') {
@@ -106,7 +118,7 @@
  
       $container.animate({marginRight: "0", marginLeft: "0"}, menuspeed);
       $burger.animate({width: "0"}, menuspeed);
-      $('.overlay').animate({left: "0"}, menuspeed);
+      $('#overlay').animate({left: "0"}, menuspeed);
     }
   }
 });
@@ -146,16 +158,17 @@ body.openmenu {
   margin: 0;
 }
  
-.overlay {
+#overlay {
   position: fixed;
   z-index: 99;
-  /*background-color: rgba(0,0,0,0.5);*/
   bottom: 0;
   right: 0;
   left: 0;
+  width: 80%;
+  background: transparent;
 }
  
-.openmenu .overlay {
+.openmenu #overlay {
   top: 0;
 }
 .hamb{
@@ -166,7 +179,7 @@ body.openmenu {
 #hamburgermenu {
   height: 100%;
   width: 0;
-  background: black;
+  background: #3F51B5;
   position: fixed;
   top: 0;
   left: 0;
@@ -222,16 +235,16 @@ body.openmenu {
         <ul>
           <li><a href="#">service1</a></li>
           <li><a href="#">service2</a></li>
-          <li><a href="#">service1</a></li>
-          <li><a href="#">service2</a></li>
-          <li><a href="#">service1</a></li>
-          <li><a href="#">service2</a></li>
-          <li><a href="#">service1</a></li>	
+          <li><a href="#">service3</a></li>
+          <li><a href="#">service4</a></li>
+          <li><a href="#">service5</a></li>
+          <li><a href="#">service6</a></li>
+          <li><a href="#">service7</a></li>	
         
         </ul>
       </div>
     </div>
-    <div class="overlay"></div>
+    <div id="overlay"></div>
   <div id="content">
   <!-- filler content -->
   </div>
