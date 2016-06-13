@@ -373,7 +373,7 @@ body.openmenu {
     <div style="float:left; width:10%;">
     	<a href="#" class="menubtn"> 
     	   	<button type="button" class="btn btn-md hamb" aria-label="Left Align">
-  				<span class="glyphicon glyphicon-align-justify" aria-hidden="true">
+  				<span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true">
   	
   				</span>
 			</button></a>
