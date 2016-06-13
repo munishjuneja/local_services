@@ -26,15 +26,7 @@
     <script type="text/javascript" src="js/jquery.min.js">
     </script>
     <script type="text/javascript">
-    	$(function(){
-    		$("#hamburgermenu ul li a").hover(function(){
-    			$("#overlay").css("background","white");
-    			$("#overlay").css("opacity","0.8");
-    			var x = $(this).html();
-    			$("#overlay").html("<h1>"+x+"</h1>");
-
-    		});
-    	});
+    	
     </script>
     <script type="text/javascript">
             function sticky_relocate() {
@@ -123,13 +115,36 @@
   }
 });
 
+  		$(function(){
+    		$("#hamburgermenu ul li a").hover(function(){
+
+    			$("#overlay").css("background","white");
+    			$("#overlay").css("opacity","0.8");
+    			$("#overlay").css("z-index","1000000");
+    			var x = $(this).html();
+    			$("#overlay").html("<h1><a href='#'>"+x+"</a></h1>");
+
+    		});
+    	});
+
+    	$(function(){
+    		$("#hamburgermenu").mouseleave(function(){
+    		  $("body").removeClass('openmenu');
+		      $("#pgcontainer").animate({marginRight: "0", marginLeft: "0"}, 400);
+		      $("#hamburgermenu").animate({width: "0"}, 400);
+		      $('#overlay').animate({left: "0"}, 400);
+		      $("#overlay").html("");
+
+    		});
+    	});
+
   </script>
   <style type="text/css">
   		header {
 
 }
  
-#navbar {
+#navbar {				
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -159,13 +174,15 @@ body.openmenu {
 }
  
 #overlay {
-  position: fixed;
+  position: absolute;
   z-index: 99;
   bottom: 0;
   right: 0;
+  margin-top:110px; 
   left: 0;
   width: 80%;
   background: transparent;
+  border:1px;
 }
  
 .openmenu #overlay {
@@ -177,11 +194,9 @@ body.openmenu {
 	margin: 0;
 }
 #hamburgermenu {
-  height: 100%;
-  width: 0;
   background: #3F51B5;
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: 110px;
   left: 0;
   font-size: 12px;
   z-index: 100000;
@@ -191,7 +206,6 @@ body.openmenu {
   box-shadow: 3px 0 7px rgba(0,0,0,0.55);
 }
 #hamburgermenu ul {
-  margin-top: 45px;
   z-index: 101;
   overflow-y: auto;
   overflow-x: hidden;
@@ -210,8 +224,8 @@ body.openmenu {
   text-align: center;
 }
 #hamburgermenu li a:hover {
-  color: #fff;
-  background: #2c2c2c;
+  color: black;
+  background: #fff;
 }
 
   </style>
@@ -240,6 +254,8 @@ body.openmenu {
           <li><a href="#">service5</a></li>
           <li><a href="#">service6</a></li>
           <li><a href="#">service7</a></li>	
+           <li><a href="#">service8</a></li>
+          <li><a href="#">service9</a></li>
         
         </ul>
       </div>
