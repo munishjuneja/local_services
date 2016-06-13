@@ -123,7 +123,6 @@
 }
  
 .menubtn {
-  /* needs positioning for z-index http://stackoverflow.com/a/10600930/477958 */
   position: relative; 
   z-index: 101;
   font-size: 0em;
@@ -133,7 +132,7 @@
   color: white;
 }
 .menubtn:hover, .openmenu .menubtn {
-  background-image: url('hamburger-active.png');
+
 }
 
 /** toggle menu **/
@@ -150,7 +149,7 @@ body.openmenu {
 .overlay {
   position: fixed;
   z-index: 99;
-  background-color: rgba(0,0,0,0.5);
+  /*background-color: rgba(0,0,0,0.5);*/
   bottom: 0;
   right: 0;
   left: 0;
@@ -167,12 +166,13 @@ body.openmenu {
 #hamburgermenu {
   height: 100%;
   width: 0;
-  background: #373737;
+  background: black;
   position: fixed;
   top: 0;
   left: 0;
+  font-size: 12px;
   z-index: 100000;
-  overflow: hidden;
+  overflow: auto;
   -webkit-box-shadow: 3px 0 7px rgba(0,0,0,0.55);
   -moz-box-shadow: 3px 0 7px rgba(0,0,0,0.55);
   box-shadow: 3px 0 7px rgba(0,0,0,0.55);
@@ -220,11 +220,14 @@ body.openmenu {
       <!-- use captain icon for toggle menu -->
       <div id="hamburgermenu">
         <ul>
-          <li><a href="#">Homepage</a></li>
-          <li><a href="#">About the Site</a></li>
-          <li><a href="#">Basic History</a></li>
-          <li><a href="#">Our Products</a></li>
-          <li><a href="#">Contact</a></li>
+          <li><a href="#">service1</a></li>
+          <li><a href="#">service2</a></li>
+          <li><a href="#">service1</a></li>
+          <li><a href="#">service2</a></li>
+          <li><a href="#">service1</a></li>
+          <li><a href="#">service2</a></li>
+          <li><a href="#">service1</a></li>	
+        
         </ul>
       </div>
     </div>
@@ -235,11 +238,115 @@ body.openmenu {
     <!-- Navigation -->
     <div id="navbar-top">
 	    <div class="navbar-login" >
-	        <a class = "login" href="#">Login</a>
-	        <a class = "login" href=""> <span class="vertical-line">|</span></a>
-	         <a class = "login" href="#">Signup</a>
+            <a class = "login" href="#">Support</a><span class="vertical-line">|</span>
+            <a class = "login" href="#">Contact Us</a><span class="vertical-line">|</span>
+	        <a class = "login" href="#"  data-toggle="modal" data-target="#loginForm">Login</a> <span class="vertical-line">|</span>
+	        
+	         <a class = "login" href="#" data-toggle="modal" data-target="#signupForm">Signup</a>
 	    </div>
 	</div>
+
+	<div class="modal fade" id="signupForm">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label=""><span>&times;</span>
+					</button>
+					<h4 class="modal-title">Sign Up</h4>
+				</div>
+				<div class="modal-body">
+					<form class="form-horizontal" action="login.php" method="post">
+						<div class="form-group">
+							<label class="col-md-4 col-md-offset-1">Name:</label>
+							<div class="col-md-5">
+								<input type="text" class="form-control input-sm" name="regfullname" placeholder="Full Name">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 col-md-offset-1">Contact No:</label>
+							<div class="col-md-5">
+								<input type="text" class="form-control input-sm" name="regusername" placeholder="Roll no">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 col-md-offset-1">Email:</label>
+							<div class="col-md-5">
+								<input type="email" name="regemail" placeholder="example@exp.com" class="form-control input-sm">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 col-md-offset-1">Password:</label>
+							<div class="col-md-5">
+								<input type="password" name="regpwd1" placeholder="password" class="form-control input-sm">
+							</div>
+						</div>
+
+						<div class="form-group">
+							<label class="col-md-4 col-md-offset-1">Confirm Password:</label>
+							<div class="col-md-5">
+								<input type="password" name="regpwd2" placeholder="repeat password" class="form-control input-sm">
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="col-md-2 col-md-offset-8">
+								<input type="submit" class="btn btn-success" name="registerform" value="Sign Up">
+							</div>
+						</div>
+
+					</form>
+				</div>
+				<div class="modal-footer"></div>
+			</div>
+
+			
+		</div>
+	</div>
+		<!-- PopUp Login Form -->
+		 <div class="modal fade" id="loginForm">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label=""><span>&times;</span>
+						</button>
+						<h4 class="modal-title">Log In</h4>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal" action="php/login.php" method="post" onsubmit="showMessage()">
+							<div class="form-group">
+								<label class="col-md-4 col-md-offset-1">User:</label>
+								<div class="col-md-5">
+									<input type="text" class="form-control input-sm" name="username" placeholder="User name" autofocus/>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-4 col-md-offset-1">Password:</label>
+								<div class="col-md-5">
+									<input type="password" class="form-control input-sm" name="password" placeholder="password" autofocus/>
+									<br>
+									<a href="">Forgot your password?</a>
+								</div>
+								
+								
+							</div>
+								<div class="form-group center">
+										
+										<div class="col-md-2 col-md-offset-6">
+											<input type="submit" class="btn btn-success" name="loginform" value="Log In" >
+										</div>
+
+								</div>
+						</form>
+					</div>
+					<div class="modal-footer"></div>
+				</div>
+				
+			</div>
+		</div>
+
 
 	<div id="sticky-anchor"></div>
     <div id="sticky">
@@ -262,8 +369,8 @@ body.openmenu {
 <div id="navbar-bottom" style="width:100%;">
 
 
-    <div id="inline-div">
-    <div style="float:left;">
+   <div id="inline-div" style="width:100%;">
+    <div style="float:left; width:10%;">
     	<a href="#" class="menubtn"> 
     	   	<button type="button" class="btn btn-md hamb" aria-label="Left Align">
   				<span class="glyphicon glyphicon-align-justify" aria-hidden="true">
@@ -272,13 +379,15 @@ body.openmenu {
 			</button></a>
     	<!-- <button><a href="#" class="menubtn">ham</a></button> -->
     </div>
-       <ul id="inline-ul" align="left">
+       <ul id="inline-ul" align="left" style="width:90%;">
            <li> <a href="#"> first</a></li>
            <li> <a href="#"> second</a></li>
            <li> <a href="#"> third</a></li>
            <li> <a href="#"> fourth</a></li>
            <li> <a href="#"> fifth</a></li>
            <li> <a href="#"> sixth</a></li>
+           <li> <a href="#"> seventh</a></li>
+           <li> <a href="#"> eighth</a></li>
        </ul>
     </div> 
 
