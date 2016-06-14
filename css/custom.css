@@ -19,7 +19,7 @@
         margin: 0;
         padding:0;
     }
-    }
+    
     p {
         margin: 1em auto;
     }
@@ -82,18 +82,18 @@
     display: inline;
 }
 .nav_bar_dropdown_hidden {
-    width: 200px;
-    min-height: 300px;
+    width: 180px;
     background-color: red;
     position: absolute;
     z-index: 2000;
     display:none;
+    margin-right: 100px;
 }
 .navbar-top .navbar-login .nav_bar_account {
     position: relative;
 }
 .nav_bar_account:hover .nav_bar_dropdown_hidden {
-    background-color:gray;
+    background-color:white;
     display:block;
 }
 .nav_bar_dropdown_hidden .user_login_icon {
@@ -115,6 +115,36 @@
 
 .nav_bar_dropdown_hidden .dropdown_header a {
     color: white;
+}
+.nav_bar_dropdown_hidden .navbar_dropdown_options {
+    color: #333;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+.nav_bar_dropdown_hidden .navbar_dropdown_options  ul li {
+    list-style: none;
+    text-decoration:none;
+    display:block;
+    text-align: center;
+}
+hr {
+    margin:0;
+    padding:0;
+}
+.nav_bar_dropdown_hidden .navbar_dropdown_options  ul li a{
+    margin:0;
+    padding:0;
+    text-decoration: none;
+    color:black;
+    padding: 10px;
+    display:block;
+}
+
+.nav_bar_dropdown_hidden .navbar_dropdown_options  ul li a:hover {
+    background-color: #CAC6C5;
 }
 .user_login_icon img {
     width: 30%;

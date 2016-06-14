@@ -335,6 +335,14 @@ body.openmenu {
 		        		<div class="dropdown_login_btn"><button data-toggle="modal" data-target="#loginForm">Log In</button></div><!-- dropdown_login_btn class -->
 		        		<p>New ? <a href="#register" data-toggle="modal" data-target="#signupForm">register here</a></p>
 	        		</div>
+	        		<div class="navbar_dropdown_options">
+	        			<ul>
+	        				<hr>
+	        				<li><a href="">one</a></li>
+	        				<hr>
+	        				<li><a href="">two</a></li>
+	        			</ul>
+	        		</div><!-- navbar_dropdown_options class -->
 	        	</div><!-- nav_bar_dropdown_hidden class -->
             </div>
 	    </div>
