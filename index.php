@@ -299,6 +299,7 @@ body.openmenu {
             <div class="nav_bar_account">
             	<a class = "login" href="#">Account</a>
             	<div class="nav_bar_dropdown_hidden">
+            		<div class="arrow-up"></div>
             		<div class="dropdown_header">
 		        		<div class="user_login_icon">
 		        			<img src="images/profile_icon.png">
