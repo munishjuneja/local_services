@@ -292,13 +292,22 @@ body.openmenu {
   <!-- filler content -->
   </div>
     <!-- Navigation -->
-    <div id="navbar-top">
+    <div id="navbar-top" class="navbar-top">
 	    <div class="navbar-login" >
             <a class = "login" href="#">Support</a><span class="vertical-line">|</span>
             <a class = "login" href="#">Contact Us</a><span class="vertical-line">|</span>
-	        <a class = "login" href="#"  data-toggle="modal" data-target="#loginForm">Login</a> <span class="vertical-line">|</span>
-	        
-	         <a class = "login" href="#" data-toggle="modal" data-target="#signupForm">Signup</a>
+            <div class="nav_bar_account">
+            	<a class = "login" href="#">Account</a>
+            	<div class="nav_bar_dropdown_hidden">
+            		<div class="dropdown_header">
+		        		<div class="user_login_icon">
+		        			<img src="images/profile_icon.png">
+		        		</div><!-- user_login_icon class -->
+		        		<div class="dropdown_login_btn"><button data-toggle="modal" data-target="#loginForm">Log In</button></div><!-- dropdown_login_btn class -->
+		        		<p>New ? <a href="#register" data-toggle="modal" data-target="#signupForm">register here</a></p>
+	        		</div>
+	        	</div><!-- nav_bar_dropdown_hidden class -->
+            </div>
 	    </div>
 	</div>
 
@@ -465,7 +474,7 @@ body.openmenu {
     <!-- <div class="main-container"> -->
 	    <!-- Header -->
 	    <header>
-	        <div class="container">
+	        <div class="container offers">
 	            <div class="row" style="object-fit: cover;">
 	                <div class="col-lg-12" >
 	                	<div id="my-slider" class="carousel slide" data-ride="carousel">
