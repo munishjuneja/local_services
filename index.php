@@ -1,3 +1,59 @@
+<?php
+	session_start();
+	include("php/config.php");
+	if(!$con)
+		echo "done";
+	 if(isset($_POST['registerform']))
+	{
+		$contact=$_POST['contact'];
+		$name= $_POST['name'];
+		$email=$_POST['email'];
+		$password1=$_POST['regpwd1'];
+		$password2=$_POST['regpwd2'];
+		$address=$_POST['address'];
+		if($password2==$password1)
+		{
+			/*echo "hello";
+			$stmt = $mysqli->prepare($con,"INSERT INTO login VALUES (?,?,?,?,?)");
+			echo "hello";
+			 $stmt->bind_param("sssss",'$contact','$name','$email','$password1','$address');
+			 	echo "hello";
+   			 // Execute the statement.
+			 $stmt->execute();
+					echo "hello"; 	
+			 // Close the prepared statement.
+			 $stmt->close();
+			 	echo "hello";*/
+ 
+			$query="insert into login values('$contact','$name','$email','$password1','$address')";
+			mysqli_query($con,$query);
+			header("location:login.php");
+		}
+		else
+		{
+			echo "password does not match";
+		}
+	}
+	if(isset($_POST['loginform']))
+	{
+		$myemail = $_POST['email'];
+		$mypassword = $_POST['password'];
+		$myemail=mysqli_real_escape_string($con,$myemail);
+		$mypassword=mysqli_real_escape_string($con,$mypassword);
+		$query="select * from login where email = '$myemail' and password = '$mypassword'";
+		$result= mysqli_query($con,$query);
+		if(mysqli_num_rows($result) > 0)
+		{
+			echo "hello";
+			
+		}
+		else
+		{
+			echo "incorrect email or password..!";
+		}
+	}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -293,25 +349,23 @@ body.openmenu {
 					<h4 class="modal-title">Sign Up</h4>
 				</div>
 				<div class="modal-body">
-					<form class="form-horizontal" action="login.php" method="post">
-						<div class="form-group">
-							<label class="col-md-4 col-md-offset-1">Name:</label>
-							<div class="col-md-5">
-								<input type="text" class="form-control input-sm" name="regfullname" placeholder="Full Name">
-							</div>
-						</div>
-
+					<form class="form-horizontal" action="" method="post">
 						<div class="form-group">
 							<label class="col-md-4 col-md-offset-1">Contact No:</label>
 							<div class="col-md-5">
-								<input type="text" class="form-control input-sm" name="regusername" placeholder="Roll no">
+								<input type="text" class="form-control input-sm" name="contact" placeholder="contact no">
 							</div>
 						</div>
-
+						<div class="form-group">
+							<label class="col-md-4 col-md-offset-1">Name:</label>
+							<div class="col-md-5">
+								<input type="text" class="form-control input-sm" name="name" placeholder="Full Name">
+							</div>
+						</div>
 						<div class="form-group">
 							<label class="col-md-4 col-md-offset-1">Email:</label>
 							<div class="col-md-5">
-								<input type="email" name="regemail" placeholder="example@exp.com" class="form-control input-sm">
+								<input type="email" name="email" placeholder="example@exp.com" class="form-control input-sm">
 							</div>
 						</div>
 
@@ -328,6 +382,18 @@ body.openmenu {
 								<input type="password" name="regpwd2" placeholder="repeat password" class="form-control input-sm">
 							</div>
 						</div>
+						
+
+						<div class="form-group">
+							<label class="col-md-4 col-md-offset-1">Address:</label>
+							<div class="col-md-5">
+								<textarea class="form-control input-sm" name="address" placeholder="Enter Address" ></textarea>
+								 
+							</div>
+						</div>
+
+						
+
 						
 						<div class="form-group">
 							<div class="col-md-2 col-md-offset-8">
@@ -348,16 +414,16 @@ body.openmenu {
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<button type="button" class="close" data-dismiss="modal" aria-label=""><span>&times;</span>
+						<button type="button" class="close" data-dismiss="modal" aria-label=""><span>&times</span>
 						</button>
 						<h4 class="modal-title">Log In</h4>
 					</div>
 					<div class="modal-body">
-						<form class="form-horizontal" action="php/login.php" method="post" onsubmit="showMessage()">
+						<form class="form-horizontal" action=" " method="post" onsubmit="showMessage()">
 							<div class="form-group">
-								<label class="col-md-4 col-md-offset-1">User:</label>
+								<label class="col-md-4 col-md-offset-1">Email:</label>
 								<div class="col-md-5">
-									<input type="text" class="form-control input-sm" name="username" placeholder="User name" autofocus/>
+									<input type="text" class="form-control input-sm" name="email" placeholder="Email/Name" autofocus/>
 								</div>
 							</div>
 							<div class="form-group">
