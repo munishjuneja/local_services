@@ -82,6 +82,9 @@
     <script type="text/javascript" src="js/jquery.min.js">
     </script>
     <script type="text/javascript">
+    	
+    </script>
+    <script type="text/javascript">
             function sticky_relocate() {
             var window_top = $(window).scrollTop();
             var div_top = $('#sticky-anchor').offset().top;
@@ -138,8 +141,9 @@
     }
   });
  
-  $('.overlay').on('click', function(e){
+  $('#overlay').on('click', function(e){
     if($bdy.hasClass('openmenu')) {
+      $("#overlay").html("");
       jsAnimateMenu('close');
     }
   });
@@ -154,7 +158,7 @@
  
       $container.animate({marginRight: negwidth, marginLeft: poswidth}, menuspeed);
       $burger.animate({width: poswidth}, menuspeed);
-      $('.overlay').animate({left: poswidth}, menuspeed);
+      $('#overlay').animate({left: poswidth}, menuspeed);
     }
  
     if(tog == 'close') {
@@ -162,10 +166,33 @@
  
       $container.animate({marginRight: "0", marginLeft: "0"}, menuspeed);
       $burger.animate({width: "0"}, menuspeed);
-      $('.overlay').animate({left: "0"}, menuspeed);
+      $('#overlay').animate({left: "0"}, menuspeed);
     }
   }
 });
+
+  		$(function(){
+    		$("#hamburgermenu ul li a").hover(function(){
+
+    			$("#overlay").css("background","white");
+    			$("#overlay").css("opacity","0.8");
+    			$("#overlay").css("z-index","1000000");
+    			var x = $(this).html();
+    			$("#overlay").html("<h1><a href='#'>"+x+"</a></h1>");
+
+    		});
+    	});
+
+    	$(function(){
+    		$("#hamburgermenu").mouseleave(function(){
+    		  $("body").removeClass('openmenu');
+		      $("#pgcontainer").animate({marginRight: "0", marginLeft: "0"}, 400);
+		      $("#hamburgermenu").animate({width: "0"}, 400);
+		      $('#overlay').animate({left: "0"}, 400);
+		      $("#overlay").html("");
+
+    		});
+    	});
 
   </script>
   <style type="text/css">
@@ -173,7 +200,7 @@
 
 }
  
-#navbar {
+#navbar {				
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -202,16 +229,19 @@ body.openmenu {
   margin: 0;
 }
  
-.overlay {
-  position: fixed;
+#overlay {
+  position: absolute;
   z-index: 99;
-  /*background-color: rgba(0,0,0,0.5);*/
   bottom: 0;
   right: 0;
+  margin-top:110px; 
   left: 0;
+  width: 80%;
+  background: transparent;
+  border:1px;
 }
  
-.openmenu .overlay {
+.openmenu #overlay {
   top: 0;
 }
 .hamb{
@@ -220,11 +250,9 @@ body.openmenu {
 	margin: 0;
 }
 #hamburgermenu {
-  height: 100%;
-  width: 0;
-  background: black;
-  position: fixed;
-  top: 0;
+  background: #3F51B5;
+  position: absolute;
+  top: 110px;
   left: 0;
   font-size: 12px;
   z-index: 100000;
@@ -234,7 +262,6 @@ body.openmenu {
   box-shadow: 3px 0 7px rgba(0,0,0,0.55);
 }
 #hamburgermenu ul {
-  margin-top: 45px;
   z-index: 101;
   overflow-y: auto;
   overflow-x: hidden;
@@ -253,8 +280,8 @@ body.openmenu {
   text-align: center;
 }
 #hamburgermenu li a:hover {
-  color: #fff;
-  background: #2c2c2c;
+  color: black;
+  background: #fff;
 }
 
   </style>
@@ -278,16 +305,18 @@ body.openmenu {
         <ul>
           <li><a href="#">service1</a></li>
           <li><a href="#">service2</a></li>
-          <li><a href="#">service1</a></li>
-          <li><a href="#">service2</a></li>
-          <li><a href="#">service1</a></li>
-          <li><a href="#">service2</a></li>
-          <li><a href="#">service1</a></li>	
+          <li><a href="#">service3</a></li>
+          <li><a href="#">service4</a></li>
+          <li><a href="#">service5</a></li>
+          <li><a href="#">service6</a></li>
+          <li><a href="#">service7</a></li>	
+           <li><a href="#">service8</a></li>
+          <li><a href="#">service9</a></li>
         
         </ul>
       </div>
     </div>
-    <div class="overlay"></div>
+    <div id="overlay"></div>
   <div id="content">
   <!-- filler content -->
   </div>
