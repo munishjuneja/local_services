@@ -1,0 +1,8 @@
+html, body, p, h1, h2, h3, h4, h5, h6, section, nav, hr, ul, li, ol {
+	margin:0;
+	padding:0;
+}
+
+.col-lg-12 h2 {
+	text-align:center;
+}
