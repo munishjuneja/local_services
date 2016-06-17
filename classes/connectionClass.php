@@ -1,7 +1,7 @@
 <?php
 	define('DB_SERVER'  , 'localhost');
 	define('DB_USERNAME', 'root');
-	define('DB_PASSWORD', 'tryagain');
+	define('DB_PASSWORD', 'strongpassword');
 	define('DB_DATABASE', 'local_services');
    	class connection {
 			var $con;
