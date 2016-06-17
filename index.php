@@ -8,6 +8,7 @@
 		$contact=$_POST['contact'];
 		$name= $_POST['name'];
 		$email=$_POST['email'];
+		$val=$_POST['email'];
 		$password1=$_POST['regpwd1'];
 		$password2=$_POST['regpwd2'];
 		$address=$_POST['address'];
