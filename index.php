@@ -1,33 +1,24 @@
 <?php
 	session_start();
-	include("php/config.php");
-	
+
+	if(isset($_SESSION['user'])) {
+		
+	}
+	include("classes/userClass.php");
+	 
 	 if(isset($_POST['registerform']))
 	{
-		$contact=$_POST['contact'];
-		$name= $_POST['name'];
-		$email=$_POST['email'];
-		$val=$_POST['email'];
-		$password1=$_POST['regpwd1'];
-		$password2=$_POST['regpwd2'];
-		$address=$_POST['address'];
-		if($password2==$password1)
+		$obj =new user();
+		$obj->contact=$_POST['contact'];
+		$obj->name= $_POST['name'];
+		$obj->email=$_POST['email'];
+		$obj->password1=$_POST['regpwd1'];
+		$obj->password2=$_POST['regpwd2'];
+		$obj->address=$_POST['address'];
+		if($obj->password2==$obj->password1)
 		{
-			/*echo "hello";
-			$stmt = $mysqli->prepare("INSERT INTO login VALUES (?,?,?,?,?)");
-			echo "hello";
-			 $stmt->bind_param("sssss",'$contact','$name','$email','$password1','$address');
-			 	echo "hello";
-   			 // Execute the statement.
-			 $stmt->execute();
-					echo "hello"; 	
-			 // Close the prepared statement.
-			 $stmt->close();
-			 	echo "hello";*/
+			 $obj->register();
  
-			$query="insert into login values('$contact','$name','$email','$password1','$address')";
-			mysqli_query($con,$query);
-			header("location:login.php");
 		}
 		else
 		{
@@ -36,21 +27,10 @@
 	}
 	if(isset($_POST['loginform']))
 	{
-		$myemail = $_POST['email'];
-		$mypassword = $_POST['password'];
-		$myemail=mysqli_real_escape_string($con,$myemail);
-		$mypassword=mysqli_real_escape_string($con,$mypassword);
-		$query="select * from login where email = '$myemail' and password = '$mypassword'";
-		$result= mysqli_query($con,$query);
-		if(mysqli_num_rows($result) > 0)
-		{
-			echo "hello";
-			
-		}
-		else
-		{
-			echo "incorrect email or password..!";
-		}
+		$obj1 = new user();
+		$obj1->myemail = $_POST['email'];
+		$obj1->mypassword = $_POST['password'];
+		$obj1->login();
 	}
 ?>
 
