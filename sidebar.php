@@ -223,16 +223,19 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="admin.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Categories<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="flot.html">Main Categories</a>
+                                    <a href="services.php">Main Categories</a>
                                 </li>
                                 <li>
-                                    <a href="morris.html">Sub Categories</a>
+                                    <a href="subCategory.php">Sub Categories</a>
+                                </li>
+                                <li>
+                                    <a href="subChildCategory.php">Sub Child Categories</a>
                                 </li>
                             </ul>
                             <!-- /.nav-second-level -->
