@@ -1,13 +1,16 @@
 <?php
-	session_start();
-	if(isset($_SESSION['user'])) {
-		
-	}
+	
 	include("classes/userClass.php");
-	 
-	 if(isset($_POST['registerform']))
+	$obj =new user();
+	if(isset($_POST['loginform']))
 	{
-		$obj =new user();
+		$obj->email = $_POST['email'];
+		$obj->password = $_POST['password'];
+		$obj->login();
+	}
+	if(isset($_POST['registerform']))
+	{
+		
 		$obj->contact=$_POST['contact'];
 		$obj->name= $_POST['name'];
 		$obj->email=$_POST['email'];
@@ -24,13 +27,7 @@
 			echo "password does not match";
 		}
 	}
-	if(isset($_POST['loginform']))
-	{
-		$obj1 = new user();
-		$obj1->myemail = $_POST['email'];
-		$obj1->mypassword = $_POST['password'];
-		$obj1->login();
-	}
+	
 ?>
 
 <!DOCTYPE html>
@@ -276,7 +273,7 @@ body.openmenu {
             <a class = "login" href="#">Support</a><span class="vertical-line">|</span>
             <a class = "login" href="#">Contact Us</a><span class="vertical-line">|</span>
             <div class="nav_bar_account">
-            	<a class = "login" href="#">Account</a>
+            	<a class = "login" href="#"><?php if(isset($_SESSION['user'])){ echo $obj->name;} else echo "Account"; ?></a>
             	<div class="nav_bar_dropdown_hidden">
             		<div class="arrow-up"></div>
             		<div class="dropdown_header">
