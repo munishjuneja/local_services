@@ -4,7 +4,7 @@
 	$getObj = new UserInfoClass;
 	$insObj = new UserInfoClass;
 
-	if($_POST['submit']){
+	if($_GET['method']=="getuser"){
 		$result = $getObj->getAllUsers();
 		$storearr = array();
 		$i=0;
@@ -22,13 +22,7 @@
 
 		}
 
-	if ($_POST['insert']) {
-				$getObj->contact = $_GET['contact'];
-				$getObj->name = $_GET['name'];
-				$getObj->email = $_GET['email'];
-				$getObj->password = $_GET['password'];
-				$getObj->address = $_GET['address'];
-	}
+
 
 		echo json_encode($storearr);
 
