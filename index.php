@@ -1,34 +1,24 @@
 <?php
 	session_start();
-	include("php/config.php");
-	if(!$con)
-		echo "done";
+
+	if(isset($_SESSION['user'])) {
+		
+	}
+	include("classes/userClass.php");
+	 
 	 if(isset($_POST['registerform']))
 	{
-		$contact=$_POST['contact'];
-		$name= $_POST['name'];
-		$email=$_POST['email'];
-		$val=$_POST['email'];
-		$password1=$_POST['regpwd1'];
-		$password2=$_POST['regpwd2'];
-		$address=$_POST['address'];
-		if($password2==$password1)
+		$obj =new user();
+		$obj->contact=$_POST['contact'];
+		$obj->name= $_POST['name'];
+		$obj->email=$_POST['email'];
+		$obj->password1=$_POST['regpwd1'];
+		$obj->password2=$_POST['regpwd2'];
+		$obj->address=$_POST['address'];
+		if($obj->password2==$obj->password1)
 		{
-			/*echo "hello";
-			$stmt = $mysqli->prepare("INSERT INTO login VALUES (?,?,?,?,?)");
-			echo "hello";
-			 $stmt->bind_param("sssss",'$contact','$name','$email','$password1','$address');
-			 	echo "hello";
-   			 // Execute the statement.
-			 $stmt->execute();
-					echo "hello"; 	
-			 // Close the prepared statement.
-			 $stmt->close();
-			 	echo "hello";*/
+			 $obj->register();
  
-			$query="insert into login values('$contact','$name','$email','$password1','$address')";
-			mysqli_query($con,$query);
-			header("location:login.php");
 		}
 		else
 		{
@@ -37,21 +27,10 @@
 	}
 	if(isset($_POST['loginform']))
 	{
-		$myemail = $_POST['email'];
-		$mypassword = $_POST['password'];
-		$myemail=mysqli_real_escape_string($con,$myemail);
-		$mypassword=mysqli_real_escape_string($con,$mypassword);
-		$query="select * from login where email = '$myemail' and password = '$mypassword'";
-		$result= mysqli_query($con,$query);
-		if(mysqli_num_rows($result) > 0)
-		{
-			echo "hello";
-			
-		}
-		else
-		{
-			echo "incorrect email or password..!";
-		}
+		$obj1 = new user();
+		$obj1->myemail = $_POST['email'];
+		$obj1->mypassword = $_POST['password'];
+		$obj1->login();
 	}
 ?>
 
@@ -258,6 +237,7 @@ body.openmenu {
   background: #2c2c2c;
 }
 
+
   </style>
 
 
@@ -277,13 +257,14 @@ body.openmenu {
       <!-- use captain icon for toggle menu -->
       <div id="hamburgermenu">
         <ul>
-          <li><a href="#">service1</a></li>
-          <li><a href="#">service2</a></li>
-          <li><a href="#">service1</a></li>
-          <li><a href="#">service2</a></li>
-          <li><a href="#">service1</a></li>
-          <li><a href="#">service2</a></li>
-          <li><a href="#">service1</a></li>	
+          <li><a href="#">Appliances</a></li>
+          <li><a href="#">Carpentry</a></li>
+          <li><a href="#">Cleaning</a></li>
+          <li><a href="#">Computer Repairing</a></li>
+           <li><a href="#">Electrical</a></li>
+          <li><a href="#">Laundry</a></li>
+          <li><a href="#">Painting</a></li>
+          <li><a href="#">Plumbing</a></li>	
         
         </ul>
       </div>
@@ -436,7 +417,7 @@ body.openmenu {
 	<div id="sticky-anchor"></div>
     <div id="sticky">
             <div style="margin-top:-14px;" class="col-xs-6 col-xs-6 col-xs-offset-3">
-                <form class="navbar-form" role="search">
+                <form class="navbar-form "  role="search">
                     <div class="input-group col-md-12">
                         <input type="text" class="form-control"  style=" padding:0;
                         height:30px" placeholder="Search" name="srch-term" id="srch-term">
@@ -464,16 +445,7 @@ body.openmenu {
 			</button></a>
     	<!-- <button><a href="#" class="menubtn">ham</a></button> -->
     </div>
-       <ul id="inline-ul" align="left" style="width:90%;">
-           <li> <a href="#"> first</a></li>
-           <li> <a href="#"> second</a></li>
-           <li> <a href="#"> third</a></li>
-           <li> <a href="#"> fourth</a></li>
-           <li> <a href="#"> fifth</a></li>
-           <li> <a href="#"> sixth</a></li>
-           <li> <a href="#"> seventh</a></li>
-           <li> <a href="#"> eighth</a></li>
-       </ul>
+       
     </div> 
 
 </div>
@@ -485,6 +457,8 @@ body.openmenu {
 	    <!-- Header -->
 	    <header>
 	        <div class="container offers">
+	        	<div class="row">
+	        	<div class="col-lg-9 col-lg-offset-1">
 	            <div class="row" style="object-fit: cover;">
 	                <div class="col-lg-12" >
 	                	<div id="my-slider" class="carousel slide" data-ride="carousel">
@@ -529,6 +503,8 @@ body.openmenu {
 	                    </div> -->
 	                </div>
 	            </div>
+	            </div>
+	            </div>
 	        </div>
 	    </header>
 
@@ -538,85 +514,85 @@ body.openmenu {
 	            <div class="row">
 	                <div class="col-lg-12 text-center">
 	                    <h2>Services</h2>
-	                    <hr class="star-primary">
+	                  
 	                </div>
 	            </div>
 	            <div class="row">
 	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-	                        <div class="caption">
-	                            <div class="caption-content">
-	                                <i class="fa fa-search-plus fa-3x"></i>
+	                    <a href="#" class="portfolio-link" data-toggle="modal">
+	                        <div class="caption" >  
+	                           <div class="caption-content">
+	                                <b> Appliances</b>
 	                            </div>
 	                        </div>
-	                        <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
+	                       <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
 	                    </a>
 	                </div>
 	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+	                    <a href="#" class="portfolio-link" data-toggle="modal">
 	                        <div class="caption">
-	                            <div class="caption-content">
-	                                <i class="fa fa-search-plus fa-3x"></i>
-	                            </div>
+	                          <div class="caption-content">
+	                                <b> Carpentry</b>
+	                            </div>  
 	                        </div>
 	                        <img src="img/portfolio/cake.png" class="img-responsive" alt="">
 	                    </a>
 	                </div>
 	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
+	                    <a href="" class="portfolio-link" data-toggle="modal">
 	                        <div class="caption">
 	                            <div class="caption-content">
-	                                <i class="fa fa-search-plus fa-3x"></i>
+	                                <b> Cleaning</b>
 	                            </div>
 	                        </div>
 	                        <img src="img/portfolio/circus.png" class="img-responsive" alt="">
 	                    </a>
 	                </div>
 	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
+	                    <a href="#" class="portfolio-link" data-toggle="modal">
 	                        <div class="caption">
 	                            <div class="caption-content">
-	                                <i class="fa fa-search-plus fa-3x"></i>
+	                                <b> Computer Repairing</b>
 	                            </div>
 	                        </div>
 	                        <img src="img/portfolio/game.png" class="img-responsive" alt="">
 	                    </a>
 	                </div>
 	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
+	                    <a href="#" class="portfolio-link" data-toggle="modal">
 	                        <div class="caption">
 	                            <div class="caption-content">
-	                                <i class="fa fa-search-plus fa-3x"></i>
+	                                <b> Electrical</b>
 	                            </div>
 	                        </div>
 	                        <img src="img/portfolio/safe.png" class="img-responsive" alt="">
 	                    </a>
 	                </div>
 	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+	                    <a href="#" class="portfolio-link" data-toggle="modal">
 	                        <div class="caption">
-	                            <div class="caption-content">
-	                                <i class="fa fa-search-plus fa-3x"></i>
+	                           <div class="caption-content">
+	                                <b> Laundry</b>
 	                            </div>
 	                        </div>
 	                        <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
 	                    </a>
 	                </div>
 	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+	                    <a href="#" class="portfolio-link" data-toggle="modal">
 	                        <div class="caption">
-	                            <div class="caption-content">
-	                                <i class="fa fa-search-plus fa-3x"></i>
+	                           <div class="caption-content">
+	                                <b> Painting</b>
 	                            </div>
 	                        </div>
 	                        <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
 	                    </a>
 	                </div>
 	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+	                    <a href="#" class="portfolio-link" data-toggle="modal">
 	                        <div class="caption">
 	                            <div class="caption-content">
-	                                <i class="fa fa-search-plus fa-3x"></i>
+	                                <b> Plumbing</b>
 	                            </div>
 	                        </div>
 	                        <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
@@ -626,21 +602,21 @@ body.openmenu {
 	        </div>
 	    </section>
 
-	    <!-- Professionals Grid Section -->
+	    <!-- Professionals Grid Section 
 	    <section id="portfolio">
 	        <div class="container">
-	            <div class="row">
-	                <div class="col-lg-12 text-center">
+	            <div class="row"> 
+	                <div class="col-lg-12 text-center" >
 	                    <h2>Our Professionals</h2>
-	                    <hr class="star-primary">
+	                  
 	                </div>
 	            </div>
 	            <div class="row">
 	                <div class="col-sm-3 portfolio-item">
 	                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
 	                        <div class="caption">
-	                            <div class="caption-content">
-	                                <i class="fa fa-search-plus fa-3x"></i>
+	                           <div class="caption-content">
+	                                <b> appliance</b>
 	                            </div>
 	                        </div>
 	                        <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
@@ -649,8 +625,8 @@ body.openmenu {
 	                <div class="col-sm-3 portfolio-item">
 	                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
 	                        <div class="caption">
-	                            <div class="caption-content">
-	                                <i class="fa fa-search-plus fa-3x"></i>
+	                           <div class="caption-content">
+	                                <b> appliance</b>
 	                            </div>
 	                        </div>
 	                        <img src="img/portfolio/cake.png" class="img-responsive" alt="">
@@ -660,7 +636,7 @@ body.openmenu {
 	                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
 	                        <div class="caption">
 	                            <div class="caption-content">
-	                                <i class="fa fa-search-plus fa-3x"></i>
+	                                <b> appliance</b>
 	                            </div>
 	                        </div>
 	                        <img src="img/portfolio/circus.png" class="img-responsive" alt="">
@@ -670,7 +646,7 @@ body.openmenu {
 	                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
 	                        <div class="caption">
 	                            <div class="caption-content">
-	                                <i class="fa fa-search-plus fa-3x"></i>
+	                                <b> appliance</b>
 	                            </div>
 	                        </div>
 	                        <img src="img/portfolio/game.png" class="img-responsive" alt="">
@@ -679,8 +655,8 @@ body.openmenu {
 	                <div class="col-sm-3 portfolio-item">
 	                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
 	                        <div class="caption">
-	                            <div class="caption-content">
-	                                <i class="fa fa-search-plus fa-3x"></i>
+	                           <div class="caption-content">
+	                                <b> appliance</b>
 	                            </div>
 	                        </div>
 	                        <img src="img/portfolio/safe.png" class="img-responsive" alt="">
@@ -689,8 +665,18 @@ body.openmenu {
 	                <div class="col-sm-3 portfolio-item">
 	                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
 	                        <div class="caption">
-	                            <div class="caption-content">
-	                                <i class="fa fa-search-plus fa-3x"></i>
+	                           <div class="caption-content">
+	                                <b> appliance</b>
+	                            </div>
+	                        </div>
+	                        <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
+	                    </a>
+	                </div>
+	                <div class="col-sm-3 portfolio-item">
+	                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
+	                        <div class="caption">
+	                           <div class="caption-content">
+	                                <b> appliance</b>
 	                            </div>
 	                        </div>
 	                        <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
@@ -700,17 +686,7 @@ body.openmenu {
 	                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
 	                        <div class="caption">
 	                            <div class="caption-content">
-	                                <i class="fa fa-search-plus fa-3x"></i>
-	                            </div>
-	                        </div>
-	                        <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
-	                    </a>
-	                </div>
-	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-	                        <div class="caption">
-	                            <div class="caption-content">
-	                                <i class="fa fa-search-plus fa-3x"></i>
+	                                <b> appliance</b>
 	                            </div>
 	                        </div>
 	                        <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
@@ -718,7 +694,7 @@ body.openmenu {
 	                </div>
 	            </div>
 	        </div>
-	    </section>
+	    </section>  -->
 
 	    <!-- About Section -->
 	    <div class="container">
@@ -727,15 +703,19 @@ body.openmenu {
 	            <div class="row">
 	                <div class="col-lg-12 text-center">
 	                    <h2>About</h2>
-	                    <hr class="star-light">
+	                    
 	                </div>
 	            </div>
 	            <div class="row">
-	                <div class="col-lg-4 col-lg-offset-2">
-	                    <p>Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional LESS stylesheets for easy customization.</p>
-	                </div>
-	                <div class="col-lg-4">
-	                    <p>Whether you're a student looking to showcase your work, a professional looking to attract clients, or a graphic artist looking to share your projects, this template is the perfect starting point!</p>
+	                <div class="col-lg-10 col-lg-offset-1">
+	                    <p style="text-align:justify">Town Seva is incorporated with the goal to make your lives as comfortable as possible. We are Tri-city’s leading home care and maintenance service provider. Our aim is to help residents with excellent quality home care services. 
+We at Town Seva make it our commitment to bring professionalism, good service and trust to the home repair service and maintenance business. We take immense pride in sending some of the most professional handymen to your homes to fix things that aren't working. 
+
+
+</p>
+	               
+	                    <p>At Town Seva we have a specialist solution for every trouble. We offer a unique range of home maintenance services like Electrical, Carpentry, White wash, Civil work, Driver Services, Pest control, A/C repair,  and Plumbing services on one platform!  To find a solution for your home care problems, you can visit our services section.
+</p>
 	                </div>
 	                <!-- <div class="col-lg-8 col-lg-offset-2 text-center">
 	                    <a href="#" class="btn btn-lg btn-outline">
@@ -757,7 +737,7 @@ body.openmenu {
 	                <div class="row">
 	                    <div class="footer-col col-md-4">
 	                        <h3>Location</h3>
-	                        <p>3481 Melrose Place<br>Beverly Hills, CA 90210</p>
+	                        <p>Mohali,Punjab</p>
 	                    </div>
 	                    <div class="footer-col col-md-4">
 	                        <h3>Around the Web</h3>
@@ -780,8 +760,9 @@ body.openmenu {
 	                        </ul>
 	                    </div>
 	                    <div class="footer-col col-md-4">
-	                        <h3>About Freelancer</h3>
-	                        <p>Freelance is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.</p>
+	                        <h3>Contact</h3>
+	                        <p>Phone:xxxxxxxx</p>
+	                        <p>email:xxxxxx@xxx</p>
 	                    </div>
 	                </div>
 	            </div>
