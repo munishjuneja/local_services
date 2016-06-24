@@ -276,7 +276,7 @@ body.openmenu {
             <a class = "login" href="#">Support</a><span class="vertical-line">|</span>
             <a class = "login" href="#">Contact Us</a><span class="vertical-line">|</span>
             <div class="nav_bar_account">
-            	<a class = "login" href="#"><?php if(isset($_SESSION['user'])){ echo $obj->name;} else echo "Account"; ?></a>
+            	<a class = "login" href="#"><?php if(isset($_SESSION['user'])){ echo $_SESSION['user_name'];} else echo "Account"; ?></a>
             	<div class="nav_bar_dropdown_hidden">
             		<div class="arrow-up"></div>
             		<div class="dropdown_header">

@@ -30,6 +30,7 @@
 				else
 				{
 					$_SESSION['user'] = $this->email;
+					$_SESSION['user_name'] = $this->name;
 					$_SESSION['email'] = $this->email;
 					return($_SESSION['user']);
 				}
