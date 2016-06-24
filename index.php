@@ -280,7 +280,7 @@ body.openmenu {
 		        		<div class="user_login_icon">
 		        			<img src="images/profile_icon.png">
 		        		</div><!-- user_login_icon class -->
-		        		<div class="dropdown_login_btn"><button data-toggle="modal" data-target="#loginForm">Log In</button></div><!-- dropdown_login_btn class -->
+		        		<div class="dropdown_login_btn"><?php echo "<button data-toggle=\"modal\" data-target=\"\#loginForm\">Log In</button>" ?></div><!-- dropdown_login_btn class -->
 		        		<p>New ? <a href="#register" data-toggle="modal" data-target="#signupForm">register here</a></p>
 	        		</div>
 	        		<div class="navbar_dropdown_options">
