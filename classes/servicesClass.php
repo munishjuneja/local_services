@@ -1,6 +1,6 @@
 <?php 
 
-	include 'connectionClass.php';
+	include_once 'connectionClass.php';
 	class Service extends connection {
 		var $id;
 		var $name;

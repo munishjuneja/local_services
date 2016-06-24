@@ -1,5 +1,5 @@
 <?php 
-	include"connectionClass.php";
+	include_once"connectionClass.php";
 	class login extends connection {
 		var $email;
 		var $password;

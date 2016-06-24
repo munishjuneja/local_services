@@ -4,7 +4,8 @@
 	if(isset($_SESSION['user'])) {
 		
 	}
-	include("classes/userClass.php");
+	include_once 'classes/userClass.php';
+	include_once 'classes/servicesClass.php';
 	 
 	 if(isset($_POST['registerform']))
 	{
@@ -517,88 +518,30 @@ body.openmenu {
 	                  
 	                </div>
 	            </div>
-	            <div class="row">
-	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#" class="portfolio-link" data-toggle="modal">
-	                        <div class="caption" >  
-	                           <div class="caption-content">
-	                                <b> Appliances</b>
-	                            </div>
-	                        </div>
-	                       <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
-	                    </a>
-	                </div>
-	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#" class="portfolio-link" data-toggle="modal">
-	                        <div class="caption">
-	                          <div class="caption-content">
-	                                <b> Carpentry</b>
-	                            </div>  
-	                        </div>
-	                        <img src="img/portfolio/cake.png" class="img-responsive" alt="">
-	                    </a>
-	                </div>
-	                <div class="col-sm-3 portfolio-item">
-	                    <a href="" class="portfolio-link" data-toggle="modal">
-	                        <div class="caption">
-	                            <div class="caption-content">
-	                                <b> Cleaning</b>
-	                            </div>
-	                        </div>
-	                        <img src="img/portfolio/circus.png" class="img-responsive" alt="">
-	                    </a>
-	                </div>
-	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#" class="portfolio-link" data-toggle="modal">
-	                        <div class="caption">
-	                            <div class="caption-content">
-	                                <b> Computer Repairing</b>
-	                            </div>
-	                        </div>
-	                        <img src="img/portfolio/game.png" class="img-responsive" alt="">
-	                    </a>
-	                </div>
-	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#" class="portfolio-link" data-toggle="modal">
-	                        <div class="caption">
-	                            <div class="caption-content">
-	                                <b> Electrical</b>
-	                            </div>
-	                        </div>
-	                        <img src="img/portfolio/safe.png" class="img-responsive" alt="">
-	                    </a>
-	                </div>
-	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#" class="portfolio-link" data-toggle="modal">
-	                        <div class="caption">
-	                           <div class="caption-content">
-	                                <b> Laundry</b>
-	                            </div>
-	                        </div>
-	                        <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
-	                    </a>
-	                </div>
-	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#" class="portfolio-link" data-toggle="modal">
-	                        <div class="caption">
-	                           <div class="caption-content">
-	                                <b> Painting</b>
-	                            </div>
-	                        </div>
-	                        <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
-	                    </a>
-	                </div>
-	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#" class="portfolio-link" data-toggle="modal">
-	                        <div class="caption">
-	                            <div class="caption-content">
-	                                <b> Plumbing</b>
-	                            </div>
-	                        </div>
-	                        <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
-	                    </a>
-	                </div>
-	            </div>
+	            <div class="row" >
+		            <div class="col-sm-12">
+		            	<?php 
+		                    $getServices = new Service;
+		                    $res=$getServices->allServices();
+		                    while($result=mysqli_fetch_array($res)){
+
+		                ?>
+		              	<div class="col-sm-3 portfolio-item">
+		                    <a href="subCategoriesView.php?id=<?php echo $result['id'];?>" class="portfolio-link" data-toggle="modal">
+		                        <div class="caption" >  
+		                           <div class="caption-content">
+
+		                                <b> <?php echo $result['name']; ?></b>
+		                           </div>
+		                        </div>
+		                       <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
+		                    </a>
+		                </div>
+		        	</div>
+		        	<?php
+		        		}
+		        	?>
+		        </div>
 	        </div>
 	    </section>
 

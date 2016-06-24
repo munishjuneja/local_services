@@ -1,5 +1,6 @@
 <?php 
 
+	include_once 'connectionClass.php';
 	class subCategory extends connection {
 		var $id;
 		var $service_id;
@@ -10,7 +11,7 @@
 		}
 		
 		public function allSubCategories(){
-			$query = mysqli_query($this->con,"SELECT `name`, `description` from sub_categories");
+			$query = mysqli_query($this->con,"SELECT * from sub_categories where `service_id`=$this->id");
 			return $query;
 		}
 

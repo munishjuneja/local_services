@@ -1,6 +1,6 @@
 <?php 
 	
-	include 'connectionClass.php';
+	include_once 'connectionClass.php';
 	class UserInfoClass extends connection{
 
 			var $contact;

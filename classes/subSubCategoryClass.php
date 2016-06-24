@@ -1,15 +1,15 @@
 <?php 
-	include 'connectionClass.php';
+	include_once 'connectionClass.php';
 	class subSubCategory extends connection {
-		var $parentCatId;
-		var $categoryName;
-		var $categoryDesc;
+		var $id;
+		var $sub_child_category_name;
+		var $rate;
 
-		public function addCategory(){
-			$query = mysqli_query($this->con,"INSERT INTO subSubCategory (`parent_cat_id`,`sub_sub_category_name`,`sub_sub_category_description`) values('$this->parentCatId,'$this->categoryName','$this->categoryDesc') ");
+		public function addSubChildCategory(){
+			$query = mysqli_query($this->con,"INSERT INTO sub_child_categories(`sub_category_name`,`sub_child_category_name`,`rate`) values('$this->sub_category_name','$this->sub_child_category_name','$this->rate')");
 		}
-		public function allCategories(){
-			$query = mysqli_query($this->con,"SELECT `sub_sub_category_name`, `sub_sub_category_description` from mainCategory");
+		public function allSubChildCategories(){
+			$query = mysqli_query($this->con, "SELECT * from sub_child_categories where `sub_category_id`='$this->id'");
 			return $query;
 		}
 

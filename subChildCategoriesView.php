@@ -1,5 +1,5 @@
 <?php 
-	include_once 'classes/subCategoriesClass.php';
+	include_once 'classes/subSubCategoryClass.php';
 
  ?>
 
@@ -25,14 +25,14 @@
 
 										     <li  class="list-group-item" style="font-size:20px;"><span><a href="#"><img src="images/back1.jpeg" style="height: 25px; width: 25px;"></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSelect from the listed items</span></li>
 										    	<?php 
-										    		$listObj = new subCategory;
+										    		$listObj = new subSubCategory;
 										    		$listObj->id=$_GET['id'];
-										    		$res=$listObj->allSubCategories();
-													while($result = mysqli_fetch_array($res)){
+										    		$res=$listObj->allSubChildCategories();
+													
 										    	 ?>
-										    	 <li class="list-group-item"><a href="subChildCategoriesView.php?id=<?php echo $result['id'];?>" class="list-group-item"><span ><img src="images/fr.png" style="height: 25px; width: 25px;"></span><?php 
-										    	 		echo $result['id'];
-										    	 		echo $result['sub_category_name'];
+										    	 <?php while($result = mysqli_fetch_array($res)){ ?>
+										    	 <li class="list-group-item"><a href="" class="list-group-item"><span ><img src="images/fr.png" style="height: 25px; width: 25px;"></span><?php 
+										    	 		echo $result['sub_child_category_name'];
 
 										    	  ?></a>
 										    	  <?php
