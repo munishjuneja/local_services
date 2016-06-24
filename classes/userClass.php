@@ -3,10 +3,10 @@
 	include"connectionClass.php";
 	class user extends connection
 	{
-		session_start();
-		if(isset($_SESSION['user'])){
-			header("Location:index.php");
-		}
+		// session_start();
+		// if(isset($_SESSION['user'])){
+		// 	header("Location:index.php");
+		// }
 		// var $email;
 		// var $password1;
 		// var $contact;

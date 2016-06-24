@@ -3,6 +3,12 @@
 	include 'connectionClass.php';
 	class UserInfoClass extends connection{
 
+			var $contact;
+			var $name;
+			var $email;
+			var $password;
+			var $address;
+
 			public function getAllUsers(){
 				
 				$query = mysqli_query($this->con,"SELECT * from login");
