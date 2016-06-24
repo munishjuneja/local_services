@@ -1,18 +1,45 @@
 <?php  
-	
+
 	include_once"connectionClass.php";
+	session_start();
 	class user extends connection
 	{
-		// session_start();
-		// if(isset($_SESSION['user'])){
-		// 	header("Location:index.php");
-		// }
-		// var $email;
-		// var $password1;
-		// var $contact;
-		// var $name;
-		// var $password;
+		var $email;
+		var $contact;
+		var $name;
+		var $password;
+		var $status;
+		public function login()
+		{
+			 
+			$query="select * from login where email = '$this->email' and password = '$this->password'";
+			$data = mysqli_query( $this->con,$query );
+			if(mysqli_num_rows($data)>0)
+			{
+				
+				$rec    = mysqli_fetch_array($data);
+				$this->status = $rec['type'];
+				$this->name   = $rec['name'];
 
+				if($this->status == 1)
+				{
+					$_SESSION['admin'] = $this->name;
+					$_SESSION['email'] = $this->email;
+					header("location:admin.php");
+				}
+				else
+				{
+					$_SESSION['user'] = $this->email;
+					$_SESSION['email'] = $this->email;
+					return($_SESSION['user']);
+				}
+			} 
+			else
+			{
+				$msg='User is not exist';
+				return $msg;
+			}
+		}
 		public function register()
 		{
 			$query="select email from login where email='$this->email'";
@@ -35,31 +62,7 @@
 				 
 			}
 		}	
-		public function login()
-		{
-			 
-			$query="select * from login where email = '$this->myemail' and password = '$this->mypassword'";
-			$data=mysqli_query($this->con,$query);
-			if(mysqli_num_rows($result)>0)
-			{
-				$rec    = mysqli_fetch_array($data);
-				$status = $rec['type'];
 
-				if($status == 1)
-				{
-					header("location:admin.php");
-				}
-				else
-				{
-					$_SESSION['user'] = $this->myemail;
-				}
-			} 
-			else
-			{
-				$msg='User is not exist';
-				return $msg;
-			}
-		}	
 		 
 	}
 
