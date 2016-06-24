@@ -254,15 +254,15 @@ body.openmenu {
       <!-- use captain icon for toggle menu -->
       <div id="hamburgermenu">
         <ul>
-          <li><a href="#">Appliances</a></li>
-          <li><a href="#">Carpentry</a></li>
-          <li><a href="#">Cleaning</a></li>
-          <li><a href="#">Computer Repairing</a></li>
-           <li><a href="#">Electrical</a></li>
-          <li><a href="#">Laundry</a></li>
-          <li><a href="#">Painting</a></li>
-          <li><a href="#">Plumbing</a></li>	
-        
+        	<?php 
+                $getServices = new Service;
+                $res=$getServices->allServices();
+                while($result=mysqli_fetch_array($res)) {
+            ?>
+          		<li><a href="subCategoriesView.php?id=<?php echo $result['id'];?>"><?php echo $result['name']; ?></a></li>
+          	<?php
+		    }
+		    ?>        
         </ul>
       </div>
     </div>
@@ -276,15 +276,16 @@ body.openmenu {
             <a class = "login" href="#">Support</a><span class="vertical-line">|</span>
             <a class = "login" href="#">Contact Us</a><span class="vertical-line">|</span>
             <div class="nav_bar_account">
-            	<a class = "login" href="#"><?php if(isset($_SESSION['user'])){ echo $obj->name;} else echo "Account"; ?></a>
+            	<a class = "login" href="#"><?php if(isset($_SESSION['user'])){ echo $_SESSION['user_name'];} else echo "Account"; ?></a>
             	<div class="nav_bar_dropdown_hidden">
             		<div class="arrow-up"></div>
             		<div class="dropdown_header">
 		        		<div class="user_login_icon">
 		        			<img src="images/profile_icon.png">
 		        		</div><!-- user_login_icon class -->
-		        		<div class="dropdown_login_btn"><?php echo "<button data-toggle=\"modal\" data-target=\"\#loginForm\">Log In</button>" ?></div><!-- dropdown_login_btn class -->
-		        		<p>New ? <a href="#register" data-toggle="modal" data-target="#signupForm">register here</a></p>
+		        		<div class="dropdown_login_btn"><?php if(!isset($_SESSION['user'])) {echo "<button data-toggle=\"modal\" data-target=\"#loginForm\">Log In</button>";}
+		        		else { echo "<a href=\"logout.php\"><button>Log out</button></a>";} ?></div><!-- dropdown_login_btn class   -->
+		        		<?php if(!isset($_SESSION['user'])) echo "<p>New ? <a href=\"#register\" data-toggle=\"modal\" data-target=\"#signupForm\">register here</a></p>"; ?>
 	        		</div>
 	        		<div class="navbar_dropdown_options">
 	        			<ul>
