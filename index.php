@@ -254,15 +254,15 @@ body.openmenu {
       <!-- use captain icon for toggle menu -->
       <div id="hamburgermenu">
         <ul>
-          <li><a href="#">Appliances</a></li>
-          <li><a href="#">Carpentry</a></li>
-          <li><a href="#">Cleaning</a></li>
-          <li><a href="#">Computer Repairing</a></li>
-           <li><a href="#">Electrical</a></li>
-          <li><a href="#">Laundry</a></li>
-          <li><a href="#">Painting</a></li>
-          <li><a href="#">Plumbing</a></li>	
-        
+        	<?php 
+                $getServices = new Service;
+                $res=$getServices->allServices();
+                while($result=mysqli_fetch_array($res)) {
+            ?>
+          		<li><a href="subCategoriesView.php?id=<?php echo $result['id'];?>"><?php echo $result['name']; ?></a></li>
+          	<?php
+		    }
+		    ?>        
         </ul>
       </div>
     </div>
