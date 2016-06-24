@@ -1,0 +1,9 @@
+#list4 { 
+	margin-top:50px;
+	box-shadow:  1px 2px 10px 0px rgba(49, 50, 50, 0.89);
+ 	border-radius: 10px;
+ }
+
+ #list4 ul li span{
+ 	margin-right:50px; 
+ }
