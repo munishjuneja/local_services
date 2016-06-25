@@ -274,7 +274,7 @@ body.openmenu {
     <div id="navbar-top" class="navbar-top">
 	    <div class="navbar-login" >
             <a class = "login" href="#">Support</a><span class="vertical-line">|</span>
-            <a class = "login" href="#">Contact Us</a><span class="vertical-line">|</span>
+            <a class = "login" href="#contact_us">Contact Us</a><span class="vertical-line">|</span>
             <div class="nav_bar_account">
             	<a class = "login" href="#"><?php if(isset($_SESSION['user'])){ echo $_SESSION['user_name'];} else echo "Account"; ?></a>
             	<div class="nav_bar_dropdown_hidden">
@@ -700,7 +700,7 @@ We at Town Seva make it our commitment to bring professionalism, good service an
 	                        </ul>
 	                    </div>
 	                    <div class="footer-col col-md-4">
-	                        <h3>Contact</h3>
+	                        <h3 id="contact_us">Contact</h3>
 	                        <p>Phone:xxxxxxxx</p>
 	                        <p>email:xxxxxx@xxx</p>
 	                    </div>

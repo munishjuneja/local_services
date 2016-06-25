@@ -5,7 +5,7 @@
 			$getObj = new UserInfoClass;
 			$insObj = new UserInfoClass;
 
-			if($_POST['getuser']){
+			if($_GET['method']=='getuser'){
 				$result = $getObj->getAllUsers();
 				$storearr = array();
 				$i=0;
@@ -26,18 +26,19 @@
 						$storearr
 					);
 
-				echo json_encode((object)($newarry));
+				$finalarray['users']=$storearr;
+				echo json_encode($finalarray);
 
 			}
-			if ($_POST['adduser']) {
-				
-					$insObj->contact=$_POST['contact'];
-					$insObj->name=$_POST['name'];
-					$insObj->email=$_POST['email'];
-					$insObj->password=$_POST['password'];
-					$insObj->address=$_POST'address'];
-					$insObj->addUser();		
-			}
+			// if ($_POST['adduser']) {
+
+			// 		$insObj->contact=$_POST['contact'];
+			// 		$insObj->name=$_POST['name'];
+			// 		$insObj->email=$_POST['email'];
+			// 		$insObj->password=$_POST['password'];
+			// 		$insObj->address=$_POST['address'];
+			// 		$insObj->addUser();		
+			// }
 
 
  ?>

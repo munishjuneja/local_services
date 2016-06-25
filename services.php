@@ -1,6 +1,6 @@
 <?php 
+    include_once 'config_admin.php';
     include 'classes/servicesClass.php';
-
     if(isset($_POST['submit'])){
         $catname = $_POST['name'];
         $catdesc = $_POST['description'];
@@ -9,7 +9,6 @@
         $inscat->description= $catdesc;
         $inscat->addService();
     }
-    session_start();
  ?>
 <?php 
     include 'header.php';

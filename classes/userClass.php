@@ -25,7 +25,9 @@
 				{
 					$_SESSION['admin'] = $this->name;
 					$_SESSION['email'] = $this->email;
-					header("location:admin.php");
+					$_SESSION['user'] = $this->email;
+					$_SESSION['user_name'] = $this->name;
+					header("location:services.php");
 				}
 				else
 				{
@@ -59,12 +61,9 @@
 			{
 				$query="insert into login(`contact`,`name`,`email`,`password`,`address`) values('$this->contact','$this->name','$this->email','$this->password1','$this->address')";
 				mysqli_query($this->con,$query);
-				echo "registerd Succesfully";
-				 
+				echo "registerd Succesfully";	 
 			}
-		}	
-
-		 
+		}	 
 	}
 
  ?>

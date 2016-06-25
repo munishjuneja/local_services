@@ -11,7 +11,7 @@
 		}
 		
 		public function allSubCategories(){
-			$query = mysqli_query($this->con,"SELECT * from sub_categories where `service_id`=$this->id");
+			$query = mysqli_query($this->con,"SELECT * from sub_categories where `service_id`='$this->id'");
 			return $query;
 		}
 
