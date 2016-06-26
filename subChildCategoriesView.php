@@ -30,8 +30,11 @@
 										    		$res=$listObj->allSubChildCategories();
 													
 										    	 ?>
-										    	 <?php while($result = mysqli_fetch_array($res)){ ?>
-										    	 <li class="list-group-item"><a href="" class="list-group-item"><span ><img src="images/fr.png" style="height: 25px; width: 25px;"></span><?php 
+										    	 <?php while($result = mysqli_fetch_array($res)){ 
+										    	 		
+										    	 	?>
+
+										    	 <li class="list-group-item"><a href="checkout.php?id=<?php echo $result['id'];?>" class="list-group-item"><span ><img src="images/fr.png" style="height: 25px; width: 25px;"></span><?php 
 										    	 		echo $result['sub_child_category_name'];
 
 										    	  ?></a>

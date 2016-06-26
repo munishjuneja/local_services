@@ -1,3 +1,4 @@
+
 <?php  
 
 	include_once"connectionClass.php";
@@ -46,14 +47,15 @@
 		public function register()
 		{
 			$query="select email from login where email='$this->email'";
-			echo $this->email;
 			$data=mysqli_query($this->con,$query);
 			$rec=mysqli_fetch_array($data);
 			if($rec)
 			{
 
 				$msg="Email already exist";
-				echo $msg;
+				echo "<div class='alert alert-warning'>
+  			<strong>{$msg}</strong> 
+			</div>";
 				return $msg;
 				 
 			}
@@ -61,7 +63,10 @@
 			{
 				$query="insert into login(`contact`,`name`,`email`,`password`,`address`) values('$this->contact','$this->name','$this->email','$this->password1','$this->address')";
 				mysqli_query($this->con,$query);
-				echo "registerd Succesfully";	 
+
+				echo "<div class='alert alert-success>
+  						<strong>{$this->email}  !!</strong>  registered Successfully.
+					</div>"; 
 			}
 		}	 
 	}

@@ -33,6 +33,15 @@
 
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+	$msg="";
+	if (isset($_POST['finalsubmit'])) {
+ 		$msg = "Your order have been placed successfully";
+
+ 		
+
+ 	}
+ ?>
 
 <head>
 
@@ -248,9 +257,18 @@ body.openmenu {
 </head>
 
 <body id="page-top" class="index">
+<?php if ($msg!=""){ ?>
+		<div style="margin-top:20px;">
+			<div class='alert alert-info'>
+		  				<strong><?php echo $msg ?></strong>
+			</div>
+		</div>
 
-    <div id="navbar">
-     
+<?php
+	}
+?>
+
+    <div id="navbar">    
       <!-- use captain icon for toggle menu -->
       <div id="hamburgermenu">
         <ul>
@@ -515,8 +533,7 @@ body.openmenu {
 	                  
 	                </div>
 	            </div>
-	            <div class="row" >
-		            <div class="col-sm-12">
+	            <div class="row">
 		            	<?php 
 		                    $getServices = new Service;
 		                    $res=$getServices->allServices();
@@ -534,107 +551,13 @@ body.openmenu {
 		                       <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
 		                    </a>
 		                </div>
-		        	</div>
-		        	<?php
+		                <?php
 		        		}
 		        	?>
 		        </div>
 	        </div>
 	    </section>
 
-	    <!-- Professionals Grid Section 
-	    <section id="portfolio">
-	        <div class="container">
-	            <div class="row"> 
-	                <div class="col-lg-12 text-center" >
-	                    <h2>Our Professionals</h2>
-	                  
-	                </div>
-	            </div>
-	            <div class="row">
-	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
-	                        <div class="caption">
-	                           <div class="caption-content">
-	                                <b> appliance</b>
-	                            </div>
-	                        </div>
-	                        <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
-	                    </a>
-	                </div>
-	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
-	                        <div class="caption">
-	                           <div class="caption-content">
-	                                <b> appliance</b>
-	                            </div>
-	                        </div>
-	                        <img src="img/portfolio/cake.png" class="img-responsive" alt="">
-	                    </a>
-	                </div>
-	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#portfolioModal3" class="portfolio-link" data-toggle="modal">
-	                        <div class="caption">
-	                            <div class="caption-content">
-	                                <b> appliance</b>
-	                            </div>
-	                        </div>
-	                        <img src="img/portfolio/circus.png" class="img-responsive" alt="">
-	                    </a>
-	                </div>
-	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#portfolioModal4" class="portfolio-link" data-toggle="modal">
-	                        <div class="caption">
-	                            <div class="caption-content">
-	                                <b> appliance</b>
-	                            </div>
-	                        </div>
-	                        <img src="img/portfolio/game.png" class="img-responsive" alt="">
-	                    </a>
-	                </div>
-	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#portfolioModal5" class="portfolio-link" data-toggle="modal">
-	                        <div class="caption">
-	                           <div class="caption-content">
-	                                <b> appliance</b>
-	                            </div>
-	                        </div>
-	                        <img src="img/portfolio/safe.png" class="img-responsive" alt="">
-	                    </a>
-	                </div>
-	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-	                        <div class="caption">
-	                           <div class="caption-content">
-	                                <b> appliance</b>
-	                            </div>
-	                        </div>
-	                        <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
-	                    </a>
-	                </div>
-	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-	                        <div class="caption">
-	                           <div class="caption-content">
-	                                <b> appliance</b>
-	                            </div>
-	                        </div>
-	                        <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
-	                    </a>
-	                </div>
-	                <div class="col-sm-3 portfolio-item">
-	                    <a href="#portfolioModal6" class="portfolio-link" data-toggle="modal">
-	                        <div class="caption">
-	                            <div class="caption-content">
-	                                <b> appliance</b>
-	                            </div>
-	                        </div>
-	                        <img src="img/portfolio/submarine.png" class="img-responsive" alt="">
-	                    </a>
-	                </div>
-	            </div>
-	        </div>
-	    </section>  -->
 
 	    <!-- About Section -->
 	    <div class="container">
