@@ -10,6 +10,7 @@
 		var $name;
 		var $password;
 		var $status;
+		var $msg;
 		public function login()
 		{
 			 
@@ -40,8 +41,8 @@
 			} 
 			else
 			{
-				$msg='User is not exist';
-				return $msg;
+				$this->msg='* Please enter valid username and password.';
+				return $this->msg;
 			}
 		}
 		public function register()

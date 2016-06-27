@@ -257,16 +257,8 @@ body.openmenu {
 </head>
 
 <body id="page-top" class="index">
-<?php if ($msg!=""){ ?>
-		<div style="margin-top:20px;">
-			<div class='alert alert-info'>
-		  				<strong><?php echo $msg ?></strong>
-			</div>
-		</div>
 
-<?php
-	}
-?>
+
 
     <div id="navbar">    
       <!-- use captain icon for toggle menu -->
@@ -465,7 +457,31 @@ body.openmenu {
     </div> 
 
 </div>
+<!-- alert section -->
+<?php if ($msg!=""){ ?>
+		<div style="margin-top:20px;">
+			<div class='alert alert-info'>
+		  				<strong><?php echo $msg ?></strong>
+			</div>
+		</div>
 
+<?php
+	}
+?>
+<!-- alert section end -->
+<!-- login failure warning section -->
+<?php if ($obj->msg!=""){ ?>
+		<div style="margin-top:0px;">
+			<div class='alert alert-danger' style="text-align:center;">
+		  				<strong><?php echo $obj->msg ?></strong>
+			</div>
+		</div>
+
+<?php
+	}
+?>
+
+<!-- login failure warning section end -->
     
 
 
