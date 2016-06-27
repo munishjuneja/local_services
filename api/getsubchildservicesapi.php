@@ -1,10 +1,10 @@
 <?php 
-	include '../classes/subCategoriesClass.php';
+	include '../classes/subSubCategoryClass.php';
 
-	$getObj = new subCategory;
-	if ($_GET['method']=='getsubservices') {
+	$getObj = new subSubCategory;
+	if ($_GET['method']=='getsubchildservices') {
 		$getObj->id = $_GET['id'];	
-		$result = $getObj->allSubCategories();
+		$result = $getObj->allSubChildCategories();
 				$storearr = array();
 				$i=0;
 		
@@ -12,7 +12,7 @@
 			$intermediatearray = array();
 			$intermediatearray['id']=$resultintoarray['id'];
 			// $intermediatearray['service_id']=$resultintoarray['service_id'];
-			$intermediatearray['sub_category_name']=$resultintoarray['sub_category_name'];
+			$intermediatearray['sub_child_category_name']=$resultintoarray['sub_child_category_name'];
 			$storearr[$i]=$intermediatearray;
 						$i++;
 
@@ -28,7 +28,7 @@
 					$finalarray['result']=0;
 
 				}
-				$finalarray['subservices']=$storearr;
+				$finalarray['subchildservices']=$storearr;
 				echo json_encode($finalarray);
 		
 	}
