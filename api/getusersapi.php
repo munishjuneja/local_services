@@ -30,15 +30,6 @@
 				echo json_encode($finalarray);
 
 			}
-			// if ($_POST['adduser']) {
-
-			// 		$insObj->contact=$_POST['contact'];
-			// 		$insObj->name=$_POST['name'];
-			// 		$insObj->email=$_POST['email'];
-			// 		$insObj->password=$_POST['password'];
-			// 		$insObj->address=$_POST['address'];
-			// 		$insObj->addUser();		
-			// }
 
 
  ?>
