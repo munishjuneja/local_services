@@ -2,8 +2,9 @@
 	include '../classes/servicesClass.php';
 
 	$getObj = new Service;
-	if ($_GET['method']=='getservices') {
-		$result = $getObj->allServices();
+	if ($_GET['method']=='getsubservice') {
+		$getObj->service_id = $_GET['id'];	
+		$result = $getObj->allSubCategories();
 				$storearr = array();
 				$i=0;
 		while($resultintoarray = mysqli_fetch_array($result)){
