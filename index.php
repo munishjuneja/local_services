@@ -294,16 +294,18 @@ body.openmenu {
 		        			<img src="images/profile_icon.png">
 		        		</div><!-- user_login_icon class -->
 		        		<div class="dropdown_login_btn"><?php if(!isset($_SESSION['user'])) {echo "<button data-toggle=\"modal\" data-target=\"#loginForm\">Log In</button>";}
-		        		else { echo "<a href=\"logout.php\"><button>Log out</button></a>";} ?></div><!-- dropdown_login_btn class   -->
+		        			else { echo "<a href=\"logout.php\"><button>Log out</button></a>";} ?>
+		        			
+		        		</div><!-- dropdown_login_btn class   -->
 		        		<?php if(!isset($_SESSION['user'])) echo "<p>New ? <a href=\"#register\" data-toggle=\"modal\" data-target=\"#signupForm\">register here</a></p>"; ?>
 	        		</div>
 	        		<div class="navbar_dropdown_options">
-	        			<ul>
+	        			<!-- <ul>
 	        				<hr>
 	        				<li><a href="">one</a></li>
 	        				<hr>
 	        				<li><a href="">two</a></li>
-	        			</ul>
+	        			</ul> -->
 	        		</div><!-- navbar_dropdown_options class -->
 	        	</div><!-- nav_bar_dropdown_hidden class -->
             </div>

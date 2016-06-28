@@ -5,6 +5,7 @@
 	session_start();
 	class user extends connection
 	{
+		var $id;
 		var $email;
 		var $contact;
 		var $name;
@@ -22,10 +23,11 @@
 				$rec    = mysqli_fetch_array($data);
 				$this->status = $rec['type'];
 				$this->name   = $rec['name'];
-
+				$this->id     = $rec['id'];
 				if($this->status == 1)
 				{
 					$_SESSION['admin'] = $this->name;
+					$_SESSION['admin_id'] = $this->id;
 					$_SESSION['email'] = $this->email;
 					$_SESSION['user'] = $this->email;
 					$_SESSION['user_name'] = $this->name;
@@ -34,6 +36,7 @@
 				else
 				{
 					$_SESSION['user'] = $this->email;
+					$_SESSION['user_id'] = $this->id;
 					$_SESSION['user_name'] = $this->name;
 					$_SESSION['email'] = $this->email;
 					return($_SESSION['user']);
