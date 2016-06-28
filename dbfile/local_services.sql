@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 28, 2016 at 10:57 AM
+-- Generation Time: Jun 28, 2016 at 04:13 PM
 -- Server version: 5.7.12-0ubuntu1.1
 -- PHP Version: 7.0.4-7ubuntu2.1
 
@@ -62,14 +62,14 @@ CREATE TABLE `services` (
 --
 
 INSERT INTO `services` (`id`, `name`, `description`, `imageurl`) VALUES
-(13, 'APPLIANCES', '', 'http://stealthtechnocrats.com/localservice/img/icons/Appliance.png'),
-(14, 'CARPENTRY', '', 'http://stealthtechnocrats.com/localservice/img/icons/Carpentry.png'),
-(15, 'CLEANING', '', 'http://stealthtechnocrats.com/localservice/img/icons/Cleaning.jpg'),
-(16, 'COMPUTER REPAIRING', '', 'http://stealthtechnocrats.com/localservice/img/icons/Computerrepairing.jpg'),
-(17, 'ELECTRICAL', '', 'http://stealthtechnocrats.com/localservice/img/icons/Electrical.jpg'),
-(18, 'LAUNDRY', '', 'http://stealthtechnocrats.com/localservice/img/icons/laundry.png'),
-(19, 'PAINTING', '', 'http://stealthtechnocrats.com/localservice/img/icons/Painting.jpg'),
-(20, 'PLUMBING', '', 'http://stealthtechnocrats.com/localservice/img/icons/Plumbing.jpg');
+(13, 'APPLIANCES', '', 'img/icons/Appliance.png'),
+(14, 'CARPENTRY', '', 'img/icons/Carpentry.png'),
+(15, 'CLEANING', '', 'img/icons/Cleaning.jpg'),
+(16, 'COMPUTER REPAIRING', '', 'img/icons/Computerrepairing.jpg'),
+(17, 'ELECTRICAL', '', 'img/icons/Electrical.jpg'),
+(18, 'LAUNDRY', '', 'img/icons/laundry.png'),
+(19, 'PAINTING', '', 'img/icons/Painting.jpg'),
+(20, 'PLUMBING', '', 'img/icons/Plumbing.jpg');
 
 -- --------------------------------------------------------
 
