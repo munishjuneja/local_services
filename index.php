@@ -566,7 +566,7 @@ body.openmenu {
 		                                <b> <?php echo $result['name']; ?></b>
 		                           </div>
 		                        </div>
-		                       <img src="img/portfolio/cabin.png" class="img-responsive" alt="">
+		                       <img src="<?php echo $result['imageurl'];?>" class="img-responsive" alt="">
 		                    </a>
 		                </div>
 		                <?php
