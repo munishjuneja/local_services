@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 27, 2016 at 01:03 PM
+-- Generation Time: Jun 28, 2016 at 10:57 AM
 -- Server version: 5.7.12-0ubuntu1.1
 -- PHP Version: 7.0.4-7ubuntu2.1
 
@@ -53,22 +53,23 @@ INSERT INTO `login` (`id`, `contact`, `name`, `password`, `address`, `type`, `em
 CREATE TABLE `services` (
   `id` int(11) NOT NULL,
   `name` varchar(50) CHARACTER SET utf8 NOT NULL,
-  `description` text
+  `description` text,
+  `imageurl` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `services`
 --
 
-INSERT INTO `services` (`id`, `name`, `description`) VALUES
-(13, 'APPLIANCES', ''),
-(14, 'CARPENTRY', ''),
-(15, 'CLEANING', ''),
-(16, 'COMPUTER REPAIRING', ''),
-(17, 'ELECTRICAL', ''),
-(18, 'LAUNDRY', ''),
-(19, 'PAINTING', ''),
-(20, 'PLUMBING', '');
+INSERT INTO `services` (`id`, `name`, `description`, `imageurl`) VALUES
+(13, 'APPLIANCES', '', 'http://stealthtechnocrats.com/localservice/img/icons/Appliance.png'),
+(14, 'CARPENTRY', '', 'http://stealthtechnocrats.com/localservice/img/icons/Carpentry.png'),
+(15, 'CLEANING', '', 'http://stealthtechnocrats.com/localservice/img/icons/Cleaning.jpg'),
+(16, 'COMPUTER REPAIRING', '', 'http://stealthtechnocrats.com/localservice/img/icons/Computerrepairing.jpg'),
+(17, 'ELECTRICAL', '', 'http://stealthtechnocrats.com/localservice/img/icons/Electrical.jpg'),
+(18, 'LAUNDRY', '', 'http://stealthtechnocrats.com/localservice/img/icons/laundry.png'),
+(19, 'PAINTING', '', 'http://stealthtechnocrats.com/localservice/img/icons/Painting.jpg'),
+(20, 'PLUMBING', '', 'http://stealthtechnocrats.com/localservice/img/icons/Plumbing.jpg');
 
 -- --------------------------------------------------------
 
@@ -93,7 +94,9 @@ INSERT INTO `sub_categories` (`id`, `service_id`, `sub_category_name`) VALUES
 (18, 13, 'WASHING MACHINE REPAIRING'),
 (19, 13, 'OVEN REPAIR'),
 (20, 13, 'FRIDGE REPAIRING'),
-(21, 13, 'FRIDGE GAS CHARGING');
+(21, 13, 'FRIDGE GAS CHARGING'),
+(22, 14, 'first sub category'),
+(23, 14, 'second sub category');
 
 -- --------------------------------------------------------
 
@@ -232,7 +235,7 @@ ALTER TABLE `services`
 -- AUTO_INCREMENT for table `sub_categories`
 --
 ALTER TABLE `sub_categories`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `sub_child_categories`
 --
