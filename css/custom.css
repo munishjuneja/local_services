@@ -133,8 +133,8 @@
 }
 .nav_bar_dropdown_hidden .user_login_icon {
     width: 100%;
-    padding-top:10px;
-    padding-bottom: 10px;
+    padding-top:20px;
+    padding-bottom: 20px;
     background-color: #61A3D3;
 }
 
@@ -150,6 +150,7 @@
 
 .nav_bar_dropdown_hidden .dropdown_header a {
     color: white;
+
 }
 .nav_bar_dropdown_hidden .navbar_dropdown_options {
     color: #333;
@@ -193,7 +194,7 @@ hr {
 .dropdown_login_btn {
     width: 100%;
     background-color: #61A3D3;
-    padding-bottom:5px;
+    padding-bottom:5px
 }
 
 .dropdown_login_btn button {

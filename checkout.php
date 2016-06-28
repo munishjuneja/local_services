@@ -1,14 +1,46 @@
 <?php 
 	include_once 'classes/connectionClass.php';
 	include_once 'classes/subSubCategoryClass.php';
+	include_once 'classes/userClass.php';
+	include_once 'classes/checkoutClass.php';
+	
+	$obj    = new CheckoutClass;
 	$finObj = new subSubCategory;
 	$finObj->self_id = $_GET['id'];
-	$res=$finObj->geteverything();
+	$res    =$finObj->geteverything();
+
+
+	
+
 	while($result = mysqli_fetch_array($res)){
 		echo $result['name'].">";
 		echo $result['sub_category_name'].">";
 		echo $result['sub_child_category_name'];
 	}
+
+	$obj->user_id 		= 	$_SESSION['user_id'];
+	$obj->service_id 	= 	$_GET['id'];
+	$obj->service_status = 	0;/* value = 0 for new pending service 
+						   * value = 1 for complete service
+						   */
+	/*echo $obj->user_id;
+	echo $obj->service_id;
+	echo $obj->service_status;*/
+	$service_address = "";
+	if(isset($_POST['go'])) {
+		$service_address 	   = (string)$_POST['house'];
+		$service_address 	  .= (string)" ".$_POST['apartment'];
+		$service_address 	  .= (string)" ".$_POST['locality'];
+		$service_address 	  .= (string)" ".$_POST['pin_code'];
+		
+		$obj->service_address = $service_address;
+		echo $obj->service_address;
+
+		$msg = $obj->add_user_service();
+	}
+
+
+
  ?>
  <?php
 
@@ -40,25 +72,25 @@
 											</li>
 										<li>								
 										<div class="panel-body">
-											<form role="form" action="index.php" method="post">
-												<div class="form-group input-group">
-										 			<span class="input-group-addon">House</span>
-										 			<input type="text" name ="house"  class="form-control" placeholder="Flat No/House No">
-										 		</div>
-										 		<div class="form-group input-group">
-										 			<span class="input-group-addon">Apartment</span>
-										 			<input type="text" name ="apartment"  class="form-control" placeholder="Apartment/street name">
-										 		</div>  
-										 		<div class="form-group input-group">
-										 			<span class="input-group-addon">locality</span>
-										 			<input type="text" name ="locality"  class="form-control" placeholder="Locality/Area Name">
-										 		</div>
-										 		<div class="form-group input-group">
-										 			<span class="input-group-addon">Chandigarh</span>
-										 			<input type="text" name ="chandigarh"  class="form-control" placeholder="Pincode">
-										 		</div>
-										 		
-										 		<button class="btn  btn-block col-lg-12 btn-success" name="submit">Submit</button>
+											<form role="form" action="" method="post">
+													<div class="form-group input-group">
+											 			<span class="input-group-addon" style="min-width:110px;">House</span>
+											 			<input type="text" name ="house"  class="form-control" placeholder="Flat No/House No">
+											 		</div>
+											 		<div class="form-group input-group">
+											 			<span class="input-group-addon" style="min-width:110px;">Apartment</span>
+											 			<input type="text" name ="apartment"  class="form-control" placeholder="Apartment/street name">
+											 		</div>  
+											 		<div class="form-group input-group">
+											 			<span class="input-group-addon" style="min-width:110px;">locality</span>
+											 			<input type="text" name ="locality"  class="form-control" placeholder="Locality/Area Name">
+											 		</div>
+											 		<div class="form-group input-group">
+											 			<span class="input-group-addon" style="min-width:110px;">Chandigarh</span>
+											 			<input type="text" name ="pin_code"  class="form-control" placeholder="Pincode">
+											 		</div>
+											 		
+											 		<button class="btn  btn-block col-lg-12 btn-success" name="go">Submit</button>
 											</form>	
 						   				</div>
 						   		      </li>
