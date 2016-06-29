@@ -27,7 +27,6 @@
 			$obj->msg = "*password does not match";
 		}
 	}
-	
 ?>
 
 <!DOCTYPE html>

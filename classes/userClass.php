@@ -31,7 +31,7 @@
 					$_SESSION['email'] = $this->email;
 					$_SESSION['user'] = $this->email;
 					$_SESSION['user_name'] = $this->name;
-					header("location:services.php");
+					header("location:admin.php");
 				}
 				else
 				{
