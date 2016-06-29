@@ -1,7 +1,13 @@
 <?php 
+    include_once 'config_admin.php';
 	include 'header.php';
 	include 'sidebar.php';
- 	/*include 'middlecontent.php';*/
+    include_once 'classes/adminClass.php';
+     
+    $getusers = new AdminPanel;
+    $rslt=$getusers->userServices();
+ 
+                            
  ?>
 
   	<div id="page-wrapper">
@@ -14,6 +20,7 @@
 	            	<div class="panel panel-default">
                         <div class="panel-heading">
                             All services
+
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -26,34 +33,41 @@
                                             <th>Service</th>
                                             <th>Sub Service</th>
                                             <th>Sub Child Service</th>
+                                            <th>Address</th>
+                                            <th>Professionals</th>
                                             <th>Status</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr class="success">
-                                            <td>1</td>
-                                            <td>Mark</td>
-                                            <td>Otto</td>
-                                            <td>@mdo</td>
-                                        </tr>
-                                        <tr class="info">
-                                            <td>2</td>
-                                            <td>Jacob</td>
-                                            <td>Thornton</td>
-                                            <td>@fat</td>
-                                        </tr>
-                                        <tr class="warning">
-                                            <td>3</td>
-                                            <td>Larry</td>
-                                            <td>the Bird</td>
-                                            <td>@twitter</td>
-                                        </tr>
-                                        <tr class="danger">
-                                            <td>4</td>
-                                            <td>John</td>
-                                            <td>Smith</td>
-                                            <td>@jsmith</td>
-                                        </tr>
+                                    <?php 
+
+                                        $i=0;
+                                           while($data=mysqli_fetch_array($rslt)){
+
+                                                $obj = new AdminPanel;
+                                                $obj->user_id=$data['user_id'];
+                                                $result=$obj->viewServices();
+    
+                                                    while ($res=mysqli_fetch_array($result)) {
+                                                        $i++;
+                                         
+                                                         ?>
+
+                                                            <tr class="success">
+                                                                <td><?php echo $i; ?></td>
+                                                                <td><?php echo $res['user_name']; ?></td>
+                                                                <td><?php echo $res['name'];?></td>
+                                                                <td><?php echo $res['sub_category_name']; ?></td>
+                                                                <td><?php echo $res['sub_child_category_name']; ?></td>
+                                                                <td><?php echo $res['service_address']; ?></td>
+                                                                <td>professional</td>
+                                                                <td><?php echo $res['status']; ?></td>
+
+                                                            </tr>
+                                                    <?php 
+                                                        }
+                                            }
+                                ?>
                                     </tbody>
                                 </table>
                             </div>
