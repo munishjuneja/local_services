@@ -20,12 +20,11 @@
 		$obj->address=$_POST['address'];
 		if($obj->password2==$obj->password1)
 		{
-			 $obj->register();
- 
+			$obj->register();
 		}
 		else
 		{
-			echo "password does not match";
+			$obj->msg = "*password does not match";
 		}
 	}
 	
@@ -37,9 +36,6 @@
 	$msg="";
 	if (isset($_POST['finalsubmit'])) {
  		$msg = "Your order have been placed successfully";
-
- 		
-
  	}
  ?>
 
@@ -52,13 +48,14 @@
     <meta name="author" content="">
 
     <title>Local-Services</title>
-
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/freelancer.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/custom.css">
 
     <!-- Custom CSS -->
-    <link href="css/freelancer.css" rel="stylesheet">
+    
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -565,10 +562,11 @@ body.openmenu {
 		                        <div class="caption" >  
 		                           <div class="caption-content">
 
-		                                <b> <?php echo $result['name']; ?></b>
+		                                <b style="background-color:#333;"> <?php echo $result['name']; ?></b>
 		                           </div>
 		                        </div>
-		                       <img src="<?php echo $result['imageurl'];?>" class="img-responsive" alt="">
+		                       	<img src="<?php echo $result['imageurl'];?>" class="img-responsive" alt="">
+		                       	
 		                    </a>
 		                </div>
 		                <?php
