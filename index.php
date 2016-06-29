@@ -492,7 +492,7 @@ body.openmenu {
 	    <header>
 	        <div class="container offers">
 	        	<div class="row">
-	        	<div class="col-lg-9 col-lg-offset-1">
+	        	<div class="col-lg-12">
 	            <div class="row" style="object-fit: cover;">
 	                <div class="col-lg-12" >
 	                	<div id="my-slider" class="carousel slide" data-ride="carousel">
