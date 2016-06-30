@@ -471,12 +471,8 @@ body.openmenu {
                 <form class="navbar-form "  role="search">
                     <div class="input-group col-md-12">
                         <input type="text" class="form-control"  style=" padding:0;
-<<<<<<< HEAD
-                        height:30px" placeholder="Search" name="search" id="search">
 
-=======
-                        height:30px" placeholder="<?php echo "\t";?>Search" name="srch-term" id="srch-term">
->>>>>>> 69794ca0c3b6cf15cad3ca39a5c0bc66400c5cf8
+                        height:30px" placeholder="Search" name="search" id="search">
                         <div class="input-group-btn">
                             <button  style="height:30px"  class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search" style="top:-4px;"></i></button>
                            
