@@ -26,10 +26,11 @@
 			$query = mysqli_query($this->con,"UPDATE sub_categories set sub_category_name='$this->sub_category_name',sub_category_description='$this->sub_category_description' where id='$this->id'");
 			return $query;
 		}
-		public function deleteSubCategory(){
-			$query = mysqli_query($this->con,"DELETE from sub_categories where id='$this->id'");
-			return $query;
-		}
+		// public function deleteSubCategory(){
+
+		// 	$query = mysqli_query($this->con,"set foreign_key_checks=0;DELETE from sub_categories where id='$this->id'");
+		// 	return $query;
+		// }
 
 
 	}
