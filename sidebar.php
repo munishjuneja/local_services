@@ -223,7 +223,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="services.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                            <a href="admin.php"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Categories<span class="fa arrow"></span></a>
