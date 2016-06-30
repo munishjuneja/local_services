@@ -40,10 +40,7 @@
                                                         <label class="control-label" for="inputSuccess">Service Name</label>
                                                         <input id="catname" name="name" type="text" class="form-control" id="inputSuccess">
                                                     </div>
-                                                   <div class="form-group">
-                                                        <label>Service Description</label>
-                                                        <textarea id="catdesc" class="form-control" rows="3" name="description"></textarea>
-                                                    </div>
+                                                   
                                                         <button type="submit" name="submit" class="btn btn-info">Add Service</button>
                                                 </form>
                                                 <br>
@@ -59,7 +56,6 @@
                                                     <tr>
                                                         <th>#</th>
                                                         <th>Service Name</th>
-                                                        <th>Service Description</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
