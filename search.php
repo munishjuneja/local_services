@@ -5,7 +5,7 @@
     	$q = $_GET['q'];
          
     	$query = "select * from services where name like '%$q%'";
-        $con = mysqli_connect('localhost','root','3418','local_services');
+        $con = mysqli_connect('localhost','root','z','local_services');
          
     	$result=mysqli_query($con,$query);
        	if(mysqli_num_rows($result)>0)

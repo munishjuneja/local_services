@@ -549,13 +549,13 @@ body.openmenu {
 							<div class="item active">
 								<img class="offer-images" src="images/slide1.jpg" alt="Auto" height="100px" width="1200px" />
 								<div class="carousel-caption">
-									<h3> Images </h3>
+									<h3> </h3>
 								</div>
 							</div>
 							<div class="item ">
 								<img class="offer-images" src="images/slide2.jpg" alt="Auto" height="100px" width="1200px" />
 								<div class="carousel-caption">
-									<h3> imagination </h3>
+									<h3> </h3>
 								</div>
 							</div>
 						</div>
