@@ -526,6 +526,20 @@ body.openmenu {
 ?>
 
 <!-- login failure warning section end -->
+
+<!-- register sucess alert section -->
+<?php if ($obj->msg_success!=""){ ?>
+		<div style="margin-top:0px;">
+			<div class='alert alert-info alert-dismissable' style="text-align:center;">
+		  				<strong><?php echo $obj->msg_success ?></strong>
+			</div>
+		</div>
+
+<?php
+	}
+?>
+
+<!-- register sucess alert section end -->
     
 
 
@@ -549,13 +563,13 @@ body.openmenu {
 							<div class="item active">
 								<img class="offer-images" src="images/slide1.jpg" alt="Auto" height="100px" width="1200px" />
 								<div class="carousel-caption">
-									<h3> Images </h3>
+									<h3> </h3>
 								</div>
 							</div>
 							<div class="item ">
 								<img class="offer-images" src="images/slide2.jpg" alt="Auto" height="100px" width="1200px" />
 								<div class="carousel-caption">
-									<h3> imagination </h3>
+									<h3> </h3>
 								</div>
 							</div>
 						</div>

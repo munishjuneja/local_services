@@ -9,11 +9,11 @@
 		var $message;
 		function registerNow() {
 			if($this->con) {
-				$query = "INSERT INTO login VALUES('$this->phone',
-													\"$this->name\",
-													'$this->email',
-													\"$this->regpass1\",
-													\"$this->address\",0)";
+				$query = "INSERT INTO login VALUES('$this->phone'
+													,\"$this->name\"
+													,'$this->email'
+													,\"$this->regpass1\"
+													,\"$this->address\",0)";
 				mysqli_query($this->con,$query);
 				$this->message = "registration complete";
 			} else {

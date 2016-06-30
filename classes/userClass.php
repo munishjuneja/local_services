@@ -12,6 +12,7 @@
 		var $password;
 		var $status;
 		var $msg;
+		var $msg_success;
 		public function login()
 		{
 			 
@@ -64,8 +65,8 @@
 			{
 				$query="insert into login(`contact`,`name`,`email`,`password`,`address`) values('$this->contact','$this->name','$this->email','$this->password1','$this->address')";
 					if(mysqli_query($this->con,$query)) {
-						$this->msg='Account registered successfully.';
-						return $this->msg;
+						$this->msg_success='Account registered successfully.';
+						return $this->msg_success;
 					}
 			}
 		}
