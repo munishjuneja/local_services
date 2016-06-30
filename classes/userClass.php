@@ -31,7 +31,7 @@
 					$_SESSION['email'] = $this->email;
 					$_SESSION['user'] = $this->email;
 					$_SESSION['user_name'] = $this->name;
-					header("location:services.php");
+					header("location:admin.php");
 				}
 				else
 				{
@@ -56,21 +56,17 @@
 			if($rec)
 			{
 
-				$msg="Email already exist";
-				echo "<div class='alert alert-warning'>
-  			<strong>{$msg}</strong> 
-			</div>";
-				return $msg;
+				$this->msg="*Email already exist.";
+				return $this->msg;
 				 
 			}
 			else
 			{
 				$query="insert into login(`contact`,`name`,`email`,`password`,`address`) values('$this->contact','$this->name','$this->email','$this->password1','$this->address')";
-				mysqli_query($this->con,$query);
-
-				echo "<div class='alert alert-success>
-  						<strong>{$this->email}  !!</strong>  registered Successfully.
-					</div>"; 
+					if(mysqli_query($this->con,$query)) {
+						$this->msg='Account registered successfully.';
+						return $this->msg;
+					}
 			}
 		}	 
 	}

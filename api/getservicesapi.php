@@ -10,7 +10,7 @@
 			$intermediatearray = array();
 			$intermediatearray['id']=$resultintoarray['id'];
 			$intermediatearray['name']=$resultintoarray['name'];
-			$intermediatearray['imageurl']=$resultintoarray['imageurl'];
+			$intermediatearray['imageurl']=$_SERVER['PHP_SELF'].$resultintoarray['imageurl'];
 			$storearr[$i]=$intermediatearray;
 						$i++;
 

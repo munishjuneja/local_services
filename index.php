@@ -20,15 +20,13 @@
 		$obj->address=$_POST['address'];
 		if($obj->password2==$obj->password1)
 		{
-			 $obj->register();
- 
+			$obj->register();
 		}
 		else
 		{
-			echo "password does not match";
+			$obj->msg = "*password does not match";
 		}
 	}
-	
 ?>
 
 <!DOCTYPE html>
@@ -37,9 +35,6 @@
 	$msg="";
 	if (isset($_POST['finalsubmit'])) {
  		$msg = "Your order have been placed successfully";
-
- 		
-
  	}
  ?>
 
@@ -52,13 +47,14 @@
     <meta name="author" content="">
 
     <title>Local-Services</title>
-
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/freelancer.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/custom.css">
 
     <!-- Custom CSS -->
-    <link href="css/freelancer.css" rel="stylesheet">
+    
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -475,8 +471,12 @@ body.openmenu {
                 <form class="navbar-form "  role="search">
                     <div class="input-group col-md-12">
                         <input type="text" class="form-control"  style=" padding:0;
+<<<<<<< HEAD
                         height:30px" placeholder="Search" name="search" id="search">
 
+=======
+                        height:30px" placeholder="<?php echo "\t";?>Search" name="srch-term" id="srch-term">
+>>>>>>> 69794ca0c3b6cf15cad3ca39a5c0bc66400c5cf8
                         <div class="input-group-btn">
                             <button  style="height:30px"  class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search" style="top:-4px;"></i></button>
                            
@@ -538,7 +538,7 @@ body.openmenu {
 	    <header>
 	        <div class="container offers">
 	        	<div class="row">
-	        	<div class="col-lg-9 col-lg-offset-1">
+	        	<div class="col-lg-12">
 	            <div class="row" style="object-fit: cover;">
 	                <div class="col-lg-12" >
 	                	<div id="my-slider" class="carousel slide" data-ride="carousel">
@@ -589,6 +589,7 @@ body.openmenu {
 	    </header>
 
 	    <!-- Portfolio Grid Section -->
+	    <br><br><br><br>
 	    <section id="portfolio">
 	        <div class="container">
 	            <div class="row">
@@ -597,6 +598,7 @@ body.openmenu {
 	                  
 	                </div>
 	            </div>
+	            <br><br>
 	            <div class="row">
 		            	<?php 
 		                    $getServices = new Service;
@@ -609,10 +611,11 @@ body.openmenu {
 		                        <div class="caption" >  
 		                           <div class="caption-content">
 
-		                                <b> <?php echo $result['name']; ?></b>
+		                                <b style="background-color:#333;"> <?php echo $result['name']; ?></b>
 		                           </div>
 		                        </div>
-		                       <img src="<?php echo $result['imageurl'];?>" class="img-responsive" alt="">
+		                       	<img src="<?php echo $result['imageurl'];?>" class="img-responsive" alt="">
+		                       	
 		                    </a>
 		                </div>
 		                <?php
@@ -622,7 +625,7 @@ body.openmenu {
 	        </div>
 	    </section>
 
-
+<br><br>
 	    <!-- About Section -->
 	    <div class="container">
 	    <section class="success" id="about">
