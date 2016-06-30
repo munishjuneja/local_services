@@ -29,7 +29,7 @@
 		}
 
 		public function addSubCategory(){
-			$query = mysqli_query($this->con,"INSERT INTO sub_categories (`service_id`,`sub_category_name`) values('$this->service_id','$this->sub_category_name') ");
+			$query = mysqli_query($this->con,"INSERT INTO sub_categories(`service_id`,`sub_category_name`,`sub_category_description`) values('$this->service_id','$this->sub_category_name','$this->sub_category_description') ");
 		}
 		
 		public function allSubCategories(){

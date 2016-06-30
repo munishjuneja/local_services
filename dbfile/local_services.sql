@@ -3,15 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
-<<<<<<< HEAD
 -- Generation Time: Jun 30, 2016 at 04:32 PM
 -- Server version: 5.7.12-0ubuntu1
--- PHP Version: 7.0.7-4+deb.sury.org~xenial+1
-=======
--- Generation Time: Jun 28, 2016 at 04:13 PM
--- Server version: 5.7.12-0ubuntu1.1
--- PHP Version: 7.0.4-7ubuntu2.1
->>>>>>> 022deeda0399559b39a5184bb253d268c1c4b5cf
+-- PHP Version: 7.0.7-4+deb.sury.org~xenial+
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
