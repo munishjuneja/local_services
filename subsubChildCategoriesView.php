@@ -7,6 +7,7 @@
 <html>
 <head>
 	<title>subCategories</title>
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 	<link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/subCategories.css">
 </head>

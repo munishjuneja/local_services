@@ -97,10 +97,10 @@
 
                                                           <td><?php
                                                            echo $out['sub_category_name'];
-                                                           $cname=$out['sub_category_name'];
+                                                           $cname=$out['id'];
                                                           ?></td>
                                                         <td>
-                                                        <a style="color:white;" href="editCategory.php?id=<?php echo $cname;?>&desc=<?php echo $cdes?>">
+                                                        <a style="color:white;" href="editCategory.php?id=<?php echo $cname;?>">
                                                             <button id="edit" class="btn btn-sm btn-info">
                                                                     Edit
                                                                     <?php

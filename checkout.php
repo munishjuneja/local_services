@@ -75,19 +75,19 @@
 											<form role="form" action="" method="post">
 													<div class="form-group input-group">
 											 			<span class="input-group-addon" style="min-width:110px;">House</span>
-											 			<input type="text" name ="house"  class="form-control" placeholder="Flat No/House No">
+											 			<input type="text" name ="house"  class="form-control" placeholder="Flat No/House No" required>
 											 		</div>
 											 		<div class="form-group input-group">
 											 			<span class="input-group-addon" style="min-width:110px;">Apartment</span>
-											 			<input type="text" name ="apartment"  class="form-control" placeholder="Apartment/street name">
+											 			<input type="text" name ="apartment"  class="form-control" placeholder="Apartment/street name" required>
 											 		</div>  
 											 		<div class="form-group input-group">
 											 			<span class="input-group-addon" style="min-width:110px;">locality</span>
-											 			<input type="text" name ="locality"  class="form-control" placeholder="Locality/Area Name">
+											 			<input type="text" name ="locality"  class="form-control" placeholder="Locality/Area Name" required>
 											 		</div>
 											 		<div class="form-group input-group">
 											 			<span class="input-group-addon" style="min-width:110px;">Chandigarh</span>
-											 			<input type="text" name ="pin_code"  class="form-control" placeholder="Pincode">
+											 			<input type="number" name ="pin_code"  class="form-control" placeholder="Pincode" required>
 											 		</div>
 											 		
 											 		<button class="btn  btn-block col-lg-12 btn-success" name="go">Submit</button>

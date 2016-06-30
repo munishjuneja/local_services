@@ -526,6 +526,20 @@ body.openmenu {
 ?>
 
 <!-- login failure warning section end -->
+
+<!-- register sucess alert section -->
+<?php if ($obj->msg_success!=""){ ?>
+		<div style="margin-top:0px;">
+			<div class='alert alert-info alert-dismissable' style="text-align:center;">
+		  				<strong><?php echo $obj->msg_success ?></strong>
+			</div>
+		</div>
+
+<?php
+	}
+?>
+
+<!-- register sucess alert section end -->
     
 
 
