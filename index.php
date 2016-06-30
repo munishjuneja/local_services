@@ -11,7 +11,7 @@
 	}
 	if(isset($_POST['registerform']))
 	{
-		
+
 		$obj->contact=$_POST['contact'];
 		$obj->name= $_POST['name'];
 		$obj->email=$_POST['email'];
@@ -63,6 +63,7 @@
 
     <script type="text/javascript" src="js/jquery.min.js">
     </script>
+     <script src="js/typeahead.min.js"></script>
     <script type="text/javascript">
             function sticky_relocate() {
             var window_top = $(window).scrollTop();
@@ -98,6 +99,28 @@
             window.setTimeout(autoscroll, 100);
         }
 
+        //starting of code for live search
+         $(document).ready(function()
+    		{  
+    			$("#search").keyup(function()
+    			{ 
+    				$("#here").show();
+    				var x =$(this).val();
+                    $.ajax(
+    				{
+    					type:'GET',
+    					url:'search.php',
+    					data:'q='+x,
+
+    					success:function(data)
+    					{   
+    						$("#here").html(data);
+                            
+    					},  
+    				});
+    			});
+    		});//ending of code live search
+  
 
     </script>
 
@@ -148,7 +171,7 @@
     }
   }
 });
-
+ 
   </script>
   <style type="text/css">
   		header {
@@ -187,7 +210,8 @@ body.openmenu {
 .overlay {
   position: fixed;
   z-index: 99;
-  /*background-color: rgba(0,0,0,0.5);*/
+  background-color: transparent;
+ /* background-color: rgba(0,0,0,0.5);*/
   bottom: 0;
   right: 0;
   left: 0;
@@ -204,7 +228,7 @@ body.openmenu {
 #hamburgermenu {
   height: 100%;
   width: 0;
-  background: black;
+  background:black;
   position: fixed;
   top: 0;
   left: 0;
@@ -238,8 +262,28 @@ body.openmenu {
   color: #fff;
   background: #2c2c2c;
 }
-
-
+#here{
+	 
+	border-radius: 5px; 
+	display: none;
+	position: absolute; z-index: 3000; 
+	background-color: white;
+}
+#here a{
+	padding-left: 20px;
+	padding-right: 30px;
+	display: block;
+	width: 100%;
+	font-size: 18px;
+	text-decoration: none;
+	cursor: pointer;
+	color:#424242;
+	
+}
+#here a:hover{
+	background-color:#F2F2F2;
+	border-radius: 5px;
+}
   </style>
 
 
@@ -272,7 +316,7 @@ body.openmenu {
         </ul>
       </div>
     </div>
-    <div class="overlay"></div>
+   <div class="overlay"></div>
   <div id="content">
   <!-- filler content -->
   </div>
@@ -281,6 +325,7 @@ body.openmenu {
 	    <div class="navbar-login" >
             <a class = "login" href="#">Support</a><span class="vertical-line">|</span>
             <a class = "login" href="#contact_us">Contact Us</a><span class="vertical-line">|</span>
+
             <div class="nav_bar_account">
             	<a class = "login" href="#"><?php if(isset($_SESSION['user'])){ echo $_SESSION['user_name'];} else echo "Account"; ?></a>
             	<div class="nav_bar_dropdown_hidden">
@@ -426,18 +471,19 @@ body.openmenu {
                 <form class="navbar-form "  role="search">
                     <div class="input-group col-md-12">
                         <input type="text" class="form-control"  style=" padding:0;
-                        height:30px" placeholder="<?php echo "\t";?>Search" name="srch-term" id="srch-term">
+
+                        height:30px" placeholder="Search" name="search" id="search">
                         <div class="input-group-btn">
                             <button  style="height:30px"  class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search" style="top:-4px;"></i></button>
+                           
                         </div>
+
+                    </div><div id="here">
                     </div>
-                </form>
-        </div>
+                </form> 
+       		</div>
     </div>
-</div>
-
-
-
+    <a href="#" style="font-size: 12px; text-align: center;"></a>
 <div id="navbar-bottom" style="width:100%;">
 
 

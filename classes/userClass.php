@@ -69,6 +69,12 @@
 						return $this->msg_success;
 					}
 			}
+		}
+
+		public function checkemail(){
+			$query = mysqli_query($this->con,"SELECT * from login where email='$this->email'");
+
+			return mysqli_num_rows($query);
 		}	 
 	}
 
