@@ -42,6 +42,7 @@
 			<li>Any parts that requires replacement will be extra</li>
 			<li>Minimum visiting charges are Rs.199 </li>
 		</ul>";
+			$finalarray['message']=htmlspecialchars($finalarray['message']);
 				echo json_encode($finalarray);
 		
 	}
