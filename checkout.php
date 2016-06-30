@@ -57,7 +57,7 @@
 	</head>
 	<body style=" background-image: url(images/bg.jpg);
 			background-size: cover;">
-
+		<?php  include_once 'navbar.php'  ?><!-- nav bar for intermediate pages -->
 		<div class = "containerfluid" >
 			<div class="container" >
 				<div class = "row">
