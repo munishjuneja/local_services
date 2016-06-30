@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
+-- version 4.5.4.1deb2ubuntu1
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 29, 2016 at 01:21 PM
+-- Generation Time: Jun 28, 2016 at 04:13 PM
 -- Server version: 5.7.12-0ubuntu1.1
 -- PHP Version: 7.0.4-7ubuntu2.1
 
@@ -178,16 +178,8 @@ CREATE TABLE `user_services` (
   `id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
   `service_id` int(11) DEFAULT NULL,
-  `status` int(11) DEFAULT NULL,
-  `service_address` text NOT NULL
+  `status` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `user_services`
---
-
-INSERT INTO `user_services` (`id`, `user_id`, `service_id`, `status`, `service_address`) VALUES
-(1, 2, 2, 0, '531 Matur Sector 71 160161');
 
 --
 -- Indexes for dumped tables
@@ -253,7 +245,7 @@ ALTER TABLE `sub_child_categories`
 -- AUTO_INCREMENT for table `user_services`
 --
 ALTER TABLE `user_services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- Constraints for dumped tables
 --
