@@ -29,6 +29,20 @@
 
 				}
 				$finalarray['subchildservices']=$storearr;
+				$finalarray['message']="<h3>Rate list</h3>
+		<ul>
+			<li>Window AC at Rs:690/AC</li>
+			<li>Split AC at Rs: 1850/AC</li>
+			
+		</ul>
+
+		<h3>What's included?</h3>
+		<ul>
+			<li>Includes labour charges only</li>
+			<li>Any parts that requires replacement will be extra</li>
+			<li>Minimum visiting charges are Rs.199 </li>
+		</ul>";
+			$finalarray['message']=htmlspecialchars($finalarray['message']);
 				echo json_encode($finalarray);
 		
 	}

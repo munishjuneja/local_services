@@ -2,7 +2,7 @@
 	 
 	define('DB_SERVER'  , 'localhost');
 	define('DB_USERNAME', 'root');
-	define('DB_PASSWORD', '13538cse');
+	define('DB_PASSWORD', 'strongpassword');
 	define('DB_DATABASE', 'local_services');
 	
    	class connection {
