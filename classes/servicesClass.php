@@ -46,10 +46,10 @@
 			return $query;
 
 		}
-
 		public function editCategory(){
 			$query = mysqli_query($this->con,"UPDATE services set name='$this->name' where id='$this->id'");
 			return $query;
 		}
+
 	}
  ?>
