@@ -22,6 +22,12 @@
 			return $query;
 		}
 
+		public function getService(){
+			$query = mysqli_query($this->con,"SELECT * from services where id='$this->id'");
+			return $query;
+
+		}
+
 		public function addSubCategory(){
 			$query = mysqli_query($this->con,"INSERT INTO sub_categories (`service_id`,`sub_category_name`) values('$this->service_id','$this->sub_category_name') ");
 		}
@@ -39,6 +45,10 @@
 			$query = mysqli_query($this->con,"SELECT * from sub_child_categories");
 			return $query;
 
+		}
+		public function editCategory(){
+			$query = mysqli_query($this->con,"UPDATE services set name='$this->name' where id='$this->id'");
+			return $query;
 		}
 
 	}
