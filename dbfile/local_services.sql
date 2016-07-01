@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 01, 2016 at 01:58 PM
+-- Generation Time: Jul 01, 2016 at 06:19 PM
 -- Server version: 5.7.12-0ubuntu1.1
 -- PHP Version: 7.0.4-7ubuntu2.1
 
@@ -41,8 +41,9 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id`, `contact`, `name`, `password`, `address`, `type`, `email`) VALUES
-(1, 9988223344, 'Munish Juneja', 'password', 'address', 1, 'munish@gmail.com'),
-(2, 7733773377, 'newuser', 'password', 'address', 0, 'nu@gmail.com');
+(2, 7733773377, 'newuser', 'password', 'address', 1, 'nu@gmail.com'),
+(3, 987654321, 'deshraj bhardwaj', 'no', 'chamb the heaven', 0, 'deshu@gmail.com'),
+(4, 9876543210, 'abhinav kandoria', 'yes', 'kandor the mini wonderland', 0, 'abhi@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -57,6 +58,15 @@ CREATE TABLE `professionals` (
   `contact` bigint(15) NOT NULL,
   `status` int(11) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `professionals`
+--
+
+INSERT INTO `professionals` (`pro_id`, `service_id`, `name`, `contact`, `status`) VALUES
+(1, 1, 'danny', 1234567890, 0),
+(2, 2, 'Mack doe', 1234567890, 0),
+(3, 6, 'dina', 9876754378, 0);
 
 -- --------------------------------------------------------
 
@@ -78,7 +88,7 @@ CREATE TABLE `services` (
 INSERT INTO `services` (`id`, `name`, `description`, `imageurl`) VALUES
 (13, 'APPLIANCES', '', 'img/icons/Appliance.png'),
 (14, 'CARPENTRY', '', 'img/icons/Carpentry.jpeg'),
-(15, 'CLEANING', '', 'img/icons/Cleaning.jpg'),
+(15, 'CLEANING', '', 'img/icons/cleaning.jpg'),
 (16, 'COMPUTER REPAIRING', '', 'img/icons/comprep.png'),
 (17, 'ELECTRICAL', '', 'img/icons/Electrical.png'),
 (18, 'LAUNDRY', '', 'img/icons/laundry.jpg'),
@@ -271,10 +281,17 @@ CREATE TABLE `user_services` (
 --
 
 INSERT INTO `user_services` (`id`, `user_id`, `sub_child_id`, `status`, `service_address`, `sub_id`, `main_id`) VALUES
-(1, 2, 2, 0, '1234 qwert asdfg 12345', NULL, NULL),
-(2, 2, 1, NULL, '', 15, 13),
-(3, 2, 1, NULL, 'address', 15, 13),
-(4, 2, 1, 0, 'address', 15, 13);
+(4, 2, 1, 1, 'address', 15, 13),
+(5, 1, 2, 0, 'address', 2, 2),
+(6, 2, 2, 1, '123 qwer asdf 123456', 15, 13),
+(7, 2, 2, 1, '888 ajay nonno 111111', 15, 13),
+(8, 2, 2, 0, '111 qwerty qqqq 123333', 15, 13),
+(9, 2, 2, 0, '531 bada apartment local 123456', 15, 13),
+(10, 2, 2, 0, '531 bada apartment local 123456', 15, 13),
+(11, 3, 2, 0, '531 Matur Sector 71 190160', 15, 13),
+(12, 4, 6, 0, '12 kandoria villa kandor 120340', 17, 13),
+(13, 4, 2, 0, '12 kandor villa kandoria 120345', 15, 13),
+(14, 4, 6, 1, '34 adfa dsfno 123456', 17, 13);
 
 --
 -- Indexes for dumped tables
@@ -326,12 +343,12 @@ ALTER TABLE `user_services`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `professionals`
 --
 ALTER TABLE `professionals`
-  MODIFY `pro_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `pro_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `services`
 --
@@ -351,7 +368,7 @@ ALTER TABLE `sub_child_categories`
 -- AUTO_INCREMENT for table `user_services`
 --
 ALTER TABLE `user_services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- Constraints for dumped tables
 --
