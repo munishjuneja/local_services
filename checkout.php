@@ -19,7 +19,9 @@
 
 
 	$obj->user_id 		= 	$_SESSION['user_id'];
-	$obj->service_id 	= 	$_GET['sub_child_id'];
+	$obj->sub_child_id 	= 	$_GET['sub_child_id'];
+	$obj->main_id 		= 	$_GET['main_id'];
+	$obj->sub_id 		= 	$_GET['sub_id'];
 	$obj->service_status = 	0;
 	$service_address = "";
 	if(isset($_POST['go'])) {
@@ -29,9 +31,8 @@
 		$service_address 	  .= (string)" ".$_POST['pin_code'];
 		
 		$obj->service_address = $service_address;
-		echo $obj->service_address;
-
 		$msg = $obj->add_user_service();
+		header("Location:user_dashboard.php");
 	}
 
 

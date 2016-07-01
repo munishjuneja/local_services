@@ -35,6 +35,7 @@
                                             <th>Sub Child Service</th>
                                             <th>Address</th>
                                             <th>Professionals</th>
+                                            <th>Contact</th>
                                             <th>Status</th>
                                         </tr>
                                     </thead>
@@ -46,7 +47,7 @@
 
                                                 $obj = new AdminPanel;
                                                 $obj->user_id=$data['user_id'];
-                                                $result=$obj->viewServices();
+                                                $result=$obj->getServices();
     
                                                     while ($res=mysqli_fetch_array($result)) {
                                                         $i++;
@@ -56,11 +57,12 @@
                                                             <tr class="success">
                                                                 <td><?php echo $i; ?></td>
                                                                 <td><?php echo $res['user_name']; ?></td>
-                                                                <td><?php echo $res['name'];?></td>
+                                                                <td><?php echo $res['main_service'];?></td>
                                                                 <td><?php echo $res['sub_category_name']; ?></td>
                                                                 <td><?php echo $res['sub_child_category_name']; ?></td>
                                                                 <td><?php echo $res['service_address']; ?></td>
-                                                                <td>professional</td>
+                                                                <td><?php echo $res['pro_name']; ?></td>
+                                                                <td><?php echo $res['pro_contact']; ?></td>
                                                                 <td><?php echo $res['status']; ?></td>
 
                                                             </tr>
