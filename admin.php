@@ -6,6 +6,11 @@
      
     $getusers = new AdminPanel;
     $rslt=$getusers->userServices();
+    $statuschange = new AdminPanel;
+    if (isset($_POST['changestatus'])) {
+        $statuschange->id=$_POST['status'];
+        $statuschange->changeStatus();      
+    }
  
                             
  ?>
@@ -34,20 +39,19 @@
                                             <th>Sub Service</th>
                                             <th>Sub Child Service</th>
                                             <th>Address</th>
-                                            <th>Professionals</th>
-                                            <th>Contact</th>
                                             <th>Status</th>
+                                            <!-- <th>Professionals</th>
+                                            <th>Contact</th> -->
                                         </tr>
                                     </thead>
                                     <tbody>
                                     <?php 
 
                                         $i=0;
-                                           while($data=mysqli_fetch_array($rslt)){
+                                          /* while($data=mysqli_fetch_array($rslt)){*/
 
                                                 $obj = new AdminPanel;
-                                                $obj->user_id=$data['user_id'];
-                                                $result=$obj->getServices();
+                                                $result=$obj->viewServices();
     
                                                     while ($res=mysqli_fetch_array($result)) {
                                                         $i++;
@@ -61,14 +65,38 @@
                                                                 <td><?php echo $res['sub_category_name']; ?></td>
                                                                 <td><?php echo $res['sub_child_category_name']; ?></td>
                                                                 <td><?php echo $res['service_address']; ?></td>
-                                                                <td><?php echo $res['pro_name']; ?></td>
-                                                                <td><?php echo $res['pro_contact']; ?></td>
-                                                                <td><?php echo $res['status']; ?></td>
+                                                              <!-- <td>-->
+                                                                 <?php 
+                                                                 // echo $res['pro_name']; 
+                                                                 ?>
+                                                                    
+                                                                <!-- </td>-->
+                                                                <!-- <td>-->
+                                                                <?php //echo $res['pro_contact']; 
+                                                                ?><!-- </td>-->
+                                                                <td>
+
+                                                                 <form method="post" action="">
+                                                                        <input type="hidden" name="status" method="post" value="<?php echo $res['id'];?>">
+                                                                        <?php if ($res['status']==0): ?>
+                                                                            <button type="submit" name="changestatus" class="btn btn-sm btn-danger" >
+                                                                                Pending
+                                                                            </button>
+                                                                        <?php else: ?>
+                                                                            <button class="btn btn-sm btn-info">Complete</button>
+                                                                        <?php endif ?>
+
+                                                                        
+
+                                                                     </form>
+
+
+                                                                </td>
 
                                                             </tr>
                                                     <?php 
                                                         }
-                                            }
+                                           /* }*/
                                 ?>
                                     </tbody>
                                 </table>

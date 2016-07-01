@@ -52,14 +52,15 @@
 			                                    <?php 
 
 			                                        $i=0;
-			                                           while($data=mysqli_fetch_array($rslt)){
+			                                          
 
 			                                                $obj = new AdminPanel;
 			                                                $obj->user_id=$_SESSION['user_id'];
-			                                                $result=$obj->getServices();
+			                                                $result=$obj->getNewServices();
 			                                                    while ($res=mysqli_fetch_array($result)) {
+			                                                    	/*if($res['user_name'] == $_SESSION['user_id'] )*/
 			                                                        $i++;
-			                                         
+			                                         				
 			                                                         ?>
 
 			                                                            <tr >
@@ -76,7 +77,6 @@
 			                                                            </tr>
 			                                                    <?php 
 			                                                        }
-			                                            }
 			                                ?>
 			                                    </tbody>
 			                                </table>
