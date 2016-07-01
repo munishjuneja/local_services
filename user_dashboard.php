@@ -26,14 +26,17 @@
 				<div class="container">
 						<div class = "row">
 								<div class = "col-lg-12" >
-									
-									<div class = "col-lg-8 col-lg-offset-2" >
-										
+									<div class = "col-lg-8 col-lg-offset-2">
 										<div id="list4">
-										   	
+										   	<ul class="list-group">
+												<li class="list-group-item list-group-item-success">Dapibus ac facilisis in</li>
+												<li class="list-group-item list-group-item">Cras sit amet nibh libero</li>
+												<li class="list-group-item list-group-item">Porta ac consectetur ac</li>
+												<li class="list-group-item list-group-item">Vestibulum at eros</li>
+											</ul>
 										</div>
 										
-									</div>	
+									</div>
 										
 								</div>
 						</div>				
