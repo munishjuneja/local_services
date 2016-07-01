@@ -52,6 +52,6 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Admin DashBoard</a>
+                <a class="navbar-brand" href="admin.php">Admin DashBoard</a>
             </div>
             <!-- /.navbar-header -->
