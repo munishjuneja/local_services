@@ -33,7 +33,7 @@
 									<div class="panel">
 									<div class="panel-body">
 			                            <div class="table-responsive">
-			                                <table class="table .table-striped">
+			                                <table class="table table-hover table-striped">
 			                                    <thead class="thead-inverse">
 			                                        <tr>
 			                                            <th>#</th>
@@ -45,6 +45,7 @@
 			                                            <th>Professionals</th>
 			                                            <th>Status</th>
 			                                        </tr>
+
 			                                    </thead>
 			                                    <tbody>
 			                                    <?php 
@@ -76,6 +77,36 @@
 			                                                        }
 			                                            }
 			                                ?>
+			                                	<tr >
+			                                		<td>1</td>
+			                                		<td>skipper</td>
+			                                		<td>AC</td>
+			                                		<td>AC 1</td>
+			                                		<td>AC 2</td>
+			                                		<td>D-104</td>
+			                                		<td>123456789</td>
+			                                		<td>1</td>
+			                                	</tr>
+			                                	<tr >
+			                                		<td>1</td>
+			                                		<td>skipper</td>
+			                                		<td>AC</td>
+			                                		<td>AC 1</td>
+			                                		<td>AC 2</td>
+			                                		<td>D-104</td>
+			                                		<td>123456789</td>
+			                                		<td>1</td>
+			                                	</tr>
+			                                	<tr >
+			                                		<td>1</td>
+			                                		<td>skipper</td>
+			                                		<td>AC</td>
+			                                		<td>AC 1</td>
+			                                		<td>AC 2</td>
+			                                		<td>D-104</td>
+			                                		<td>123456789</td>
+			                                		<td>1</td>
+			                                	</tr>
 			                                    </tbody>
 			                                </table>
 			                            </div>
