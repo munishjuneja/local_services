@@ -1,9 +1,8 @@
 <?php 
-    include_once 'config_admin.php';
 	include 'header.php';
 	include 'sidebar.php';
     include_once 'classes/adminClass.php';
-     
+    if(isset($_SESSION['user']));
     $getusers = new AdminPanel;
     $rslt=$getusers->userServices();
  
