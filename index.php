@@ -27,6 +27,19 @@
 			$obj->msg = "*password does not match";
 		}
 	}
+
+	/*section to handel login session */
+	$err_msg = "";
+		if(isset($_GET['error'])) {
+			$err_msg = $_GET['error'];
+		}
+
+	if(isset($_SESSION['user'])) {
+		$err_msg = "";
+	}
+
+	/*section to handel login session end */
+
 ?>
 
 <!DOCTYPE html>
@@ -506,6 +519,17 @@ body.openmenu {
 		<div style="margin-top:20px;">
 			<div class='alert alert-info'>
 		  				<strong><?php echo $msg ?></strong>
+			</div>
+		</div>
+
+<?php
+	}
+?>
+
+<?php if ($err_msg!=""){ ?>
+		<div style="margin-top:0px;">
+			<div class='alert alert-warning' style="text-align:center;">
+		  				<strong><?php echo "*".$err_msg ?></strong>
 			</div>
 		</div>
 

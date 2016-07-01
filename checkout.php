@@ -4,6 +4,14 @@
 	include_once 'classes/userClass.php';
 	include_once 'classes/checkoutClass.php';
 	
+	/*user session handling */
+	/*session_start();*/
+	if(!isset($_SESSION['user'])) {
+		header("Location:index.php?error=You need to login first.");
+	}
+
+	/*user session handling end*/
+
 	$obj    = new CheckoutClass;
 	$finObj = new subSubCategory;
 	$finObj->self_id = $_GET['id'];

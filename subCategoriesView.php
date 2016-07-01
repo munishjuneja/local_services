@@ -1,12 +1,21 @@
 <?php 
 	include_once 'classes/subCategoriesClass.php';
 
+	/*user session handling */
+	session_start();
+    if(!isset($_SESSION['user'])) {
+      header("Location:index.php?error=You need to login first.");
+    }
+
+    /*user session handling end*/
+
  ?>
 
 <!DOCTYPE html>
 <html>
 <head>
 	<title>subCategories</title>
+	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
 	<link href="css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/subCategories.css">
 </head>
@@ -30,7 +39,7 @@
 										    		$res=$listObj->allSubCategories();
 													while($result = mysqli_fetch_array($res)){
 										    	 ?>
-										    	 <li class="list-group-item"><a href="subChildCategoriesView.php?id=<?php echo $result['id'];?>" class="list-group-item"><span ><img src="images/fr.png" style="height: 25px; width: 25px;"></span><?php 
+										    	<li class="list-group-item"><a href="subChildCategoriesView.php?id=<?php echo $result['id'];?>" class="list-group-item"><span ><img src="images/fr.png" style="height: 25px; width: 25px;"></span><?php 
 										    	 		
 										    	 		echo $result['sub_category_name'];
 
@@ -38,7 +47,7 @@
 										    	  <?php
 										    	  	}
 										    	  ?>
-										      </li>
+										      	</li>
 										   	</ul>
 										</div>
 										
