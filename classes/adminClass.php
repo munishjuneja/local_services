@@ -15,6 +15,22 @@
 			return $rows;
 		}
 
+		function getServices(){
+			$rows = mysqli_query($this->con,"
+				select login.name,services.name,sub_categories.sub_category_name,
+				sub_child_categories.sub_child_category_name,user_services.service_address,
+				professionals.contact,professionals.name,
+				user_services.status
+				 from login,services,professionals,sub_categories,sub_child_categories,
+				 user_services where user_services.user_id = login.id
+				  and user_services.sub_id = sub_categories.id 
+				 and user_services.main_id = services.id and
+				 user_services.sub_child_id = sub_child_categories.id and
+				 professionals.service_id = user_services.sub_child_id");
+			return $rows;
+
+		}
+
 		function userServices(){
 			$query = mysqli_query($this->con,"SELECT user_id from user_services");
 			return $query;
