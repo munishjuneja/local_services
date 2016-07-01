@@ -21,6 +21,7 @@
 </head>
 <body style=" background-image: url(images/bg.jpg);
 		background-size: cover;">
+		<?php $url = $_SERVER['HTTP_REFERER'] ?>
 		<?php  include_once 'navbar.php'  ?><!-- nav bar for intermediate pages -->
 		<div class = "containerfluid" >
 				<div class="container">

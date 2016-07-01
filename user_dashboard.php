@@ -1,6 +1,6 @@
 <?php 
 	include_once 'classes/subSubCategoryClass.php';
-	include_once 'config_admin.php';
+	session_start();
 	/*user session handling */
 	if(!isset($_SESSION['user'])) {
 		header("Location:index.php?error=You need to login first.");
@@ -53,9 +53,9 @@
 			                                           while($data=mysqli_fetch_array($rslt)){
 
 			                                                $obj = new AdminPanel;
-			                                                $obj->user_id=$data['user_id'];
+			                                                $obj->user_id=$_SESSION['user_id'];
 			                                                $result=$obj->viewServices();
-			    
+			    											print_r($result);
 			                                                    while ($res=mysqli_fetch_array($result)) {
 			                                                        $i++;
 			                                         
