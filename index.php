@@ -241,7 +241,7 @@ body.openmenu {
 #hamburgermenu {
   height: 100%;
   width: 0;
-  background:black;
+  background:#3F51B5;
   position: fixed;
   top: 0;
   left: 0;
@@ -480,7 +480,10 @@ body.openmenu {
 
 	<div id="sticky-anchor"></div>
     <div id="sticky">
-            <div style="margin-top:-14px;" class="col-xs-6 col-xs-6 col-xs-offset-3">
+            <div class="col-xs-3 " >
+            	<img src="favicon1.ico" style="height:40px; padding-bottom:1%;">&nbsp<b style="font-size:20px;">TOWN SEWA</b>
+            </div>
+            <div style="margin-top:-14px;" class="col-xs-6 col-xs-6 col-xs-offset-right-3">
                 <form class="navbar-form "  role="search">
                     <div class="input-group col-md-12">
                         <input type="text" class="form-control"  style=" padding:0;
@@ -587,13 +590,13 @@ body.openmenu {
 							<div class="item active">
 								<img class="offer-images" src="images/slide1.jpg" alt="Auto" height="100px" width="1200px" />
 								<div class="carousel-caption">
-									<h3> Images </h3>
+									<h3> </h3>
 								</div>
 							</div>
 							<div class="item ">
 								<img class="offer-images" src="images/slide2.jpg" alt="Auto" height="100px" width="1200px" />
 								<div class="carousel-caption">
-									<h3> imagination </h3>
+									<h3> </h3>
 								</div>
 							</div>
 						</div>
@@ -645,7 +648,7 @@ body.openmenu {
 		                        <div class="caption" >  
 		                           <div class="caption-content">
 
-		                                <b style="background-color:#333;"> <?php echo $result['name']; ?></b>
+		                                <b > <?php echo $result['name']; ?></b>
 		                           </div>
 		                        </div>
 		                       	<img src="<?php echo $result['imageurl'];?>" class="img-responsive" alt="">
@@ -666,7 +669,7 @@ body.openmenu {
 	        <div class="container">
 	            <div class="row">
 	                <div class="col-lg-12 text-center">
-	                    <h2>About</h2>
+	                    <h2>About US</h2>
 	                    
 	                </div>
 	            </div>

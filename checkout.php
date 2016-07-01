@@ -14,20 +14,20 @@
 
 	$obj    = new CheckoutClass;
 	$finObj = new subSubCategory;
-	$finObj->self_id = $_GET['id'];
+	$finObj->self_id = $_GET['sub_child_id'];
 	$res    =$finObj->geteverything();
 
 
 	
 
-	while($result = mysqli_fetch_array($res)){
-		echo $result['name'].">";
-		echo $result['sub_category_name'].">";
-		echo $result['sub_child_category_name'];
-	}
+	// while($result = mysqli_fetch_array($res)){
+	// 	echo $result['name'].">";
+	// 	echo $result['sub_category_name'].">";
+	// 	echo $result['sub_child_category_name'];
+	// }
 
 	$obj->user_id 		= 	$_SESSION['user_id'];
-	$obj->service_id 	= 	$_GET['id'];
+	$obj->service_id 	= 	$_GET['sub_child_id'];
 	$obj->service_status = 	0;/* value = 0 for new pending service 
 						   * value = 1 for complete service
 						   */
@@ -65,7 +65,7 @@
 	</head>
 	<body style=" background-image: url(images/bg.jpg);
 			background-size: cover;">
-
+		<?php  include_once 'navbar.php'  ?><!-- nav bar for intermediate pages -->
 		<div class = "containerfluid" >
 			<div class="container" >
 				<div class = "row">

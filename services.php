@@ -91,7 +91,7 @@
                                                                
                                                             </button>
                                                          </a>
-                                                            <span><button id="delete" class="btn btn-sm btn-danger">Delete</button></span>
+                                                            
                                                         </td>
                                                         
                                                     </tr>

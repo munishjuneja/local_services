@@ -1,15 +1,23 @@
 <?php 
     include_once 'config_admin.php';
-    include 'header.php';
-    include 'sidebar.php';
-    include 'classes/servicesClass.php';
+    include_once 'header.php';
+    include_once 'sidebar.php';
+    include_once 'classes/servicesClass.php';
+    include_once 'classes/subCategoriesClass.php';
+    $obj = new subCategory;
     if (isset($_POST['submit'])){
             $subObj = new Service;
             $subObj->service_id =$_POST['sid'];
             $subObj->sub_category_name=$_POST['sub_category_name'];
+            $subObj->sub_category_description=$_POST['sub_category_description'];
             $subObj->addSubCategory();
        }
-    
+    if (isset($_POST['delete'])) {
+        $obj->id = $_POST['delinput'];
+        $obj->deleteSubCategory();
+
+    }
+
 ?>
 
 
@@ -26,7 +34,12 @@
                          <div class="panel-body">
                                 <div class="row">
                                      <div class="col-lg-6">
-
+                                          <?php if (isset($_SESSION['msg'])): ?>
+                                            <div class="alert alert-success">
+                                                <?php echo $_SESSION['msg']; ?>
+                                                <?php unset($_SESSION['msg']);?>
+                                            </div>
+                                        <?php endif ?>
                                            
                                              <div class="form-group">
                                                     <label class="control-label" for="inputSuccess">Category Name</label>
@@ -61,6 +74,13 @@
                                                     <div class="form-group has-info">
                                                         <label class="control-label" for="inputSuccess">Sub Category Name</label>
                                                         <input type="text" class="form-control" id="inputSuccess" name="sub_category_name">
+
+                                                        <input id="sinput" type="hidden" name="sid">
+                                                        
+                                                    </div>
+                                                    <div class="form-group has-info">
+                                                        <label class="control-label" for="inputSuccess">Sub Category Description</label>
+                                                        <input type="text" class="form-control" id="inputSuccess" name="sub_category_description">
 
                                                         <input id="sinput" type="hidden" name="sid">
                                                         
@@ -100,7 +120,7 @@
                                                            $cname=$out['id'];
                                                           ?></td>
                                                         <td>
-                                                        <a style="color:white;" href="editCategory.php?id=<?php echo $cname;?>">
+                                                        <a style="color:white;" href="editSubCategory.php?id=<?php echo $cname;?>">
                                                             <button id="edit" class="btn btn-sm btn-info">
                                                                     Edit
                                                                     <?php
@@ -110,7 +130,7 @@
                                                                
                                                             </button>
                                                          </a>
-                                                            <span><button id="delete" class="btn btn-sm btn-danger">Delete</button></span>
+                                                            
                                                         </td>
                                                         
                                                     </tr>
