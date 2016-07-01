@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jun 30, 2016 at 06:22 PM
+-- Generation Time: Jul 01, 2016 at 01:29 PM
 -- Server version: 5.7.12-0ubuntu1.1
 -- PHP Version: 7.0.4-7ubuntu2.1
 
@@ -95,65 +95,66 @@ CREATE TABLE `sub_categories` (
   `id` int(11) NOT NULL,
   `service_id` int(11) NOT NULL,
   `sub_category_name` varchar(100) NOT NULL,
-  `sub_category_description` text NOT NULL
+  `description` text NOT NULL,
+  `imgurl` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `sub_categories`
 --
 
-INSERT INTO `sub_categories` (`id`, `service_id`, `sub_category_name`, `sub_category_description`) VALUES
-(15, 13, 'AC INSTALLATION', 'MY DESCRIPTION'),
-(16, 13, 'AC UNINSTALLATION', ''),
-(17, 13, 'AC SERVICING', ''),
-(18, 13, 'WASHING MACHINE REPAIRING', ''),
-(19, 13, 'OVEN REPAIR', ''),
-(20, 13, 'FRIDGE REPAIRING', ''),
-(21, 13, 'FRIDGE GAS CHARGING', ''),
-(22, 14, 'first sub category', ''),
-(23, 14, 'second sub category', ''),
-(24, 14, 'General Carpentry', ''),
-(25, 14, 'FURNITURE  REPAIR', ''),
-(26, 14, 'DOOR OR  WINDOW REPAIR', ''),
-(27, 14, 'CURTAIN ROLL FIXTURE', ''),
-(28, 14, 'LOCK REPAIR', ''),
-(29, 15, 'EXPRESS CLEANING', ''),
-(30, 15, 'DEEP HOME CLEANING', ''),
-(31, 15, 'SOFA SHAMPOOING', ''),
-(32, 15, 'BATHROOM CLEANING ', ''),
-(33, 15, 'KITCHEN CLEANING', ''),
-(34, 15, 'CLEANING INSPECTION', ''),
-(35, 16, 'COMPUTER REPAIR & SERVICES  DELL', ''),
-(36, 16, 'COMPUTER REPAIR & SERVICES  HCL', ''),
-(37, 16, 'COMPUTER REPAIR & SERVICES ACER', ''),
-(38, 16, 'COMPUTER REPAIR & SERVICES SONY', ''),
-(39, 16, 'COMPUTER REPAIR & SERVICES ASUS', ''),
-(40, 16, 'COMPUTER REPAIR & SERVICES INTEL', ''),
-(41, 16, 'COMPUTER REPAIR & SERVICES VAIO', ''),
-(42, 16, 'COMPUTER REPAIR & SERVICES MAC', ''),
-(43, 17, 'LIGHTS & FITTINGS', ''),
-(44, 17, 'FANS', ''),
-(45, 17, 'PLUG AND SWITCH', ''),
-(46, 17, 'TV AND ENTERTAINMENT', ''),
-(47, 17, '', ''),
-(48, 17, 'UPS', ''),
-(49, 17, 'GENERAL ELECTRICAL SERVICES', ''),
-(50, 18, 'WASH AND FOLD', ''),
-(51, 18, 'WASH AND IRON', ''),
-(52, 18, 'PREMIUM LAUNDRY', ''),
-(53, 18, 'DRY CLEAN', ''),
-(54, 19, 'INTERIOR FRESH PAINTING', ''),
-(55, 19, 'INTERIOR RE-PAINTING', ''),
-(56, 19, 'EXTERIOR FRESH-PAINTING', ''),
-(57, 19, 'EXTERIOR RE-PAINTING', ''),
-(58, 19, 'WOOD POLISHING', ''),
-(59, 20, 'LEAKS AND BLOCKS', ''),
-(60, 20, 'TAPS AND SHOWERS', ''),
-(61, 20, 'TOILET FITTINGS', ''),
-(62, 20, 'ACCESSORIES', ''),
-(63, 20, 'GENERAL PLUMBING SERVICES', ''),
-(64, 15, 'MOVE ', ''),
-(65, 15, 'MOVE IN CLEANING', '');
+INSERT INTO `sub_categories` (`id`, `service_id`, `sub_category_name`, `description`, `imgurl`) VALUES
+(15, 13, 'AC INSTALLATION', 'AC INSTALLATION', ''),
+(16, 13, 'AC UNINSTALLATION', '', ''),
+(17, 13, 'AC SERVICING', '', ''),
+(18, 13, 'WASHING MACHINE REPAIRING', '', ''),
+(19, 13, 'OVEN REPAIR', '', ''),
+(20, 13, 'FRIDGE REPAIRING', '', ''),
+(21, 13, 'FRIDGE GAS CHARGING', '', ''),
+(22, 14, 'first sub category', '', ''),
+(23, 14, 'second sub category', '', ''),
+(24, 14, 'General Carpentry', '', ''),
+(25, 14, 'FURNITURE  REPAIR', '', ''),
+(26, 14, 'DOOR OR  WINDOW REPAIR', '', ''),
+(27, 14, 'CURTAIN ROLL FIXTURE', '', ''),
+(28, 14, 'LOCK REPAIR', '', ''),
+(29, 15, 'EXPRESS CLEANING', '', ''),
+(30, 15, 'DEEP HOME CLEANING', '', ''),
+(31, 15, 'SOFA SHAMPOOING', '', ''),
+(32, 15, 'BATHROOM CLEANING ', '', ''),
+(33, 15, 'KITCHEN CLEANING', '', ''),
+(34, 15, 'CLEANING INSPECTION', '', ''),
+(35, 16, 'COMPUTER REPAIR & SERVICES  DELL', '', ''),
+(36, 16, 'COMPUTER REPAIR & SERVICES  HCL', '', ''),
+(37, 16, 'COMPUTER REPAIR & SERVICES ACER', '', ''),
+(38, 16, 'COMPUTER REPAIR & SERVICES SONY', '', ''),
+(39, 16, 'COMPUTER REPAIR & SERVICES ASUS', '', ''),
+(40, 16, 'COMPUTER REPAIR & SERVICES INTEL', '', ''),
+(41, 16, 'COMPUTER REPAIR & SERVICES VAIO', '', ''),
+(42, 16, 'COMPUTER REPAIR & SERVICES MAC', '', ''),
+(43, 17, 'LIGHTS & FITTINGS', '', ''),
+(44, 17, 'FANS', '', ''),
+(45, 17, 'PLUG AND SWITCH', '', ''),
+(46, 17, 'TV AND ENTERTAINMENT', '', ''),
+(47, 17, '', '', ''),
+(48, 17, 'UPS', '', ''),
+(49, 17, 'GENERAL ELECTRICAL SERVICES', '', ''),
+(50, 18, 'WASH AND FOLD', '', ''),
+(51, 18, 'WASH AND IRON', '', ''),
+(52, 18, 'PREMIUM LAUNDRY', '', ''),
+(53, 18, 'DRY CLEAN', '', ''),
+(54, 19, 'INTERIOR FRESH PAINTING', '', ''),
+(55, 19, 'INTERIOR RE-PAINTING', '', ''),
+(56, 19, 'EXTERIOR FRESH-PAINTING', '', ''),
+(57, 19, 'EXTERIOR RE-PAINTING', '', ''),
+(58, 19, 'WOOD POLISHING', '', ''),
+(59, 20, 'LEAKS AND BLOCKS', '', ''),
+(60, 20, 'TAPS AND SHOWERS', '', ''),
+(61, 20, 'TOILET FITTINGS', '', ''),
+(62, 20, 'ACCESSORIES', '', ''),
+(63, 20, 'GENERAL PLUMBING SERVICES', '', ''),
+(64, 15, 'MOVE ', '', ''),
+(65, 15, 'MOVE IN CLEANING', '', '');
 
 -- --------------------------------------------------------
 
@@ -258,17 +259,22 @@ INSERT INTO `testtable` (`id`, `val`) VALUES
 CREATE TABLE `user_services` (
   `id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL,
-  `service_id` int(11) DEFAULT NULL,
-  `status` int(11) DEFAULT NULL,
-  `service_address` text NOT NULL
+  `sub_child_id` int(11) DEFAULT NULL,
+  `status` int(11) DEFAULT '0',
+  `service_address` text NOT NULL,
+  `sub_id` int(11) DEFAULT NULL,
+  `main_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `user_services`
 --
 
-INSERT INTO `user_services` (`id`, `user_id`, `service_id`, `status`, `service_address`) VALUES
-(1, 2, 2, 0, '1234 qwert asdfg 12345');
+INSERT INTO `user_services` (`id`, `user_id`, `sub_child_id`, `status`, `service_address`, `sub_id`, `main_id`) VALUES
+(1, 2, 2, 0, '1234 qwert asdfg 12345', NULL, NULL),
+(2, 2, 1, NULL, '', 15, 13),
+(3, 2, 1, NULL, 'address', 15, 13),
+(4, 2, 1, 0, 'address', 15, 13);
 
 --
 -- Indexes for dumped tables
@@ -345,7 +351,7 @@ ALTER TABLE `sub_child_categories`
 -- AUTO_INCREMENT for table `user_services`
 --
 ALTER TABLE `user_services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- Constraints for dumped tables
 --
@@ -354,13 +360,13 @@ ALTER TABLE `user_services`
 -- Constraints for table `sub_categories`
 --
 ALTER TABLE `sub_categories`
-  ADD CONSTRAINT `sub_categories_ibfk_1` FOREIGN KEY (`service_id`) REFERENCES `services` (`id`);
+  ADD CONSTRAINT `sub_categories_ibfk_1` FOREIGN KEY (`service_id`) REFERENCES `services` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `sub_child_categories`
 --
 ALTER TABLE `sub_child_categories`
-  ADD CONSTRAINT `sub_child_categories_ibfk_1` FOREIGN KEY (`sub_category_id`) REFERENCES `sub_categories` (`id`);
+  ADD CONSTRAINT `sub_child_categories_ibfk_1` FOREIGN KEY (`sub_category_id`) REFERENCES `sub_categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
