@@ -62,7 +62,7 @@
 			                                         
 			                                                         ?>
 
-			                                                            <tr class="success">
+			                                                            <tr >
 			                                                                <td><?php echo $i; ?></td>
 			                                                                <td><?php echo $res['user_name']; ?></td>
 			                                                                <td><?php echo $res['name'];?></td>
