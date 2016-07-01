@@ -481,7 +481,7 @@ body.openmenu {
 	<div id="sticky-anchor"></div>
     <div id="sticky">
             <div class="col-xs-3 " >
-            	<img src="favicon1.ico" style="height:40px; padding-bottom:1%;">&nbsp<b style="font-size:20px;">TOWN SEWA</b>
+            	<img src="favicon.ico" style="height:40px; padding-bottom:1%;">&nbsp<b style="font-size:20px;">TOWN SEWA</b>
             </div>
             <div style="margin-top:-14px;" class="col-xs-6 col-xs-6 col-xs-offset-right-3">
                 <form class="navbar-form "  role="search">

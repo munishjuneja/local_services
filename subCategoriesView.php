@@ -40,12 +40,8 @@
 										    		$res=$listObj->allSubCategories();
 													while($result = mysqli_fetch_array($res)){
 										    	 ?>
-<<<<<<< HEAD
-										    	<li class="list-group-item"><a href="subChildCategoriesView.php?id=<?php echo $result['id'];?>" class="list-group-item"><span ><img src="images/fr.png" style="height: 25px; width: 25px;"></span><?php 
-/*=======
-										    	 <li class="list-group-item"><a href="subChildCategoriesView.php?id=<?php echo $result['id'];?>&service_id=<?php echo $_GET['id'];?>" class="list-group-item"><span ><img src="images/fr.png" style="height: 25px; width: 25px;"></span><?php 
->>>>>>> 7d706a67362ed8bd416c09c716d97eecdb7e4c4e
-										    	 */		
+
+										    	 <li class="list-group-item"><a href="subChildCategoriesView.php?id=<?php echo $result['id'];?>&service_id=<?php echo $_GET['id'];?>" class="list-group-item"><span ><img src="images/fr.png" style="height: 25px; width: 25px;"></span><?php 	
 										    	 		echo $result['sub_category_name'];
 
 										    	  ?></a>
