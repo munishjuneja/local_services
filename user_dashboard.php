@@ -1,14 +1,18 @@
 <?php 
 	include_once 'classes/subSubCategoryClass.php';
-
+	include_once 'config_admin.php';
 	/*user session handling */
-	session_start();
 	if(!isset($_SESSION['user'])) {
 		header("Location:index.php?error=You need to login first.");
 	}
 
 	/*user session handling end*/
-
+    include_once 'classes/adminClass.php';
+     
+    $getusers = new AdminPanel;
+    $rslt=$getusers->userServices();
+ 
+                            
  ?>
 
 <!DOCTYPE html>
@@ -26,17 +30,59 @@
 				<div class="container">
 						<div class = "row">
 								<div class = "col-lg-12" >
-									<div class = "col-lg-8 col-lg-offset-2">
-										<div id="list4">
-										   	<ul class="list-group">
-												<li class="list-group-item list-group-item-success">Dapibus ac facilisis in</li>
-												<li class="list-group-item list-group-item">Cras sit amet nibh libero</li>
-												<li class="list-group-item list-group-item">Porta ac consectetur ac</li>
-												<li class="list-group-item list-group-item">Vestibulum at eros</li>
-											</ul>
-										</div>
-										
-									</div>
+									<div class="panel">
+									<div class="panel-body">
+			                            <div class="table-responsive">
+			                                <table class="table .table-striped">
+			                                    <thead class="thead-inverse">
+			                                        <tr>
+			                                            <th>#</th>
+			                                            <th>User Name</th>
+			                                            <th>Service</th>
+			                                            <th>Sub Service</th>
+			                                            <th>Sub Child Service</th>
+			                                            <th>Address</th>
+			                                            <th>Professionals</th>
+			                                            <th>Status</th>
+			                                        </tr>
+			                                    </thead>
+			                                    <tbody>
+			                                    <?php 
+
+			                                        $i=0;
+			                                           while($data=mysqli_fetch_array($rslt)){
+
+			                                                $obj = new AdminPanel;
+			                                                $obj->user_id=$data['user_id'];
+			                                                $result=$obj->viewServices();
+			    
+			                                                    while ($res=mysqli_fetch_array($result)) {
+			                                                        $i++;
+			                                         
+			                                                         ?>
+
+			                                                            <tr class="success">
+			                                                                <td><?php echo $i; ?></td>
+			                                                                <td><?php echo $res['user_name']; ?></td>
+			                                                                <td><?php echo $res['name'];?></td>
+			                                                                <td><?php echo $res['sub_category_name']; ?></td>
+			                                                                <td><?php echo $res['sub_child_category_name']; ?></td>
+			                                                                <td><?php echo $res['service_address']; ?></td>
+			                                                                <td>professional</td>
+			                                                                <td><?php echo $res['status']; ?></td>
+
+			                                                            </tr>
+			                                                    <?php 
+			                                                        }
+			                                            }
+			                                ?>
+			                                    </tbody>
+			                                </table>
+			                            </div>
+			                            <!-- /.table-responsive -->
+			                        </div>
+			                        <!-- /.panel-body -->
+			                        </div><!-- panel class end -->
 										
 								</div>
 						</div>				
