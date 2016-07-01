@@ -16,6 +16,12 @@
 
 			}
 
+			public function getUser(){
+
+				$query = mysqli_query($this->con, "SELECT * from login where email='$this->email' and password='$this->password'");
+				return $query;
+			}
+
 			public function addUser(){
 				
 				$query = mysqli_query($this->con,"INSERT INTO login(`contact`,`name`,`email`,`password`,`address`) values('$this->contact','$this->name','$this->email','$this->password','$this->address')");

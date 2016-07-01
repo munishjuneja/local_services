@@ -10,22 +10,9 @@
 	$res    =$finObj->geteverything();
 
 
-	
-
-	// while($result = mysqli_fetch_array($res)){
-	// 	echo $result['name'].">";
-	// 	echo $result['sub_category_name'].">";
-	// 	echo $result['sub_child_category_name'];
-	// }
-
 	$obj->user_id 		= 	$_SESSION['user_id'];
 	$obj->service_id 	= 	$_GET['sub_child_id'];
-	$obj->service_status = 	0;/* value = 0 for new pending service 
-						   * value = 1 for complete service
-						   */
-	/*echo $obj->user_id;
-	echo $obj->service_id;
-	echo $obj->service_status;*/
+	$obj->service_status = 	0;
 	$service_address = "";
 	if(isset($_POST['go'])) {
 		$service_address 	   = (string)$_POST['house'];
