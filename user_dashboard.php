@@ -56,7 +56,6 @@
 			                                                $obj = new AdminPanel;
 			                                                $obj->user_id=$_SESSION['user_id'];
 			                                                $result=$obj->viewServices();
-			    											print_r($result);
 			                                                    while ($res=mysqli_fetch_array($result)) {
 			                                                        $i++;
 			                                         
