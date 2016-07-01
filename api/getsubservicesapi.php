@@ -13,6 +13,7 @@
 			$intermediatearray['id']=$resultintoarray['id'];
 			// $intermediatearray['service_id']=$resultintoarray['service_id'];
 			$intermediatearray['sub_category_name']=$resultintoarray['sub_category_name'];
+			
 			$storearr[$i]=$intermediatearray;
 						$i++;
 

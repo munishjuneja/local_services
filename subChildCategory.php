@@ -1,4 +1,4 @@
-<?php 
+  <?php 
     include_once 'config_admin.php';
     include 'header.php';
     include 'sidebar.php';
