@@ -1,6 +1,6 @@
 <?php 
 	include_once 'classes/subSubCategoryClass.php';
-	include_once 'config_admin.php';
+	session_start();
 	/*user session handling */
 	if(!isset($_SESSION['user'])) {
 		header("Location:index.php?error=You need to login first.");
@@ -33,7 +33,7 @@
 									<div class="panel">
 									<div class="panel-body">
 			                            <div class="table-responsive">
-			                                <table class="table .table-striped">
+			                                <table class="table table-hover table-striped">
 			                                    <thead class="thead-inverse">
 			                                        <tr>
 			                                            <th>#</th>
@@ -45,6 +45,7 @@
 			                                            <th>Professionals</th>
 			                                            <th>Status</th>
 			                                        </tr>
+
 			                                    </thead>
 			                                    <tbody>
 			                                    <?php 
@@ -53,15 +54,14 @@
 			                                           while($data=mysqli_fetch_array($rslt)){
 
 			                                                $obj = new AdminPanel;
-			                                                $obj->user_id=$data['user_id'];
+			                                                $obj->user_id=$_SESSION['user_id'];
 			                                                $result=$obj->viewServices();
-			    
 			                                                    while ($res=mysqli_fetch_array($result)) {
 			                                                        $i++;
 			                                         
 			                                                         ?>
 
-			                                                            <tr class="success">
+			                                                            <tr >
 			                                                                <td><?php echo $i; ?></td>
 			                                                                <td><?php echo $res['user_name']; ?></td>
 			                                                                <td><?php echo $res['name'];?></td>
@@ -76,6 +76,36 @@
 			                                                        }
 			                                            }
 			                                ?>
+			                                	<tr >
+			                                		<td>1</td>
+			                                		<td>skipper</td>
+			                                		<td>AC</td>
+			                                		<td>AC 1</td>
+			                                		<td>AC 2</td>
+			                                		<td>D-104</td>
+			                                		<td>123456789</td>
+			                                		<td>1</td>
+			                                	</tr>
+			                                	<tr >
+			                                		<td>1</td>
+			                                		<td>skipper</td>
+			                                		<td>AC</td>
+			                                		<td>AC 1</td>
+			                                		<td>AC 2</td>
+			                                		<td>D-104</td>
+			                                		<td>123456789</td>
+			                                		<td>1</td>
+			                                	</tr>
+			                                	<tr >
+			                                		<td>1</td>
+			                                		<td>skipper</td>
+			                                		<td>AC</td>
+			                                		<td>AC 1</td>
+			                                		<td>AC 2</td>
+			                                		<td>D-104</td>
+			                                		<td>123456789</td>
+			                                		<td>1</td>
+			                                	</tr>
 			                                    </tbody>
 			                                </table>
 			                            </div>
