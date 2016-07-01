@@ -11,8 +11,6 @@
 		$obj->addUserServices();
 		$arr['message']="Success";
 		echo json_encode($arr);
-
-
 	}
 
  ?>
