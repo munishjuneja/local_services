@@ -4,6 +4,14 @@
 	include_once 'classes/userClass.php';
 	include_once 'classes/checkoutClass.php';
 	
+	/*user session handling */
+	/*session_start();*/
+	if(!isset($_SESSION['user'])) {
+		header("Location:index.php?error=You need to login first.");
+	}
+
+	/*user session handling end*/
+
 	$obj    = new CheckoutClass;
 	$finObj = new subSubCategory;
 	$finObj->self_id = $_GET['sub_child_id'];
@@ -41,6 +49,8 @@
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 	    <link rel="stylesheet" type="text/css" href="css/subCategories.css">
 
+	    
+
 	</head>
 	<body style=" background-image: url(images/bg.jpg);
 			background-size: cover;">
@@ -74,7 +84,7 @@
 											 		</div>
 											 		<div class="form-group input-group">
 											 			<span class="input-group-addon" style="min-width:110px;">Chandigarh</span>
-											 			<input type="number" name ="pin_code"  class="form-control" placeholder="Pincode" required>
+											 			<input type="text" id="pin_code" name ="pin_code"  class="form-control" placeholder="Pincode"  pattern="^[0-9]{6}$" required>
 											 		</div>
 											 		
 											 		<button class="btn  btn-block col-lg-12 btn-success" name="go">Submit</button>
@@ -91,4 +101,17 @@
 			</div>
 		</div>
 	</body>
+	<script>
+	    	
+	    	var pin = document.getElementById("pin_code");
+
+			pin.addEventListener("keyup", function (event) {
+			  if (pin.validity.patternMismatch) {
+			    pin.setCustomValidity("Please enter six digit pin only.");
+			  } else {
+			    pin.setCustomValidity("");
+			  }
+			});
+
+	    </script>
 </html>
