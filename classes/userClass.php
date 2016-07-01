@@ -29,6 +29,7 @@
 				{
 					$_SESSION['admin'] = $this->name;
 					$_SESSION['admin_id'] = $this->id;
+					$_SESSION['user_id'] = $this->id;
 					$_SESSION['email'] = $this->email;
 					$_SESSION['user'] = $this->email;
 					$_SESSION['user_name'] = $this->name;
