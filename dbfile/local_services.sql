@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 01, 2016 at 01:29 PM
+-- Generation Time: Jul 01, 2016 at 01:58 PM
 -- Server version: 5.7.12-0ubuntu1.1
 -- PHP Version: 7.0.4-7ubuntu2.1
 
@@ -79,11 +79,11 @@ INSERT INTO `services` (`id`, `name`, `description`, `imageurl`) VALUES
 (13, 'APPLIANCES', '', 'img/icons/Appliance.png'),
 (14, 'CARPENTRY', '', 'img/icons/Carpentry.jpeg'),
 (15, 'CLEANING', '', 'img/icons/Cleaning.jpg'),
-(16, 'COMPUTER REPAIRING', '', 'img/icons/Computerrepairing.png'),
+(16, 'COMPUTER REPAIRING', '', 'img/icons/comprep.png'),
 (17, 'ELECTRICAL', '', 'img/icons/Electrical.png'),
-(18, 'LAUNDRY', '', 'img/icons/laundry.png'),
+(18, 'LAUNDRY', '', 'img/icons/laundry.jpg'),
 (19, 'PAINTING', '', 'img/icons/Painting.png'),
-(20, 'PLUMBING', '', 'img/icons/Plumbing.jpeg');
+(20, 'PLUMBING', '', 'img/icons/plumbing.jpg');
 
 -- --------------------------------------------------------
 

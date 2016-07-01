@@ -11,6 +11,7 @@
 	</div>
 	
     <ul class="nav navbar-nav navbar-right">
+      <li><a href="user_dashboard.php"><span class="glyphicon glyphicon-time"></span> Dashboard</a></li>
       <li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
       <li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
     </ul>
