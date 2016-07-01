@@ -27,6 +27,19 @@
 			$obj->msg = "*password does not match";
 		}
 	}
+
+	/*section to handel login session */
+	$err_msg = "";
+		if(isset($_GET['error'])) {
+			$err_msg = $_GET['error'];
+		}
+
+	if(isset($_SESSION['user'])) {
+		$err_msg = "";
+	}
+
+	/*section to handel login session end */
+
 ?>
 
 <!DOCTYPE html>
@@ -467,7 +480,10 @@ body.openmenu {
 
 	<div id="sticky-anchor"></div>
     <div id="sticky">
-            <div style="margin-top:-14px;" class="col-xs-6 col-xs-6 col-xs-offset-3">
+            <div class="col-xs-3 " >
+            	<img src="favicon1.ico" style="height:40px; padding-bottom:1%;">&nbsp<b style="font-size:20px;">TOWN SEWA</b>
+            </div>
+            <div style="margin-top:-14px;" class="col-xs-6 col-xs-6 col-xs-offset-right-3">
                 <form class="navbar-form "  role="search">
                     <div class="input-group col-md-12">
                         <input type="text" class="form-control"  style=" padding:0;
@@ -506,6 +522,17 @@ body.openmenu {
 		<div style="margin-top:20px;">
 			<div class='alert alert-info'>
 		  				<strong><?php echo $msg ?></strong>
+			</div>
+		</div>
+
+<?php
+	}
+?>
+
+<?php if ($err_msg!=""){ ?>
+		<div style="margin-top:0px;">
+			<div class='alert alert-warning' style="text-align:center;">
+		  				<strong><?php echo "*".$err_msg ?></strong>
 			</div>
 		</div>
 
@@ -621,7 +648,7 @@ body.openmenu {
 		                        <div class="caption" >  
 		                           <div class="caption-content">
 
-		                                <b style="background-color:#333;"> <?php echo $result['name']; ?></b>
+		                                <b > <?php echo $result['name']; ?></b>
 		                           </div>
 		                        </div>
 		                       	<img src="<?php echo $result['imageurl'];?>" class="img-responsive" alt="">
@@ -642,7 +669,7 @@ body.openmenu {
 	        <div class="container">
 	            <div class="row">
 	                <div class="col-lg-12 text-center">
-	                    <h2>About</h2>
+	                    <h2>About US</h2>
 	                    
 	                </div>
 	            </div>

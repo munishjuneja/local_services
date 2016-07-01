@@ -4,6 +4,7 @@
     include_once 'sidebar.php';
     include_once 'classes/servicesClass.php';
     include_once 'classes/subCategoriesClass.php';
+    $obj = new subCategory;
     if (isset($_POST['submit'])){
             $subObj = new Service;
             $subObj->service_id =$_POST['sid'];
@@ -12,9 +13,7 @@
             $subObj->addSubCategory();
        }
     if (isset($_POST['delete'])) {
-        $id = $_POST['delinput'];
-        $obj = new subCategory;
-        $obj->id = $id;
+        $obj->id = $_POST['delinput'];
         $obj->deleteSubCategory();
 
     }
@@ -131,13 +130,7 @@
                                                                
                                                             </button>
                                                          </a>
-                                                            <span>
-                                                              <form method="post" action="">
-                                                                <input type="hidden" value="<php echo $out['id'];>" name="delinput">
-                                                                <button id="delete" class="btn btn-sm btn-danger" name="delete">Delete</button>
-                                                              </form>
-
-                                                            </span>
+                                                            
                                                         </td>
                                                         
                                                     </tr>

@@ -1,4 +1,4 @@
-<?php $url =  $_SERVER['HTTP_REFERER']; ?><!-- gives url of previous page -->
+<!-- gives url of previous page -->
 
 
 <nav class="navbar navbar-default">

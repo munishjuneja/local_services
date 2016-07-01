@@ -4,22 +4,30 @@
 	include_once 'classes/userClass.php';
 	include_once 'classes/checkoutClass.php';
 	
+	/*user session handling */
+	/*session_start();*/
+	if(!isset($_SESSION['user'])) {
+		header("Location:index.php?error=You need to login first.");
+	}
+
+	/*user session handling end*/
+
 	$obj    = new CheckoutClass;
 	$finObj = new subSubCategory;
-	$finObj->self_id = $_GET['id'];
+	$finObj->self_id = $_GET['sub_child_id'];
 	$res    =$finObj->geteverything();
 
 
 	
 
-	while($result = mysqli_fetch_array($res)){
-		echo $result['name'].">";
-		echo $result['sub_category_name'].">";
-		echo $result['sub_child_category_name'];
-	}
+	// while($result = mysqli_fetch_array($res)){
+	// 	echo $result['name'].">";
+	// 	echo $result['sub_category_name'].">";
+	// 	echo $result['sub_child_category_name'];
+	// }
 
 	$obj->user_id 		= 	$_SESSION['user_id'];
-	$obj->service_id 	= 	$_GET['id'];
+	$obj->service_id 	= 	$_GET['sub_child_id'];
 	$obj->service_status = 	0;/* value = 0 for new pending service 
 						   * value = 1 for complete service
 						   */

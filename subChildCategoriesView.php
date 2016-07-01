@@ -1,6 +1,14 @@
 <?php 
 	include_once 'classes/subSubCategoryClass.php';
 
+	/*user session handling */
+	session_start();
+	if(!isset($_SESSION['user'])) {
+		header("Location:index.php?error=You need to login first.");
+	}
+
+	/*user session handling end*/
+
  ?>
 
 <!DOCTYPE html>
@@ -24,7 +32,8 @@
 										<div id="list4">
 										   	<ul class="list-group">
 
-										     <li  class="list-group-item" style="font-size:20px;"><span><a href="<?php echo $url;?>"><img src="images/back1.jpeg" style="height: 25px; width: 25px;"></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSelect from the listed items</span></li>
+										     <li  class="list-group-item" style="font-size:20px;"><span>
+										     <a href="<?php echo $url;?>"><img src="images/back1.jpeg" style="height: 25px; width: 25px;"></a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSelect from the listed items</span></li>
 										    	<?php 
 										    		$listObj = new subSubCategory;
 										    		$listObj->id=$_GET['id'];
@@ -35,7 +44,7 @@
 										    	 		
 										    	 	?>
 
-										    	 <li class="list-group-item"><a href="checkout.php?id=<?php echo $result['id'];?>" class="list-group-item"><span ><img src="images/fr.png" style="height: 25px; width: 25px;"></span><?php 
+										    	 <li class="list-group-item"><a href="checkout.php?sub_child_id=<?php echo $result['id'];?>&sub_id=<?php echo $_GET['id']?>&main_id=<?php echo $_GET['service_id'];?>" class="list-group-item"><span ><img src="images/fr.png" style="height: 25px; width: 25px;"></span><?php 
 										    	 		echo $result['sub_child_category_name'];
 
 										    	  ?></a>
