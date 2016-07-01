@@ -90,7 +90,6 @@
 
 		function userServices(){
 			$query = mysqli_query($this->con,"SELECT user_id from user_services");
-			echo mysqli_num_rows($query);
 			return $query;
 
 		}

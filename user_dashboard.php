@@ -42,8 +42,8 @@
 			                                            <th>Sub Service</th>
 			                                            <th>Sub Child Service</th>
 			                                            <th>Address</th>
-			                                            <th>Professionals</th>
-			                                            <th>Contact</th>
+			                                            <!-- <th>Professionals</th>
+			                                            <th>Contact</th> -->
 			                                            <th>Status</th>
 			                                        </tr>
 
@@ -70,9 +70,16 @@
 			                                                                <td><?php echo $res['sub_category_name']; ?></td>
 			                                                                <td><?php echo $res['sub_child_category_name']; ?></td>
 			                                                                <td><?php echo $res['service_address']; ?></td>
-			                                                                <td><?php echo $res['pro_name']; ?></td>
-			                                                                <td><?php echo $res['pro_contact']; ?></td>
-			                                                                <td><?php echo $res['status']; ?></td>
+			                                                                <!--<td>-->
+			                                                                <?php //echo $res['pro_name']; ?>
+			                                                                	
+			                                                                <!--</td>-->
+			                                                                <!--<td>-->
+			                                                                <?php //echo $res['pro_contact']; ?>
+			                                                                <!--</td>-->
+			                                                                <td><?php if(0 ==$res['status']) {echo "Pending";} 
+			                                                                else {echo "Complete";}
+			                                                                ?></td>
 
 			                                                            </tr>
 			                                                    <?php 
