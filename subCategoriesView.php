@@ -2,10 +2,10 @@
 	include_once 'classes/subCategoriesClass.php';
 
 	/*user session handling */
-	session_start();
+	/*session_start();
     if(!isset($_SESSION['user'])) {
       header("Location:index.php?error=You need to login first.");
-    }
+    }*/
 
     /*user session handling end*/
 
