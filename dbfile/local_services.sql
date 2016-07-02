@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jul 01, 2016 at 06:19 PM
+-- Generation Time: Jul 01, 2016 at 10:27 PM
 -- Server version: 5.7.12-0ubuntu1.1
 -- PHP Version: 7.0.4-7ubuntu2.1
 
@@ -41,9 +41,8 @@ CREATE TABLE `login` (
 --
 
 INSERT INTO `login` (`id`, `contact`, `name`, `password`, `address`, `type`, `email`) VALUES
-(2, 7733773377, 'newuser', 'password', 'address', 1, 'nu@gmail.com'),
-(3, 987654321, 'deshraj bhardwaj', 'no', 'chamb the heaven', 0, 'deshu@gmail.com'),
-(4, 9876543210, 'abhinav kandoria', 'yes', 'kandor the mini wonderland', 0, 'abhi@gmail.com');
+(1, 9988223344, 'Munish Juneja', 'password', 'address', 1, 'munish@gmail.com'),
+(2, 7733773377, 'newuser', 'password', 'address', 0, 'nu@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -64,9 +63,9 @@ CREATE TABLE `professionals` (
 --
 
 INSERT INTO `professionals` (`pro_id`, `service_id`, `name`, `contact`, `status`) VALUES
-(1, 1, 'danny', 1234567890, 0),
-(2, 2, 'Mack doe', 1234567890, 0),
-(3, 6, 'dina', 9876754378, 0);
+(1, 1, 'example', 123456789, 0),
+(2, 2, 'example2', 789456123, 0),
+(3, 3, 'example3', 124567893, 0);
 
 -- --------------------------------------------------------
 
@@ -114,57 +113,57 @@ CREATE TABLE `sub_categories` (
 --
 
 INSERT INTO `sub_categories` (`id`, `service_id`, `sub_category_name`, `description`, `imgurl`) VALUES
-(15, 13, 'AC INSTALLATION', 'AC INSTALLATION', ''),
-(16, 13, 'AC UNINSTALLATION', '', ''),
-(17, 13, 'AC SERVICING', '', ''),
-(18, 13, 'WASHING MACHINE REPAIRING', '', ''),
-(19, 13, 'OVEN REPAIR', '', ''),
-(20, 13, 'FRIDGE REPAIRING', '', ''),
-(21, 13, 'FRIDGE GAS CHARGING', '', ''),
-(22, 14, 'first sub category', '', ''),
-(23, 14, 'second sub category', '', ''),
-(24, 14, 'General Carpentry', '', ''),
-(25, 14, 'FURNITURE  REPAIR', '', ''),
-(26, 14, 'DOOR OR  WINDOW REPAIR', '', ''),
-(27, 14, 'CURTAIN ROLL FIXTURE', '', ''),
-(28, 14, 'LOCK REPAIR', '', ''),
-(29, 15, 'EXPRESS CLEANING', '', ''),
-(30, 15, 'DEEP HOME CLEANING', '', ''),
-(31, 15, 'SOFA SHAMPOOING', '', ''),
-(32, 15, 'BATHROOM CLEANING ', '', ''),
-(33, 15, 'KITCHEN CLEANING', '', ''),
-(34, 15, 'CLEANING INSPECTION', '', ''),
-(35, 16, 'COMPUTER REPAIR & SERVICES  DELL', '', ''),
-(36, 16, 'COMPUTER REPAIR & SERVICES  HCL', '', ''),
-(37, 16, 'COMPUTER REPAIR & SERVICES ACER', '', ''),
-(38, 16, 'COMPUTER REPAIR & SERVICES SONY', '', ''),
-(39, 16, 'COMPUTER REPAIR & SERVICES ASUS', '', ''),
-(40, 16, 'COMPUTER REPAIR & SERVICES INTEL', '', ''),
-(41, 16, 'COMPUTER REPAIR & SERVICES VAIO', '', ''),
-(42, 16, 'COMPUTER REPAIR & SERVICES MAC', '', ''),
-(43, 17, 'LIGHTS & FITTINGS', '', ''),
-(44, 17, 'FANS', '', ''),
-(45, 17, 'PLUG AND SWITCH', '', ''),
-(46, 17, 'TV AND ENTERTAINMENT', '', ''),
-(47, 17, '', '', ''),
-(48, 17, 'UPS', '', ''),
-(49, 17, 'GENERAL ELECTRICAL SERVICES', '', ''),
-(50, 18, 'WASH AND FOLD', '', ''),
-(51, 18, 'WASH AND IRON', '', ''),
-(52, 18, 'PREMIUM LAUNDRY', '', ''),
-(53, 18, 'DRY CLEAN', '', ''),
-(54, 19, 'INTERIOR FRESH PAINTING', '', ''),
-(55, 19, 'INTERIOR RE-PAINTING', '', ''),
-(56, 19, 'EXTERIOR FRESH-PAINTING', '', ''),
-(57, 19, 'EXTERIOR RE-PAINTING', '', ''),
-(58, 19, 'WOOD POLISHING', '', ''),
-(59, 20, 'LEAKS AND BLOCKS', '', ''),
-(60, 20, 'TAPS AND SHOWERS', '', ''),
-(61, 20, 'TOILET FITTINGS', '', ''),
-(62, 20, 'ACCESSORIES', '', ''),
-(63, 20, 'GENERAL PLUMBING SERVICES', '', ''),
-(64, 15, 'MOVE ', '', ''),
-(65, 15, 'MOVE IN CLEANING', '', '');
+(15, 13, 'AC INSTALLATION', 'description goes here', '/images/fr.png'),
+(16, 13, 'AC UNINSTALLATION', 'description goes here', '/images/fr.png'),
+(17, 13, 'AC SERVICING', 'description goes here', '/images/fr.png'),
+(18, 13, 'WASHING MACHINE REPAIRING', 'description goes here', '/images/fr.png'),
+(19, 13, 'OVEN REPAIR', 'description goes here', '/images/fr.png'),
+(20, 13, 'FRIDGE REPAIRING', 'description goes here', '/images/fr.png'),
+(21, 13, 'FRIDGE GAS CHARGING', 'description goes here', '/images/fr.png'),
+(22, 14, 'first sub category', 'description goes here', '/images/fr.png'),
+(23, 14, 'second sub category', 'description goes here', '/images/fr.png'),
+(24, 14, 'General Carpentry', 'description goes here', '/images/fr.png'),
+(25, 14, 'FURNITURE  REPAIR', 'description goes here', '/images/fr.png'),
+(26, 14, 'DOOR OR  WINDOW REPAIR', 'description goes here', '/images/fr.png'),
+(27, 14, 'CURTAIN ROLL FIXTURE', 'description goes here', '/images/fr.png'),
+(28, 14, 'LOCK REPAIR', 'description goes here', '/images/fr.png'),
+(29, 15, 'EXPRESS CLEANING', 'description goes here', '/images/fr.png'),
+(30, 15, 'DEEP HOME CLEANING', 'description goes here', '/images/fr.png'),
+(31, 15, 'SOFA SHAMPOOING', 'description goes here', '/images/fr.png'),
+(32, 15, 'BATHROOM CLEANING ', 'description goes here', '/images/fr.png'),
+(33, 15, 'KITCHEN CLEANING', 'description goes here', '/images/fr.png'),
+(34, 15, 'CLEANING INSPECTION', 'description goes here', '/images/fr.png'),
+(35, 16, 'COMPUTER REPAIR & SERVICES  DELL', 'description goes here', '/images/fr.png'),
+(36, 16, 'COMPUTER REPAIR & SERVICES  HCL', 'description goes here', '/images/fr.png'),
+(37, 16, 'COMPUTER REPAIR & SERVICES ACER', 'description goes here', '/images/fr.png'),
+(38, 16, 'COMPUTER REPAIR & SERVICES SONY', 'description goes here', '/images/fr.png'),
+(39, 16, 'COMPUTER REPAIR & SERVICES ASUS', 'description goes here', '/images/fr.png'),
+(40, 16, 'COMPUTER REPAIR & SERVICES INTEL', 'description goes here', '/images/fr.png'),
+(41, 16, 'COMPUTER REPAIR & SERVICES VAIO', 'description goes here', '/images/fr.png'),
+(42, 16, 'COMPUTER REPAIR & SERVICES MAC', 'description goes here', '/images/fr.png'),
+(43, 17, 'LIGHTS & FITTINGS', 'description goes here', '/images/fr.png'),
+(44, 17, 'FANS', 'description goes here', '/images/fr.png'),
+(45, 17, 'PLUG AND SWITCH', 'description goes here', '/images/fr.png'),
+(46, 17, 'TV AND ENTERTAINMENT', 'description goes here', '/images/fr.png'),
+(47, 17, '', 'description goes here', '/images/fr.png'),
+(48, 17, 'UPS', 'description goes here', '/images/fr.png'),
+(49, 17, 'GENERAL ELECTRICAL SERVICES', 'description goes here', '/images/fr.png'),
+(50, 18, 'WASH AND FOLD', 'description goes here', '/images/fr.png'),
+(51, 18, 'WASH AND IRON', 'description goes here', '/images/fr.png'),
+(52, 18, 'PREMIUM LAUNDRY', 'description goes here', '/images/fr.png'),
+(53, 18, 'DRY CLEAN', 'description goes here', '/images/fr.png'),
+(54, 19, 'INTERIOR FRESH PAINTING', 'description goes here', '/images/fr.png'),
+(55, 19, 'INTERIOR RE-PAINTING', 'description goes here', '/images/fr.png'),
+(56, 19, 'EXTERIOR FRESH-PAINTING', 'description goes here', '/images/fr.png'),
+(57, 19, 'EXTERIOR RE-PAINTING', 'description goes here', '/images/fr.png'),
+(58, 19, 'WOOD POLISHING', 'description goes here', '/images/fr.png'),
+(59, 20, 'LEAKS AND BLOCKS', 'description goes here', '/images/fr.png'),
+(60, 20, 'TAPS AND SHOWERS', 'description goes here', '/images/fr.png'),
+(61, 20, 'TOILET FITTINGS', 'description goes here', '/images/fr.png'),
+(62, 20, 'ACCESSORIES', 'description goes here', '/images/fr.png'),
+(63, 20, 'GENERAL PLUMBING SERVICES', 'description goes here', '/images/fr.png'),
+(64, 15, 'MOVE ', 'description goes here', '/images/fr.png'),
+(65, 15, 'MOVE IN CLEANING', 'description goes here', '/images/fr.png');
 
 -- --------------------------------------------------------
 
@@ -176,40 +175,41 @@ CREATE TABLE `sub_child_categories` (
   `id` int(11) NOT NULL,
   `sub_category_id` int(11) NOT NULL,
   `sub_child_category_name` varchar(100) NOT NULL,
-  `rate` double NOT NULL
+  `rate` double NOT NULL,
+  `imgurl` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `sub_child_categories`
 --
 
-INSERT INTO `sub_child_categories` (`id`, `sub_category_id`, `sub_child_category_name`, `rate`) VALUES
-(1, 15, 'WINDOW AC', 650),
-(2, 15, 'SPLIT AC', 900),
-(3, 16, 'SPLIT AC', 900),
-(4, 16, 'WINDOW AC', 650),
-(5, 17, 'WINDOW AC', 500),
-(6, 17, 'SPLIT AC', 900),
-(7, 18, 'FULLY AUTOMATIC ', 450),
-(8, 18, 'SEMI-AUTOMATIC', 9),
-(9, 18, 'FRONT LOADING ', 550),
-(10, 19, 'CONVECTION/GRILL', 450),
-(11, 20, 'DIRECT COOL', 475),
-(12, 20, 'FROST FREE(UPTO 400Ltrs)', 475),
-(13, 20, 'GENERAL SERVICE', 950),
-(14, 21, 'DIRECT COOL', 2000),
-(15, 21, 'FROST FREE(UPTO 400Ltrs)', 2),
-(16, 29, 'BHK', 1900),
-(17, 30, 'BHK', 3600),
-(18, 30, 'WATER TANK/500Ltrs', 750),
-(19, 31, 'SEATER SOFA', 1500),
-(20, 32, 'BATHROOM', 1000),
-(21, 33, 'KITCHEN', 2000),
-(22, 65, 'BHK', 3190),
-(23, 43, 'LIGHTS REPAIR', 250),
-(24, 43, 'LIGHTS INSTALLATION', 250),
-(25, 43, 'FANCY LIGHT', 250),
-(26, 43, 'CHANDLIER', 500);
+INSERT INTO `sub_child_categories` (`id`, `sub_category_id`, `sub_child_category_name`, `rate`, `imgurl`) VALUES
+(1, 15, 'WINDOW AC', 650, '/images/fr.png'),
+(2, 15, 'SPLIT AC', 900, '/images/fr.png'),
+(3, 16, 'SPLIT AC', 900, '/images/fr.png'),
+(4, 16, 'WINDOW AC', 650, '/images/fr.png'),
+(5, 17, 'WINDOW AC', 500, '/images/fr.png'),
+(6, 17, 'SPLIT AC', 900, '/images/fr.png'),
+(7, 18, 'FULLY AUTOMATIC ', 450, '/images/fr.png'),
+(8, 18, 'SEMI-AUTOMATIC', 9, '/images/fr.png'),
+(9, 18, 'FRONT LOADING ', 550, '/images/fr.png'),
+(10, 19, 'CONVECTION/GRILL', 450, '/images/fr.png'),
+(11, 20, 'DIRECT COOL', 475, '/images/fr.png'),
+(12, 20, 'FROST FREE(UPTO 400Ltrs)', 475, '/images/fr.png'),
+(13, 20, 'GENERAL SERVICE', 950, '/images/fr.png'),
+(14, 21, 'DIRECT COOL', 2000, '/images/fr.png'),
+(15, 21, 'FROST FREE(UPTO 400Ltrs)', 2, '/images/fr.png'),
+(16, 29, 'BHK', 1900, '/images/fr.png'),
+(17, 30, 'BHK', 3600, '/images/fr.png'),
+(18, 30, 'WATER TANK/500Ltrs', 750, '/images/fr.png'),
+(19, 31, 'SEATER SOFA', 1500, '/images/fr.png'),
+(20, 32, 'BATHROOM', 1000, '/images/fr.png'),
+(21, 33, 'KITCHEN', 2000, '/images/fr.png'),
+(22, 65, 'BHK', 3190, '/images/fr.png'),
+(23, 43, 'LIGHTS REPAIR', 250, '/images/fr.png'),
+(24, 43, 'LIGHTS INSTALLATION', 250, '/images/fr.png'),
+(25, 43, 'FANCY LIGHT', 250, '/images/fr.png'),
+(26, 43, 'CHANDLIER', 500, '/images/fr.png');
 
 -- --------------------------------------------------------
 
@@ -281,17 +281,12 @@ CREATE TABLE `user_services` (
 --
 
 INSERT INTO `user_services` (`id`, `user_id`, `sub_child_id`, `status`, `service_address`, `sub_id`, `main_id`) VALUES
-(4, 2, 1, 1, 'address', 15, 13),
-(5, 1, 2, 0, 'address', 2, 2),
-(6, 2, 2, 1, '123 qwer asdf 123456', 15, 13),
-(7, 2, 2, 1, '888 ajay nonno 111111', 15, 13),
-(8, 2, 2, 0, '111 qwerty qqqq 123333', 15, 13),
-(9, 2, 2, 0, '531 bada apartment local 123456', 15, 13),
-(10, 2, 2, 0, '531 bada apartment local 123456', 15, 13),
-(11, 3, 2, 0, '531 Matur Sector 71 190160', 15, 13),
-(12, 4, 6, 0, '12 kandoria villa kandor 120340', 17, 13),
-(13, 4, 2, 0, '12 kandor villa kandoria 120345', 15, 13),
-(14, 4, 6, 1, '34 adfa dsfno 123456', 17, 13);
+(1, 2, 2, 0, '1234 qwert asdfg 12345', NULL, NULL),
+(2, 2, 1, 1, '', 15, 13),
+(3, 2, 1, 0, 'address', 15, 13),
+(4, 2, 1, 0, 'address', 15, 13),
+(5, 2, 1, 0, '7733 7766 KSL 663363', 15, 13),
+(6, 2, 1, 0, '67 kjhjh jhjkhkj 676766', 15, 13);
 
 --
 -- Indexes for dumped tables
@@ -343,7 +338,7 @@ ALTER TABLE `user_services`
 -- AUTO_INCREMENT for table `login`
 --
 ALTER TABLE `login`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `professionals`
 --
@@ -368,7 +363,7 @@ ALTER TABLE `sub_child_categories`
 -- AUTO_INCREMENT for table `user_services`
 --
 ALTER TABLE `user_services`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- Constraints for dumped tables
 --

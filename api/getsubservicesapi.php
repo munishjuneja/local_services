@@ -13,7 +13,9 @@
 			$intermediatearray['id']=$resultintoarray['id'];
 			// $intermediatearray['service_id']=$resultintoarray['service_id'];
 			$intermediatearray['sub_category_name']=$resultintoarray['sub_category_name'];
+			$intermediatearray['description']=$resultintoarray['description'];
 			
+			$intermediatearray['imgurl']="http://".$_SERVER['HTTP_HOST'].$resultintoarray['imgurl'];
 			$storearr[$i]=$intermediatearray;
 						$i++;
 

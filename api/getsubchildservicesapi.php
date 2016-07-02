@@ -13,6 +13,8 @@
 			$intermediatearray['id']=$resultintoarray['id'];
 			// $intermediatearray['service_id']=$resultintoarray['service_id'];
 			$intermediatearray['sub_child_category_name']=$resultintoarray['sub_child_category_name'];
+			$intermediatearray['rate']=$resultintoarray['rate'];
+			$intermediatearray['imgurl']="http://".$_SERVER['HTTP_HOST'].$resultintoarray['imgurl'];
 			$storearr[$i]=$intermediatearray;
 						$i++;
 
@@ -29,7 +31,12 @@
 
 				}
 				$finalarray['subchildservices']=$storearr;
-				$finalarray['message']="<h3>Rate list</h3>
+				$finalarray['message']="<html>
+	<head>
+		<title></title>
+	</head>
+	<body>
+	<h3>Rate list</h3>
 		<ul>
 			<li>Window AC at Rs:690/AC</li>
 			<li>Split AC at Rs: 1850/AC</li>
@@ -41,11 +48,15 @@
 			<li>Includes labour charges only</li>
 			<li>Any parts that requires replacement will be extra</li>
 			<li>Minimum visiting charges are Rs.199 </li>
-		</ul>";
+		</ul>
+	
+	</body>
+	</html>";
 			$finalarray['message']=htmlspecialchars($finalarray['message']);
 				echo json_encode($finalarray);
 		
 	}
+
 		
 
  ?>
