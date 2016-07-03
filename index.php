@@ -59,7 +59,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Local-Services</title>
+    <title>Town Sewa</title>
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
     <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -675,13 +675,13 @@ body.openmenu {
 	            </div>
 	            <div class="row">
 	                <div class="col-lg-10 col-lg-offset-1">
-	                    <p style="text-align:justify">Town Seva is incorporated with the goal to make your lives as comfortable as possible. We are Tri-city’s leading home care and maintenance service provider. Our aim is to help residents with excellent quality home care services. 
-We at Town Seva make it our commitment to bring professionalism, good service and trust to the home repair service and maintenance business. We take immense pride in sending some of the most professional handymen to your homes to fix things that aren't working. 
+	                    <p style="text-align:justify">Town Sewa is incorporated with the goal to make your lives as comfortable as possible. We are Tri-city’s leading home care and maintenance service provider. Our aim is to help residents with excellent quality home care services. 
+We at Town Sewa make it our commitment to bring professionalism, good service and trust to the home repair service and maintenance business. We take immense pride in sending some of the most professional handymen to your homes to fix things that aren't working. 
 
 
 </p>
 	               
-	                    <p>At Town Seva we have a specialist solution for every trouble. We offer a unique range of home maintenance services like Electrical, Carpentry, White wash, Civil work, Driver Services, Pest control, A/C repair,  and Plumbing services on one platform!  To find a solution for your home care problems, you can visit our services section.
+	                    <p>At Town Sewa we have a specialist solution for every trouble. We offer a unique range of home maintenance services like Electrical, Carpentry, White wash, Civil work, Driver Services, Pest control, A/C repair,  and Plumbing services on one platform!  To find a solution for your home care problems, you can visit our services section.
 </p>
 	                </div>
 	                <!-- <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -704,32 +704,30 @@ We at Town Seva make it our commitment to bring professionalism, good service an
 	                <div class="row">
 	                    <div class="footer-col col-md-4">
 	                        <h3>Location</h3>
-	                        <p>Mohali,Punjab</p>
+	                        <address>All Innovative Technologies,<br>D-104, Phase-7,<br>Industrial Area,<br> Mohali </address>
 	                    </div>
 	                    <div class="footer-col col-md-4">
 	                        <h3>Around the Web</h3>
 	                        <ul class="list-inline">
 	                            <li>
-	                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+	                                <a href="https://www.facebook.com/Town-Sewa-164629787287349/" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-facebook"></i></a>
+	                            </li>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+	                            <li>
+	                                <a href="//plus.google.com/u/1/113783599093536980105" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
 	                            </li>
 	                            <li>
-	                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-google-plus"></i></a>
+	                                <a href="https://twitter.com/@TownSewa" target="_blank" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
 	                            </li>
 	                            <li>
-	                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-twitter"></i></a>
-	                            </li>
-	                            <li>
-	                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-linkedin"></i></a>
-	                            </li>
-	                            <li>
-	                                <a href="#" class="btn-social btn-outline"><i class="fa fa-fw fa-dribbble"></i></a>
+	                                <a href="https://www.linkedin.com/in/town-sewa-584a34120?trk=nav_responsive_tab_profile" class="btn-social btn-outline" target="_blank"><i class="fa fa-fw fa-linkedin"></i></a>
 	                            </li>
 	                        </ul>
 	                    </div>
 	                    <div class="footer-col col-md-4">
 	                        <h3 id="contact_us">Contact</h3>
-	                        <p>Phone:xxxxxxxx</p>
-	                        <p>email:xxxxxx@xxx</p>
+	                        <p>Phone:+91 9056711144</p>
+	                        <p>Email:info@townsewa.com</p>
 	                    </div>
 	                </div>
 	            </div>
@@ -738,7 +736,7 @@ We at Town Seva make it our commitment to bring professionalism, good service an
 	            <div class="container">
 	                <div class="row">
 	                    <div class="col-lg-12">
-	                        Copyright &copy; Local-Services 2016
+	                        Copyright &copy; Town Sewa 2016
 	                    </div>
 	                </div>
 	            </div>
