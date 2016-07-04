@@ -10,7 +10,7 @@
 			$intermediatearray = array();
 			$intermediatearray['id']=$resultintoarray['id'];
 			$intermediatearray['name']=$resultintoarray['name'];
-			$intermediatearray['imageurl']="http://"$_SERVER['HTTP_HOST']."/".$resultintoarray['imageurl'];
+			$intermediatearray['imageurl']="http://".$_SERVER['HTTP_HOST']."/".$resultintoarray['imageurl'];
 			$storearr[$i]=$intermediatearray;
 						$i++;
 

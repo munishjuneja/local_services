@@ -10,13 +10,19 @@
             $subObj->service_id =$_POST['sid'];
             $subObj->sub_category_name=$_POST['sub_category_name'];
             $subObj->sub_category_description=$_POST['sub_category_description'];
+            $filename = $_FILES['file']['name'];
+            $tmp_name = $_FILES['file']['tmp_name'];
+            $location='images/'.$filename;
+            move_uploaded_file($tmp_name,$location);
+            $subObj->imgurl = "/".$location;
             $subObj->addSubCategory();
        }
     if (isset($_POST['delete'])) {
-        $obj->id = $_POST['delinput'];
-        $obj->deleteSubCategory();
-
-    }
+                $obj = new Service;
+                $obj->id = $_POST['id'];
+                $obj->deleteSub();
+                $_SESSION['msg']="SUCCESSFULLY DELETED";
+           }
 
 ?>
 
@@ -70,12 +76,11 @@
                                                     </div>
 
 
-                                             <form  method="post" role="form" action="subCategory.php">
+                                             <form  method="post" role="form" action="subCategory.php" enctype="multipart/form-data">
                                                     <div class="form-group has-info">
                                                         <label class="control-label" for="inputSuccess">Sub Category Name</label>
                                                         <input type="text" class="form-control" id="inputSuccess" name="sub_category_name">
 
-                                                        <input id="sinput" type="hidden" name="sid">
                                                         
                                                     </div>
                                                     <div class="form-group has-info">
@@ -84,6 +89,11 @@
 
                                                         <input id="sinput" type="hidden" name="sid">
                                                         
+                                                    </div>
+                                                     <div class="form-group has-info">
+                                                        <label class="control-label" for="inputSuccess">Service Icon</label>
+                                                        <input id="file" name="file" type="file" class="form-control" id="inputSuccess">
+                                                
                                                     </div>
                                                         <input type="submit" class="btn btn-info" name="submit" value="Add Sub Category">
                                                       
@@ -132,6 +142,18 @@
                                                          </a>
                                                             
                                                         </td>
+                                                        <td>
+                                                            <a style="color:white;" href="">
+                                                                 <form method="POST" action="subCategory.php">
+                                                                  <input type="hidden" value="<?php echo $out['id'];?>" name="id">
+                                                                  <button id="delete" class="btn btn-sm btn-danger" type="submit" name="delete">
+                                                                        Delete
+                                                                  </button>
+                                                                </form>
+                                                                    
+                                                             </a>
+                                                                
+                                                      </td>
                                                         
                                                     </tr>
                                                 </tbody>

@@ -10,7 +10,7 @@
 		var $sub_category_description;
 
 		public function addSubCategory(){
-			$query = mysqli_query($this->con,"INSERT INTO sub_categories (`sub_category_name`) values('$this->sub_category_name') ");
+			$query = mysqli_query($this->con,"INSERT INTO sub_categories (`service_id,``sub_category_name`) values('$this->service_id',$this->sub_category_name') ");
 		}
 		
 		public function allSubCategories(){
@@ -24,7 +24,7 @@
 		}
 
 		public function editSubCategory(){
-			$query = mysqli_query($this->con,"UPDATE sub_categories set sub_category_name='$this->sub_category_name',sub_category_description='$this->sub_category_description' where id='$this->id'");
+			$query = mysqli_query($this->con,"UPDATE sub_categories set sub_category_name='$this->sub_category_name',description='$this->sub_category_description' where id='$this->id'");
 			return $query;
 		}
 

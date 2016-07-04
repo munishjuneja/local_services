@@ -6,9 +6,22 @@
     if (isset($_POST['submit'])){
             $subObj = new Service;
             $subObj->sub_category_id =$_POST['sid'];
+            echo $subObj->sub_category_id;
             $subObj->sub_child_category_name=$_POST['sub_child_category_name'];
             $subObj->rate = $_POST['rate'];
+            $filename = $_FILES['file']['name'];
+            $tmp_name = $_FILES['file']['tmp_name'];
+            $location='images/'.$filename;
+            move_uploaded_file($tmp_name,$location);
+            $subObj->imgurl = "/".$location;
             $subObj->addSubChildCategory();
+       }
+       if (isset($_POST['delete'])) {
+            $obj = new Service;
+            $obj->id = $_POST['id'];
+            echo $_POST['id'];
+            $obj->deleteSubChild();
+            $_SESSION['msg']="SUCCESSFULLY DELETED";
        }
     
 ?>
@@ -27,7 +40,12 @@
                          <div class="panel-body">
                                 <div class="row">
                                      <div class="col-lg-6">
-
+                                            <?php if (isset($_SESSION['msg'])): ?>
+                                            <div class="alert alert-success">
+                                                <?php echo $_SESSION['msg']; ?>
+                                                <?php unset($_SESSION['msg']);?>
+                                            </div>
+                                        <?php endif ?>
                                            
                                              <div class="form-group">
                                                     <label class="control-label" for="inputSuccess">Category Name</label>
@@ -58,7 +76,7 @@
                                                     </div>
 
 
-                                             <form  method="post" role="form" action="subChildCategory.php">
+                                             <form  method="post" role="form" action="subChildCategory.php" enctype="multipart/form-data">
                                                     <div class="form-group has-info">
                                                        
                                                         <label class="control-label" for="inputSuccess">Sub Child Category Name</label>
@@ -72,6 +90,11 @@
 
                                                             <input type="text" class="form-control" id="inputSuccess" name="rate">
                                                        </div>
+                                                       <div class="form-group has-info">
+                                                        <label class="control-label" for="inputSuccess">Service Icon</label>
+                                                        <input id="file" name="file" type="file" class="form-control" id="inputSuccess">
+                                                
+                                                    </div>
                                                         
                                                     </div>
 
@@ -113,7 +136,7 @@
                                                         </td>
 
                                                         <td>
-                                                        <a style="color:white;" href="editCategory.php?id=<?php echo $cname;?>&desc=<?php echo $cdes?>">
+                                                        <a style="color:white;" href="editSubChildCategory.php?id=<?php echo $out['id'];?>&desc=<?php echo $out['rate']?>&name=<?php echo $out['sub_child_category_name'];?>">
                                                             <button id="edit" class="btn btn-sm btn-info">
                                                                     Edit
                                                                     <?php
@@ -124,6 +147,18 @@
                                                             </button>
                                                          </a>
                                                             
+                                                        </td>
+                                                        <td>
+                                                             <a style="color:white;" href="">
+
+                                                            <form method="POST" action="subChildCategory.php">
+                                                              <input type="hidden" value="<?php echo $out['id'];?>" name="id">
+                                                              <button id="delete" class="btn btn-sm btn-danger" type="submit" name="delete">
+                                                                    Delete
+                                                              </button>
+                                                            </form>
+                                                         </a>
+
                                                         </td>
                                                         
                                                     </tr>
