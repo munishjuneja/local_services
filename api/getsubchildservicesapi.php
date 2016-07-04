@@ -31,7 +31,7 @@
 
 				}
 				$finalarray['subchildservices']=$storearr;
-				$finalarray['message']="<html>
+				$finalarray['message']=htmlentities("<html>
 	<head>
 		<title></title>
 	</head>
@@ -51,8 +51,8 @@
 		</ul>
 	
 	</body>
-	</html>";
-			$finalarray['message']=htmlspecialchars($finalarray['message']);
+	</html>");
+			$finalarray['message']=$finalarray['message'];
 				echo json_encode($finalarray);
 		
 	}

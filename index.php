@@ -241,7 +241,7 @@ body.openmenu {
 #hamburgermenu {
   height: 100%;
   width: 0;
-  background:#3F51B5;
+  background:#01a194;
   position: fixed;
   top: 0;
   left: 0;
@@ -297,6 +297,10 @@ body.openmenu {
 	background-color:#F2F2F2;
 	border-radius: 5px;
 }
+
+#sticky{
+	background: #01a194
+}
   </style>
 
 
@@ -351,7 +355,7 @@ body.openmenu {
 		        			else { echo "<a href=\"logout.php\"><button>Log out</button></a>";} ?>
 		        			
 		        		</div><!-- dropdown_login_btn class   -->
-		        		<?php if(!isset($_SESSION['user'])) echo "<p>New ? <a href=\"#register\" data-toggle=\"modal\" data-target=\"#signupForm\">register here</a></p>"; ?>
+		        		<?php if(!isset($_SESSION['user'])) echo "<p style=\"padding-bottom:10px;\">New ?&nbsp;&nbsp; <a href=\"#register\" data-toggle=\"modal\" data-target=\"#signupForm\">Register here</a></p>"; ?>
 	        		</div>
 	        		<div class="navbar_dropdown_options">
 	        			<!-- <ul>
@@ -478,13 +482,13 @@ body.openmenu {
 		</div>
 
 
-	<div id="sticky-anchor"></div>
+<div id="sticky-anchor"></div>
     <div id="sticky">
             <div class="col-xs-3 " >
             	<img src="favicon.ico" style="height:40px; padding-bottom:1%;">&nbsp<b style="font-size:20px;">TOWN SEWA</b>
             </div>
             <div style="margin-top:-14px;" class="col-xs-6 col-xs-6 col-xs-offset-right-3">
-                <form class="navbar-form "  role="search">
+                <form class="navbar-form " role="search">
                     <div class="input-group col-md-12">
                         <input type="text" class="form-control"  style=" padding:0;
 
@@ -500,10 +504,10 @@ body.openmenu {
        		</div>
     </div>
     <a href="#" style="font-size: 12px; text-align: center;"></a>
-<div id="navbar-bottom" style="width:100%;">
+<div id="navbar-bottom" style="width:100%; background:#009676">
 
 
-   <div id="inline-div" style="width:100%;">
+   <div id="inline-div" style="width:100%;background:#009676">
     <div style="float:left; width:10%;">
     	<a href="#" class="menubtn"> 
     	   	<button type="button" class="btn btn-md hamb" aria-label="Left Align">
@@ -572,7 +576,7 @@ body.openmenu {
 
     <!-- <div class="main-container"> -->
 	    <!-- Header -->
-	    <header>
+	    <header style="margin-top:20px;">
 	        <div class="container offers">
 	        	<div class="row">
 	        	<div class="col-lg-12">
